@@ -37,6 +37,10 @@ export default grammar({
 
     parameter_list: ($) =>
       seq(
+        // this is more loose than reef actually allows, but this is just for syntax highlighting, so that's fine.
+        // eg: both these would be parsed but are not actually valid rf
+        // (, a: int)
+        // (,)
         "(",
         optional($.parameter),
         repeat(seq(",", $.parameter)),
