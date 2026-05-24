@@ -11,23 +11,52 @@ export default grammar({
   name: "reef",
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: ($) => repeat(choice($.definition, $._statement)),
+    source_file: ($) => repeat(choice($._definition, $._statement)),
 
-    definition: ($) => choice(),
+    _definition: ($) => choice($.function_declaration),
     // $._functionDef,
     // $._unionDef,
     // $._classDef
+
+    modifier: ($) => choice("extern", "pub", "static"),
+
+    function_declaration: ($) =>
+      seq(
+        field("attributes", repeat($.attribute)),
+        field("modifiers", repeat($.modifier)),
+        "fn",
+        field("name", $.identifier),
+        field("parameter_list", $.parameter_list),
+        field("return_type", optional(seq(":", $.type_identifier))),
+        field("body", $.block),
+      ),
+
+    attribute: ($) => seq("#", "[", $.identifier, "]"),
+
+    block: ($) => seq("{", repeat($._statement), "}"),
+
+    parameter_list: ($) =>
+      seq(
+        "(",
+        optional($.parameter),
+        repeat(seq(",", $.parameter)),
+        optional(","),
+        ")",
+      ),
+
+    parameter: ($) => seq($.identifier, ":", $.type_identifier),
 
     _statement: ($) => seq($._expression, ";"),
 
     _expression: ($) => choice($.string, $.int, $.variable_declaration),
 
+    type_identifier: ($) => $.identifier, // todo: other type identifiers
+
     variable_declaration: ($) =>
       seq(
         "var",
         field("name", $.identifier),
-        field("type", optional(seq(":", $.identifier))),
+        field("type", optional(seq(":", $.type_identifier))),
         field("value", optional(seq("=", $._expression))),
       ),
 

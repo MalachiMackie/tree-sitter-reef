@@ -1,0 +1,73 @@
+=============
+Function Declaration
+=============
+
+fn some_fn() {
+    var a;
+}
+
+pub fn other_fn() {}
+
+static fn fn_3() {}
+
+extern fn fn_3() {}
+
+pub static extern fn fn_3() {}
+
+fn fn_4(a: string, b: int,) {}
+
+fn fn_5(): string {}
+
+#[attribute]
+#[attribute_2]
+fn fn_6() {}
+
+---
+
+(source_file
+    (function_declaration
+        name: (identifier)
+        parameter_list: (parameter_list)
+        body: (block
+            (variable_declaration name: (identifier))))
+    (function_declaration
+        modifiers: (modifier)
+        name: (identifier)
+        parameter_list: (parameter_list)
+        body: (block))
+    (function_declaration
+        modifiers: (modifier)
+        name: (identifier)
+        parameter_list: (parameter_list)
+        body: (block))
+    (function_declaration
+        modifiers: (modifier)
+        name: (identifier)
+        parameter_list: (parameter_list)
+        body: (block))
+    (function_declaration
+        modifiers: (modifier)
+        modifiers: (modifier)
+        modifiers: (modifier)
+        name: (identifier)
+        parameter_list: (parameter_list)
+        body: (block))
+    (function_declaration
+        name: (identifier)
+        parameter_list: (parameter_list
+            (parameter (identifier) (type_identifier (identifier)))
+            (parameter (identifier) (type_identifier (identifier)))
+            )
+        body: (block))
+    (function_declaration
+        name: (identifier)
+        parameter_list: (parameter_list)
+        return_type: (type_identifier (identifier))
+        body: (block))
+    (function_declaration
+        attributes: (attribute (identifier))
+        attributes: (attribute (identifier))
+        name: (identifier)
+        parameter_list: (parameter_list)
+        body: (block))
+)
