@@ -12,6 +12,19 @@ export default grammar({
 
   rules: {
     // TODO: add the actual grammar rules
-    source_file: $ => "hello"
-  }
+    source_file: ($) => repeat(choice($.definition, $._statement)),
+
+    definition: ($) => choice(),
+    // $._functionDef,
+    // $._unionDef,
+    // $._classDef
+
+    _statement: ($) => seq($._expression, ";"),
+
+    _expression: ($) => choice($.string, $.int),
+
+    string: ($) => new RustRegex('"[^"]*"'),
+
+    int: ($) => new RustRegex("[0-9]+"),
+  },
 });
