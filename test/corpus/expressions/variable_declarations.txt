@@ -1,0 +1,24 @@
+================
+Variable Declarations
+================
+
+var a = 1;
+var b;
+var b: type;
+var b: type = 2;
+
+---
+
+(source_file
+    (variable_declaration
+        name: (identifier)
+        value: (int))
+    (variable_declaration
+        name: (identifier))
+    (variable_declaration
+        name: (identifier)
+        type: (identifier))
+    (variable_declaration
+        name: (identifier)
+        type: (identifier)
+        value: (int)))

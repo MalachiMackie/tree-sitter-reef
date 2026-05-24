@@ -21,7 +21,17 @@ export default grammar({
 
     _statement: ($) => seq($._expression, ";"),
 
-    _expression: ($) => choice($.string, $.int),
+    _expression: ($) => choice($.string, $.int, $.variable_declaration),
+
+    variable_declaration: ($) =>
+      seq(
+        "var",
+        field("name", $.identifier),
+        field("type", optional(seq(":", $.identifier))),
+        field("value", optional(seq("=", $._expression))),
+      ),
+
+    identifier: ($) => new RustRegex("[a-zA-Z_][a-zA-Z_0-9]*"),
 
     string: ($) => new RustRegex('"[^"]*"'),
 
