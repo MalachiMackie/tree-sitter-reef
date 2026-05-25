@@ -7,6 +7,15 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+/**
+ * Creates a comma-separated list of a given rule.
+ * @param {RuleOrLiteral} rule - The Tree-sitter rule to repeat.
+ * @returns {RuleOrLiteral} The combined sequence rule.
+ */
+function comma_separated_list(rule) {
+  return seq(optional(rule), repeat(seq(",", rule)), optional(","));
+}
+
 export default grammar({
   name: "reef",
 
@@ -23,30 +32,43 @@ export default grammar({
     function_declaration: ($) =>
       seq(
         field("attributes", repeat($.attribute)),
-        field("modifiers", repeat($.modifier)),
+        field("modifiers", optional($.modifier_list)),
         "fn",
         field("name", $.identifier),
+        field("type_parameter_list", optional($.type_parameter_list)),
         field("parameter_list", $.parameter_list),
-        field("return_type", optional(seq(":", $.type_identifier))),
-        field("body", $.block),
+        field("return_type", optional($.return_type)),
+        field("type_constraints", optional($.type_constraint_list)),
+        field("body", optional($.block)),
       ),
+
+    type_constraint_list: ($) => repeat1($.type_constraint),
+
+    type_constraint: ($) =>
+      seq(
+        "where",
+        $.identifier,
+        ":",
+        $.boxing_specifier,
+        optional($.type_identifier),
+      ),
+
+    boxing_specifier: ($) => choice("boxed", "unboxed"),
+
+    return_type: ($) => seq(":", optional($.mut_specifier), $.type_identifier),
+
+    mut_specifier: ($) => "mut",
 
     attribute: ($) => seq("#", "[", $.identifier, "]"),
 
+    modifier_list: ($) => repeat1($.modifier),
+
     block: ($) => seq("{", repeat($._statement), "}"),
 
-    parameter_list: ($) =>
-      seq(
-        // this is more loose than reef actually allows, but this is just for syntax highlighting, so that's fine.
-        // eg: both these would be parsed but are not actually valid rf
-        // (, a: int)
-        // (,)
-        "(",
-        optional($.parameter),
-        repeat(seq(",", $.parameter)),
-        optional(","),
-        ")",
-      ),
+    type_parameter_list: ($) =>
+      seq("<", comma_separated_list($.identifier), ">"),
+
+    parameter_list: ($) => seq("(", comma_separated_list($.parameter), ")"),
 
     parameter: ($) => seq($.identifier, ":", $.type_identifier),
 

@@ -38,6 +38,11 @@
     }
   },
   {
+    "type": "boxing_specifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "function_declaration",
     "named": true,
     "fields": {
@@ -53,7 +58,7 @@
       },
       "body": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "block",
@@ -62,11 +67,11 @@
         ]
       },
       "modifiers": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": "modifier",
+            "type": "modifier_list",
             "named": true
           }
         ]
@@ -92,15 +97,31 @@
         ]
       },
       "return_type": {
-        "multiple": true,
+        "multiple": false,
         "required": false,
         "types": [
           {
-            "type": ":",
-            "named": false
-          },
+            "type": "return_type",
+            "named": true
+          }
+        ]
+      },
+      "type_constraints": {
+        "multiple": false,
+        "required": false,
+        "types": [
           {
-            "type": "type_identifier",
+            "type": "type_constraint_list",
+            "named": true
+          }
+        ]
+      },
+      "type_parameter_list": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_parameter_list",
             "named": true
           }
         ]
@@ -111,6 +132,21 @@
     "type": "modifier",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "modifier_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "parameter",
@@ -147,6 +183,25 @@
     }
   },
   {
+    "type": "return_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "mut_specifier",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -175,12 +230,65 @@
     }
   },
   {
+    "type": "type_constraint",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boxing_specifier",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_constraint_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "type_constraint",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "type_identifier",
     "named": true,
     "fields": {},
     "children": {
       "multiple": false,
       "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
       "types": [
         {
           "type": "identifier",
@@ -266,7 +374,15 @@
     "named": false
   },
   {
+    "type": "<",
+    "named": false
+  },
+  {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": ">",
     "named": false
   },
   {
@@ -275,6 +391,10 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "boxed",
     "named": false
   },
   {
@@ -294,6 +414,10 @@
     "named": true
   },
   {
+    "type": "mut_specifier",
+    "named": true
+  },
+  {
     "type": "pub",
     "named": false
   },
@@ -306,7 +430,15 @@
     "named": true
   },
   {
+    "type": "unboxed",
+    "named": false
+  },
+  {
     "type": "var",
+    "named": false
+  },
+  {
+    "type": "where",
     "named": false
   },
   {

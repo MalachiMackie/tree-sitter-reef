@@ -18,9 +18,18 @@ fn fn_4(a: string, b: int,) {}
 
 fn fn_5(): string {}
 
+fn fn_5(): mut string {}
+
 #[attribute]
 #[attribute_2]
 fn fn_6() {}
+
+fn some_generic_fn<T, T2,>(){}
+
+fn some_fn<TParam, TReturn>()
+    where TParam: unboxed TReturn
+    where TReturn: boxed TParam
+    where TReturn: boxed
 
 ---
 
@@ -31,24 +40,22 @@ fn fn_6() {}
         body: (block
             (variable_declaration name: (identifier))))
     (function_declaration
-        modifiers: (modifier)
+        modifiers: (modifier_list (modifier))
         name: (identifier)
         parameter_list: (parameter_list)
         body: (block))
     (function_declaration
-        modifiers: (modifier)
+        modifiers: (modifier_list (modifier))
         name: (identifier)
         parameter_list: (parameter_list)
         body: (block))
     (function_declaration
-        modifiers: (modifier)
+        modifiers: (modifier_list (modifier))
         name: (identifier)
         parameter_list: (parameter_list)
         body: (block))
     (function_declaration
-        modifiers: (modifier)
-        modifiers: (modifier)
-        modifiers: (modifier)
+        modifiers: (modifier_list (modifier) (modifier) (modifier))
         name: (identifier)
         parameter_list: (parameter_list)
         body: (block))
@@ -62,7 +69,12 @@ fn fn_6() {}
     (function_declaration
         name: (identifier)
         parameter_list: (parameter_list)
-        return_type: (type_identifier (identifier))
+        return_type: (return_type (type_identifier (identifier)))
+        body: (block))
+    (function_declaration
+        name: (identifier)
+        parameter_list: (parameter_list)
+        return_type: (return_type (mut_specifier) (type_identifier (identifier)))
         body: (block))
     (function_declaration
         attributes: (attribute (identifier))
@@ -70,4 +82,23 @@ fn fn_6() {}
         name: (identifier)
         parameter_list: (parameter_list)
         body: (block))
+    (function_declaration
+        name: (identifier)
+        type_parameter_list: (type_parameter_list
+            (identifier)
+            (identifier))
+        parameter_list: (parameter_list)
+        body: (block))
+    (function_declaration
+        name: (identifier)
+        type_parameter_list: (type_parameter_list
+            (identifier)
+            (identifier))
+        parameter_list: (parameter_list)
+        type_constraints: (type_constraint_list
+            (type_constraint (identifier) (boxing_specifier) (type_identifier (identifier)))
+            (type_constraint (identifier) (boxing_specifier) (type_identifier (identifier)))
+            (type_constraint (identifier) (boxing_specifier))
+        )
+    )
 )
