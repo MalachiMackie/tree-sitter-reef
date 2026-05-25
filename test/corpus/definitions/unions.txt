@@ -1,0 +1,109 @@
+=====================
+Union Definitions
+=====================
+
+union MyUnion{}
+
+pub extern union MyUnion{}
+
+pub unboxed union MyUnion{}
+
+boxed union MyUnion{}
+
+union MyGenericUnion<T, T2,> {}
+
+union MyUnion<T> where T : boxed something
+{}
+
+union MyUnion
+{
+    A,
+    B,
+}
+
+union MyUnion
+{
+    B(string,int,),
+}
+
+union MyUnion
+{
+    B{field MyField: string, field otherField: int},
+}
+
+union MyUnion
+{
+    fn some_fn(){},
+    fn some_fn(){},
+}
+
+---
+
+(source_file
+    (union_definition
+        name: (identifier)
+        body: (member_list))
+    (union_definition
+        modifiers: (modifier_list (modifier) (modifier))
+        name: (identifier)
+        body: (member_list))
+    (union_definition
+        modifiers: (modifier_list (modifier))
+        boxing_specifier: (boxing_specifier)
+        name: (identifier)
+        body: (member_list))
+    (union_definition
+        boxing_specifier: (boxing_specifier)
+        name: (identifier)
+        body: (member_list))
+    (union_definition
+        name: (identifier)
+        type_parameters: (type_parameter_list (identifier) (identifier))
+        body: (member_list))
+    (union_definition
+        name: (identifier)
+        type_parameters: (type_parameter_list (identifier))
+        type_constraints: (type_constraint_list
+                (type_constraint (identifier) (boxing_specifier) (type_identifier (identifier))))
+        body: (member_list))
+    (union_definition
+        name: (identifier)
+        body: (member_list
+            (variant
+                name: (identifier))
+            (variant
+                name: (identifier))))
+    (union_definition
+        name: (identifier)
+        body: (member_list
+            (variant
+                name: (identifier)
+                tuple_members:
+                    (type_identifier (identifier))
+                tuple_members:
+                    (type_identifier (identifier)))))
+    (union_definition
+        name: (identifier)
+        body: (member_list
+            (variant
+                name: (identifier)
+                fields:
+                    (field
+                        name: (identifier)
+                        type: (type_identifier (identifier)))
+                fields:
+                    (field
+                        name: (identifier)
+                        type: (type_identifier (identifier))))))
+    (union_definition
+        name: (identifier)
+        body: (member_list
+            (function_definition
+                name: (identifier)
+                parameters: (parameter_list)
+                body: (block))
+            (function_definition
+                name: (identifier)
+                parameters: (parameter_list)
+                body: (block))))
+)

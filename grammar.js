@@ -22,7 +22,8 @@ export default grammar({
   rules: {
     source_file: ($) => repeat(choice($._definition, $._statement)),
 
-    _definition: ($) => choice($.function_definition, $.class_definition),
+    _definition: ($) =>
+      choice($.function_definition, $.class_definition, $.union_definition),
 
     modifier: ($) => choice("extern", "pub", "mut", "static"),
 
@@ -39,6 +40,17 @@ export default grammar({
         field("body", optional($.block)),
       ),
 
+    union_definition: ($) =>
+      seq(
+        field("modifiers", optional($.modifier_list)),
+        field("boxing_specifier", optional($.boxing_specifier)),
+        "union",
+        field("name", $.identifier),
+        field("type_parameters", optional($.type_parameter_list)),
+        field("type_constraints", optional($.type_constraint_list)),
+        field("body", $.member_list),
+      ),
+
     class_definition: ($) =>
       seq(
         field("modifiers", optional($.modifier_list)),
@@ -52,7 +64,26 @@ export default grammar({
 
     member_list: ($) => seq("{", comma_separated_list($._member), "}"),
 
-    _member: ($) => choice($.field, $.function_definition),
+    _member: ($) => choice($.field, $.function_definition, $.variant),
+
+    variant: ($) => choice($._unitVariant, $._tupleVariant, $._classVariant),
+
+    _unitVariant: ($) => field("name", $.identifier),
+
+    _tupleVariant: ($) =>
+      seq(
+        field("name", $.identifier),
+        field(
+          "tuple_members",
+          seq("(", comma_separated_list($.type_identifier), ")"),
+        ),
+      ),
+
+    _classVariant: ($) =>
+      seq(
+        field("name", $.identifier),
+        field("fields", seq("{", comma_separated_list($.field), "}")),
+      ),
 
     field: ($) =>
       seq(
