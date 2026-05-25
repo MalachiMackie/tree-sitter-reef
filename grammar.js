@@ -22,24 +22,46 @@ export default grammar({
   rules: {
     source_file: ($) => repeat(choice($._definition, $._statement)),
 
-    _definition: ($) => choice($.function_declaration),
-    // $._functionDef,
-    // $._unionDef,
-    // $._classDef
+    _definition: ($) => choice($.function_definition, $.class_definition),
 
-    modifier: ($) => choice("extern", "pub", "static"),
+    modifier: ($) => choice("extern", "pub", "mut", "static"),
 
-    function_declaration: ($) =>
+    function_definition: ($) =>
       seq(
         field("attributes", repeat($.attribute)),
         field("modifiers", optional($.modifier_list)),
         "fn",
         field("name", $.identifier),
-        field("type_parameter_list", optional($.type_parameter_list)),
-        field("parameter_list", $.parameter_list),
+        field("type_parameters", optional($.type_parameter_list)),
+        field("parameters", $.parameter_list),
         field("return_type", optional($.return_type)),
         field("type_constraints", optional($.type_constraint_list)),
         field("body", optional($.block)),
+      ),
+
+    class_definition: ($) =>
+      seq(
+        field("modifiers", optional($.modifier_list)),
+        field("boxing_specifier", optional($.boxing_specifier)),
+        "class",
+        field("name", $.identifier),
+        field("type_parameters", optional($.type_parameter_list)),
+        field("type_constraints", optional($.type_constraint_list)),
+        field("body", $.member_list),
+      ),
+
+    member_list: ($) => seq("{", comma_separated_list($._member), "}"),
+
+    _member: ($) => choice($.field, $.function_definition),
+
+    field: ($) =>
+      seq(
+        field("modifiers", optional($.modifier_list)),
+        "field",
+        field("name", $.identifier),
+        ":",
+        field("type", $.type_identifier),
+        field("value", optional(seq("=", $._expression))),
       ),
 
     type_constraint_list: ($) => repeat1($.type_constraint),
@@ -55,15 +77,13 @@ export default grammar({
 
     boxing_specifier: ($) => choice("boxed", "unboxed"),
 
-    return_type: ($) => seq(":", optional($.mut_specifier), $.type_identifier),
-
-    mut_specifier: ($) => "mut",
+    return_type: ($) => seq(":", optional($.modifier), $.type_identifier),
 
     attribute: ($) => seq("#", "[", $.identifier, "]"),
 
     modifier_list: ($) => repeat1($.modifier),
 
-    block: ($) => seq("{", repeat($._statement), "}"),
+    block: ($) => seq("{", repeat(choice($._statement, $._definition)), "}"),
 
     type_parameter_list: ($) =>
       seq("<", comma_separated_list($.identifier), ">"),

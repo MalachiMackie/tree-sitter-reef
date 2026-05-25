@@ -23,6 +23,14 @@
       "required": false,
       "types": [
         {
+          "type": "class_definition",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
           "type": "int",
           "named": true
         },
@@ -43,7 +51,131 @@
     "fields": {}
   },
   {
-    "type": "function_declaration",
+    "type": "class_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "member_list",
+            "named": true
+          }
+        ]
+      },
+      "boxing_specifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "boxing_specifier",
+            "named": true
+          }
+        ]
+      },
+      "modifiers": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "modifier_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type_constraints": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_constraint_list",
+            "named": true
+          }
+        ]
+      },
+      "type_parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_parameter_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "field",
+    "named": true,
+    "fields": {
+      "modifiers": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "modifier_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "function_definition",
     "named": true,
     "fields": {
       "attributes": {
@@ -86,7 +218,7 @@
           }
         ]
       },
-      "parameter_list": {
+      "parameters": {
         "multiple": false,
         "required": true,
         "types": [
@@ -116,7 +248,7 @@
           }
         ]
       },
-      "type_parameter_list": {
+      "type_parameters": {
         "multiple": false,
         "required": false,
         "types": [
@@ -126,6 +258,25 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "member_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -191,7 +342,7 @@
       "required": true,
       "types": [
         {
-          "type": "mut_specifier",
+          "type": "modifier",
           "named": true
         },
         {
@@ -211,7 +362,11 @@
       "required": false,
       "types": [
         {
-          "type": "function_declaration",
+          "type": "class_definition",
+          "named": true
+        },
+        {
+          "type": "function_definition",
           "named": true
         },
         {
@@ -398,7 +553,15 @@
     "named": false
   },
   {
+    "type": "class",
+    "named": false
+  },
+  {
     "type": "extern",
+    "named": false
+  },
+  {
+    "type": "field",
     "named": false
   },
   {
@@ -414,8 +577,8 @@
     "named": true
   },
   {
-    "type": "mut_specifier",
-    "named": true
+    "type": "mut",
+    "named": false
   },
   {
     "type": "pub",

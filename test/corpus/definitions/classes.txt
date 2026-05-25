@@ -1,0 +1,95 @@
+============
+Class definition
+============
+
+class MyClass{}
+
+pub extern class MyClass{}
+
+pub unboxed class MyClass{}
+
+boxed class MyClass{}
+
+class MyGenericClass<T, T2,> {}
+
+class MyClass<T> where T : boxed something
+{}
+
+class MyClass {
+    field MyField: string,
+}
+
+class MyClass {
+    pub mut field MyField: string,
+}
+
+class MyClass {
+    pub mut static field MyField: string = "",
+}
+
+class MyClass {
+    fn some_fn(){}
+}
+
+---
+
+(source_file
+    (class_definition
+        name: (identifier)
+        body: (member_list))
+    (class_definition
+        modifiers: (modifier_list (modifier) (modifier))
+        name: (identifier)
+        body: (member_list))
+    (class_definition
+        modifiers: (modifier_list (modifier))
+        boxing_specifier: (boxing_specifier)
+        name: (identifier)
+        body: (member_list))
+    (class_definition
+        boxing_specifier: (boxing_specifier)
+        name: (identifier)
+        body: (member_list))
+    (class_definition
+        name: (identifier)
+        type_parameters: (type_parameter_list (identifier) (identifier))
+        body: (member_list))
+    (class_definition
+        name: (identifier)
+        type_parameters: (type_parameter_list (identifier))
+        type_constraints: (type_constraint_list
+                (type_constraint (identifier) (boxing_specifier) (type_identifier (identifier))))
+        body: (member_list))
+    (class_definition
+        name: (identifier)
+        body: (member_list
+                (field
+                    name: (identifier)
+                    type: (type_identifier (identifier)))
+            ))
+    (class_definition
+        name: (identifier)
+        body: (member_list
+                (field
+                    modifiers: (modifier_list (modifier) (modifier))
+                    name: (identifier)
+                    type: (type_identifier (identifier)))
+            ))
+    (class_definition
+        name: (identifier)
+        body: (member_list
+                (field
+                    modifiers: (modifier_list (modifier) (modifier) (modifier))
+                    name: (identifier)
+                    type: (type_identifier (identifier))
+                    value: (string))
+            ))
+    (class_definition
+        name: (identifier)
+        body: (member_list
+                (function_definition
+                    name: (identifier)
+                    parameters: (parameter_list)
+                    body: (block))
+            ))
+)

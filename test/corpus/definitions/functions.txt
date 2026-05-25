@@ -34,67 +34,67 @@ fn some_fn<TParam, TReturn>()
 ---
 
 (source_file
-    (function_declaration
+    (function_definition
         name: (identifier)
-        parameter_list: (parameter_list)
+        parameters: (parameter_list)
         body: (block
             (variable_declaration name: (identifier))))
-    (function_declaration
+    (function_definition
         modifiers: (modifier_list (modifier))
         name: (identifier)
-        parameter_list: (parameter_list)
+        parameters: (parameter_list)
         body: (block))
-    (function_declaration
+    (function_definition
         modifiers: (modifier_list (modifier))
         name: (identifier)
-        parameter_list: (parameter_list)
+        parameters: (parameter_list)
         body: (block))
-    (function_declaration
+    (function_definition
         modifiers: (modifier_list (modifier))
         name: (identifier)
-        parameter_list: (parameter_list)
+        parameters: (parameter_list)
         body: (block))
-    (function_declaration
+    (function_definition
         modifiers: (modifier_list (modifier) (modifier) (modifier))
         name: (identifier)
-        parameter_list: (parameter_list)
+        parameters: (parameter_list)
         body: (block))
-    (function_declaration
+    (function_definition
         name: (identifier)
-        parameter_list: (parameter_list
+        parameters: (parameter_list
             (parameter (identifier) (type_identifier (identifier)))
             (parameter (identifier) (type_identifier (identifier)))
             )
         body: (block))
-    (function_declaration
+    (function_definition
         name: (identifier)
-        parameter_list: (parameter_list)
+        parameters: (parameter_list)
         return_type: (return_type (type_identifier (identifier)))
         body: (block))
-    (function_declaration
+    (function_definition
         name: (identifier)
-        parameter_list: (parameter_list)
-        return_type: (return_type (mut_specifier) (type_identifier (identifier)))
+        parameters: (parameter_list)
+        return_type: (return_type (modifier) (type_identifier (identifier)))
         body: (block))
-    (function_declaration
+    (function_definition
         attributes: (attribute (identifier))
         attributes: (attribute (identifier))
         name: (identifier)
-        parameter_list: (parameter_list)
+        parameters: (parameter_list)
         body: (block))
-    (function_declaration
+    (function_definition
         name: (identifier)
-        type_parameter_list: (type_parameter_list
+        type_parameters: (type_parameter_list
             (identifier)
             (identifier))
-        parameter_list: (parameter_list)
+        parameters: (parameter_list)
         body: (block))
-    (function_declaration
+    (function_definition
         name: (identifier)
-        type_parameter_list: (type_parameter_list
+        type_parameters: (type_parameter_list
             (identifier)
             (identifier))
-        parameter_list: (parameter_list)
+        parameters: (parameter_list)
         type_constraints: (type_constraint_list
             (type_constraint (identifier) (boxing_specifier) (type_identifier (identifier)))
             (type_constraint (identifier) (boxing_specifier) (type_identifier (identifier)))
