@@ -123,7 +123,24 @@ export default grammar({
 
     parameter: ($) => seq($.identifier, ":", $.type_identifier),
 
-    _statement: ($) => seq($._expression, ";"),
+    _statement: ($) => seq(choice($._expression, $.use_statement), ";"),
+
+    use_statement: ($) => seq("use", optional(":::"), $.use_segment),
+
+    use_segment: ($) =>
+      seq(
+        $.identifier,
+        optional(
+          seq(
+            ":::",
+            choice(
+              $.use_segment,
+              seq("{", comma_separated_list($.use_segment), "}"),
+              "*",
+            ),
+          ),
+        ),
+      ),
 
     _expression: ($) => choice($.string, $.int, $.variable_declaration),
 
