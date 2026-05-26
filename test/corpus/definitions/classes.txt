@@ -58,14 +58,14 @@ class MyClass {
         name: (identifier)
         type_parameters: (type_parameter_list (identifier))
         type_constraints: (type_constraint_list
-                (type_constraint (identifier) (boxing_specifier) (type_identifier (identifier))))
+                (type_constraint (identifier) (named_type_identifier (boxing_specifier) (identifier))))
         body: (member_list))
     (class_definition
         name: (identifier)
         body: (member_list
                 (field
                     name: (identifier)
-                    type: (type_identifier (identifier)))
+                    type: (named_type_identifier (identifier)))
             ))
     (class_definition
         name: (identifier)
@@ -73,7 +73,7 @@ class MyClass {
                 (field
                     modifiers: (modifier_list (modifier) (modifier))
                     name: (identifier)
-                    type: (type_identifier (identifier)))
+                    type: (named_type_identifier (identifier)))
             ))
     (class_definition
         name: (identifier)
@@ -81,7 +81,7 @@ class MyClass {
                 (field
                     modifiers: (modifier_list (modifier) (modifier) (modifier))
                     name: (identifier)
-                    type: (type_identifier (identifier))
+                    type: (named_type_identifier (identifier))
                     value: (string))
             ))
     (class_definition

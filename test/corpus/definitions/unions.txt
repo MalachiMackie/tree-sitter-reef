@@ -64,7 +64,7 @@ union MyUnion
         name: (identifier)
         type_parameters: (type_parameter_list (identifier))
         type_constraints: (type_constraint_list
-                (type_constraint (identifier) (boxing_specifier) (type_identifier (identifier))))
+                (type_constraint (identifier) (named_type_identifier (boxing_specifier) (identifier))))
         body: (member_list))
     (union_definition
         name: (identifier)
@@ -79,9 +79,9 @@ union MyUnion
             (variant
                 name: (identifier)
                 tuple_members:
-                    (type_identifier (identifier))
+                    (named_type_identifier (identifier))
                 tuple_members:
-                    (type_identifier (identifier)))))
+                    (named_type_identifier (identifier)))))
     (union_definition
         name: (identifier)
         body: (member_list
@@ -90,11 +90,11 @@ union MyUnion
                 fields:
                     (field
                         name: (identifier)
-                        type: (type_identifier (identifier)))
+                        type: (named_type_identifier (identifier)))
                 fields:
                     (field
                         name: (identifier)
-                        type: (type_identifier (identifier))))))
+                        type: (named_type_identifier (identifier))))))
     (union_definition
         name: (identifier)
         body: (member_list

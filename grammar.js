@@ -75,7 +75,7 @@ export default grammar({
         field("name", $.identifier),
         field(
           "tuple_members",
-          seq("(", comma_separated_list($.type_identifier), ")"),
+          seq("(", comma_separated_list($._type_identifier), ")"),
         ),
       ),
 
@@ -91,7 +91,7 @@ export default grammar({
         "field",
         field("name", $.identifier),
         ":",
-        field("type", $.type_identifier),
+        field("type", $._type_identifier),
         field("value", optional(seq("=", $._expression))),
       ),
 
@@ -102,13 +102,12 @@ export default grammar({
         "where",
         $.identifier,
         ":",
-        $.boxing_specifier,
-        optional($.type_identifier),
+        choice($._type_identifier, $.boxing_specifier),
       ),
 
     boxing_specifier: ($) => choice("boxed", "unboxed"),
 
-    return_type: ($) => seq(":", optional($.modifier), $.type_identifier),
+    return_type: ($) => seq(":", optional($.modifier), $._type_identifier),
 
     attribute: ($) => seq("#", "[", $.identifier, "]"),
 
@@ -121,7 +120,7 @@ export default grammar({
 
     parameter_list: ($) => seq("(", comma_separated_list($.parameter), ")"),
 
-    parameter: ($) => seq($.identifier, ":", $.type_identifier),
+    parameter: ($) => seq($.identifier, ":", $._type_identifier),
 
     _statement: ($) => seq(choice($._expression, $.use_statement), ";"),
 
@@ -144,13 +143,55 @@ export default grammar({
 
     _expression: ($) => choice($.string, $.int, $.variable_declaration),
 
-    type_identifier: ($) => $.identifier, // todo: other type identifiers
+    _type_identifier: ($) =>
+      choice(
+        $.named_type_identifier,
+        $.array_type_identifier,
+        $.tuple_type_identifier,
+        $.fn_type_identifier,
+      ),
+
+    array_type_identifier: ($) =>
+      seq(
+        optional($.boxing_specifier),
+        "[",
+        $._type_identifier,
+        optional(seq(";", $.int)),
+        "]",
+      ),
+
+    tuple_type_identifier: ($) =>
+      seq(
+        optional($.boxing_specifier),
+        seq("(", comma_separated_list($._type_identifier), ")"),
+      ),
+
+    fn_type_identifier: ($) =>
+      seq(
+        optional($.boxing_specifier),
+        seq("Fn", $.fn_type_parameter_list, optional($.return_type)),
+      ),
+
+    fn_type_parameter_list: ($) =>
+      seq("(", comma_separated_list($.fn_type_parameter), ")"),
+
+    fn_type_parameter: ($) => seq(optional($.modifier), $._type_identifier),
+
+    named_type_identifier: ($) =>
+      seq(
+        optional($.boxing_specifier),
+        $.identifier,
+        field(
+          "type_arguments",
+          optional(seq("::<", comma_separated_list($._type_identifier), ">")),
+        ),
+      ),
 
     variable_declaration: ($) =>
       seq(
         "var",
         field("name", $.identifier),
-        field("type", optional(seq(":", $.type_identifier))),
+        field("type", optional(seq(":", $._type_identifier))),
         field("value", optional(seq("=", $._expression))),
       ),
 

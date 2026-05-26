@@ -1,5 +1,40 @@
 [
   {
+    "type": "array_type_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_type_identifier",
+          "named": true
+        },
+        {
+          "type": "boxing_specifier",
+          "named": true
+        },
+        {
+          "type": "fn_type_identifier",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "named_type_identifier",
+          "named": true
+        },
+        {
+          "type": "tuple_type_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "attribute",
     "named": true,
     "fields": {},
@@ -153,7 +188,19 @@
         "required": true,
         "types": [
           {
-            "type": "type_identifier",
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
             "named": true
           }
         ]
@@ -180,6 +227,75 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "fn_type_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boxing_specifier",
+          "named": true
+        },
+        {
+          "type": "fn_type_parameter_list",
+          "named": true
+        },
+        {
+          "type": "return_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fn_type_parameter",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_type_identifier",
+          "named": true
+        },
+        {
+          "type": "fn_type_identifier",
+          "named": true
+        },
+        {
+          "type": "modifier",
+          "named": true
+        },
+        {
+          "type": "named_type_identifier",
+          "named": true
+        },
+        {
+          "type": "tuple_type_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fn_type_parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "fn_type_parameter",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -312,6 +428,60 @@
     }
   },
   {
+    "type": "named_type_identifier",
+    "named": true,
+    "fields": {
+      "type_arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "::<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boxing_specifier",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "parameter",
     "named": true,
     "fields": {},
@@ -320,11 +490,23 @@
       "required": true,
       "types": [
         {
+          "type": "array_type_identifier",
+          "named": true
+        },
+        {
+          "type": "fn_type_identifier",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
-          "type": "type_identifier",
+          "type": "named_type_identifier",
+          "named": true
+        },
+        {
+          "type": "tuple_type_identifier",
           "named": true
         }
       ]
@@ -354,11 +536,23 @@
       "required": true,
       "types": [
         {
+          "type": "array_type_identifier",
+          "named": true
+        },
+        {
+          "type": "fn_type_identifier",
+          "named": true
+        },
+        {
           "type": "modifier",
           "named": true
         },
         {
-          "type": "type_identifier",
+          "type": "named_type_identifier",
+          "named": true
+        },
+        {
+          "type": "tuple_type_identifier",
           "named": true
         }
       ]
@@ -405,6 +599,37 @@
     }
   },
   {
+    "type": "tuple_type_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array_type_identifier",
+          "named": true
+        },
+        {
+          "type": "boxing_specifier",
+          "named": true
+        },
+        {
+          "type": "fn_type_identifier",
+          "named": true
+        },
+        {
+          "type": "named_type_identifier",
+          "named": true
+        },
+        {
+          "type": "tuple_type_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "type_constraint",
     "named": true,
     "fields": {},
@@ -413,7 +638,15 @@
       "required": true,
       "types": [
         {
+          "type": "array_type_identifier",
+          "named": true
+        },
+        {
           "type": "boxing_specifier",
+          "named": true
+        },
+        {
+          "type": "fn_type_identifier",
           "named": true
         },
         {
@@ -421,7 +654,11 @@
           "named": true
         },
         {
-          "type": "type_identifier",
+          "type": "named_type_identifier",
+          "named": true
+        },
+        {
+          "type": "tuple_type_identifier",
           "named": true
         }
       ]
@@ -437,21 +674,6 @@
       "types": [
         {
           "type": "type_constraint",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "type_identifier",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
           "named": true
         }
       ]
@@ -595,7 +817,19 @@
             "named": false
           },
           {
-            "type": "type_identifier",
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
             "named": true
           }
         ]
@@ -677,7 +911,19 @@
             "named": false
           },
           {
-            "type": "type_identifier",
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
             "named": true
           }
         ]
@@ -713,6 +959,10 @@
     "named": false
   },
   {
+    "type": "::<",
+    "named": false
+  },
+  {
     "type": ";",
     "named": false
   },
@@ -726,6 +976,10 @@
   },
   {
     "type": ">",
+    "named": false
+  },
+  {
+    "type": "Fn",
     "named": false
   },
   {
