@@ -1,0 +1,27 @@
+==================
+Match expression
+==================
+
+match (x) {
+    _ => {},
+    _ => 2,
+}
+
+match(x) {
+}
+
+---
+
+(source_file
+    (match
+        check: (variable_access (identifier))
+        (match_arm
+            (discard_pattern)
+            (block))
+        (match_arm
+            (discard_pattern)
+            (int))
+        )
+    (match
+        check: (variable_access (identifier)))
+)

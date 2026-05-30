@@ -1,0 +1,25 @@
+=================
+Block
+=================
+
+{}
+
+var a = {};
+
+{
+    var a = 2;
+}
+
+
+---
+
+(source_file
+    (block)
+    (variable_declaration
+        name: (identifier)
+        value: (block))
+    (block
+        (variable_declaration
+            name: (identifier)
+            value: (int)))
+)

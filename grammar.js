@@ -19,6 +19,38 @@ function comma_separated_list(rule) {
 export default grammar({
   name: "reef",
 
+  reserved: {
+    global: ($) => [
+      // "if",
+      // "attribute",
+      "use",
+      "extern",
+      "where",
+      "union",
+      "unboxed",
+      "boxed",
+      "mut",
+      // "while",
+      // "break",
+      // "continue",
+      "match",
+      // "matches",
+      // "new",
+      "static",
+      "class",
+      "pub",
+      "fn",
+      "field",
+      "var",
+      // "else",
+      // "return",
+      // "true",
+      // "false",
+    ],
+  },
+
+  conflicts: ($) => [[$.named_type_identifier, $.type_constraint]],
+
   rules: {
     source_file: ($) => repeat(choice($._definition, $._statement)),
 
@@ -28,16 +60,19 @@ export default grammar({
     modifier: ($) => choice("extern", "pub", "mut", "static"),
 
     function_definition: ($) =>
-      seq(
-        field("attributes", repeat($.attribute)),
-        field("modifiers", optional($.modifier_list)),
-        "fn",
-        field("name", $.identifier),
-        field("type_parameters", optional($.type_parameter_list)),
-        field("parameters", $.parameter_list),
-        field("return_type", optional($.return_type)),
-        field("type_constraints", optional($.type_constraint_list)),
-        field("body", optional($.block)),
+      // prec.right so that function_declaration will consume a block instead of allowing it to become it's own statement
+      prec.right(
+        seq(
+          field("attributes", repeat($.attribute)),
+          field("modifiers", optional($.modifier_list)),
+          "fn",
+          field("name", $.identifier),
+          field("type_parameters", optional($.type_parameter_list)),
+          field("parameters", $.parameter_list),
+          field("return_type", optional($.return_type)),
+          field("type_constraints", optional($.type_constraint_list)),
+          field("body", optional($.block)),
+        ),
       ),
 
     union_definition: ($) =>
@@ -122,7 +157,18 @@ export default grammar({
 
     parameter: ($) => seq($.identifier, ":", $._type_identifier),
 
-    _statement: ($) => seq(choice($._expression, $.use_statement), ";"),
+    _statement: ($) =>
+      choice(
+        $._block_expression,
+        seq(optional(choice($._non_block_expression, $.use_statement)), ";"),
+      ),
+
+    // expressions that don't need a semicolon to be a statement
+    _block_expression: ($) => choice($.block, $.match),
+
+    // expressions that need a semicolon to be a statement
+    _non_block_expression: ($) =>
+      choice($.string, $.int, $.variable_declaration, $.variable_access),
 
     use_statement: ($) => seq("use", optional(":::"), $.use_segment),
 
@@ -141,7 +187,26 @@ export default grammar({
         ),
       ),
 
-    _expression: ($) => choice($.string, $.int, $.variable_declaration),
+    _expression: ($) => choice($._block_expression, $._non_block_expression),
+
+    variable_access: ($) => $.identifier,
+
+    match: ($) =>
+      seq(
+        "match",
+        "(",
+        field("check", $._expression),
+        ")",
+        "{",
+        comma_separated_list($.match_arm),
+        "}",
+      ),
+
+    match_arm: ($) => seq($._pattern, "=>", $._expression),
+
+    _pattern: ($) => choice($.discard_pattern),
+
+    discard_pattern: ($) => "_",
 
     _type_identifier: ($) =>
       choice(
