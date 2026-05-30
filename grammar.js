@@ -242,10 +242,23 @@ export default grammar({
 
     fn_type_parameter: ($) => seq(optional($.modifier), $._type_identifier),
 
+    module_path: ($) => seq($.identifier, repeat(seq(":::", $.identifier))),
+
     named_type_identifier: ($) =>
       seq(
         optional($.boxing_specifier),
-        $.identifier,
+        choice(
+          $.identifier,
+          seq(
+            optional(":::"),
+            field(
+              "module_path",
+              seq($.identifier, repeat(seq(":::", $.identifier))),
+            ),
+            ":::",
+            $.identifier,
+          ),
+        ),
         field(
           "type_arguments",
           optional(seq("::<", comma_separated_list($._type_identifier), ">")),

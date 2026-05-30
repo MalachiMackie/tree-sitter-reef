@@ -6,6 +6,9 @@ var x: string;
 var x: string::<A, B,>;
 var x: string::<A::<B>, C>;
 
+var x: A:::B:::string;
+var x: :::A:::B:::string;
+
 var x: unboxed string;
 var x: boxed string;
 
@@ -45,6 +48,18 @@ var x: unboxed Fn();
                     (identifier)
                     type_arguments: (named_type_identifier (identifier)))
             type_arguments: (named_type_identifier (identifier))))
+    (variable_declaration
+        name: (identifier)
+        type: (named_type_identifier
+            module_path: (identifier)
+            module_path: (identifier)
+            (identifier)))
+    (variable_declaration
+        name: (identifier)
+        type: (named_type_identifier
+            module_path: (identifier)
+            module_path: (identifier)
+            (identifier)))
     (variable_declaration
         name: (identifier)
         type: (named_type_identifier
