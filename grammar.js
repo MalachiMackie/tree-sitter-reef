@@ -204,9 +204,123 @@ export default grammar({
 
     match_arm: ($) => seq($._pattern, "=>", $._expression),
 
-    _pattern: ($) => choice($.discard_pattern),
+    _pattern: ($) =>
+      choice(
+        $.discard_pattern,
+        $.variable_declaration_pattern,
+        $.type_pattern,
+        $.class_pattern,
+        $.union_variant_pattern,
+        $.union_tuple_variant_pattern,
+        $.union_class_variant_pattern,
+      ),
 
     discard_pattern: ($) => "_",
+
+    variable_declaration_pattern: ($) =>
+      seq(optional($.modifier), "var", field("variable_name", $.identifier)),
+
+    type_pattern: ($) =>
+      prec(
+        0,
+        seq(
+          field("type", $._type_identifier),
+          optional(
+            seq(
+              optional($.modifier),
+              "var",
+              field("variable_name", $.identifier),
+            ),
+          ),
+        ),
+      ),
+
+    class_pattern: ($) =>
+      prec(
+        1,
+        seq(
+          field("type", $._type_identifier),
+          "{",
+          field(
+            "field_patterns",
+            comma_separated_list(choice("_", $.field_pattern)),
+          ),
+          "}",
+          optional(
+            seq(
+              optional($.modifier),
+              "var",
+              field("variable_name", $.identifier),
+            ),
+          ),
+        ),
+      ),
+
+    union_class_variant_pattern: ($) =>
+      prec(
+        3,
+        seq(
+          field("type", $._type_identifier),
+          "::",
+          field("variant", $.identifier),
+          "{",
+          field(
+            "field_patterns",
+            comma_separated_list(choice("_", $.field_pattern)),
+          ),
+          "}",
+          optional(
+            seq(
+              optional($.modifier),
+              "var",
+              field("variable_name", $.identifier),
+            ),
+          ),
+        ),
+      ),
+
+    union_variant_pattern: ($) =>
+      prec(
+        2,
+        seq(
+          field("type", $._type_identifier),
+          "::",
+          field("variant", $.identifier),
+          optional(
+            seq(
+              optional($.modifier),
+              "var",
+              field("variable_name", $.identifier),
+            ),
+          ),
+        ),
+      ),
+
+    union_tuple_variant_pattern: ($) =>
+      prec(
+        2,
+        seq(
+          field("type", $._type_identifier),
+          "::",
+          field("variant", $.identifier),
+          "(",
+          field("element_patterns", comma_separated_list($._pattern)),
+          ")",
+          optional(
+            seq(
+              optional($.modifier),
+              "var",
+              field("variable_name", $.identifier),
+            ),
+          ),
+        ),
+      ),
+
+    field_pattern: ($) =>
+      seq(
+        field("field_name", $.identifier),
+        optional(seq(":", field("pattern", $._pattern))),
+      ),
 
     _type_identifier: ($) =>
       choice(

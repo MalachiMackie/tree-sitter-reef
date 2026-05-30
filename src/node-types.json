@@ -172,6 +172,77 @@
     }
   },
   {
+    "type": "class_pattern",
+    "named": true,
+    "fields": {
+      "field_patterns": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "_",
+            "named": false
+          },
+          {
+            "type": "field_pattern",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "variable_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "discard_pattern",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "field",
     "named": true,
     "fields": {
@@ -247,6 +318,56 @@
           },
           {
             "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "field_pattern",
+    "named": true,
+    "fields": {
+      "field_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "class_pattern",
+            "named": true
+          },
+          {
+            "type": "discard_pattern",
+            "named": true
+          },
+          {
+            "type": "type_pattern",
+            "named": true
+          },
+          {
+            "type": "union_class_variant_pattern",
+            "named": true
+          },
+          {
+            "type": "union_tuple_variant_pattern",
+            "named": true
+          },
+          {
+            "type": "union_variant_pattern",
+            "named": true
+          },
+          {
+            "type": "variable_declaration_pattern",
             "named": true
           }
         ]
@@ -467,6 +588,10 @@
           "named": true
         },
         {
+          "type": "class_pattern",
+          "named": true
+        },
+        {
           "type": "discard_pattern",
           "named": true
         },
@@ -483,11 +608,31 @@
           "named": true
         },
         {
+          "type": "type_pattern",
+          "named": true
+        },
+        {
+          "type": "union_class_variant_pattern",
+          "named": true
+        },
+        {
+          "type": "union_tuple_variant_pattern",
+          "named": true
+        },
+        {
+          "type": "union_variant_pattern",
+          "named": true
+        },
+        {
           "type": "variable_access",
           "named": true
         },
         {
           "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "variable_declaration_pattern",
           "named": true
         }
       ]
@@ -830,6 +975,130 @@
     }
   },
   {
+    "type": "type_pattern",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "variable_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "union_class_variant_pattern",
+    "named": true,
+    "fields": {
+      "field_patterns": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "_",
+            "named": false
+          },
+          {
+            "type": "field_pattern",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "variable_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "variant": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "union_definition",
     "named": true,
     "fields": {
@@ -893,6 +1162,160 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "union_tuple_variant_pattern",
+    "named": true,
+    "fields": {
+      "element_patterns": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "class_pattern",
+            "named": true
+          },
+          {
+            "type": "discard_pattern",
+            "named": true
+          },
+          {
+            "type": "type_pattern",
+            "named": true
+          },
+          {
+            "type": "union_class_variant_pattern",
+            "named": true
+          },
+          {
+            "type": "union_tuple_variant_pattern",
+            "named": true
+          },
+          {
+            "type": "union_variant_pattern",
+            "named": true
+          },
+          {
+            "type": "variable_declaration_pattern",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "variable_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "variant": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "union_variant_pattern",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "variable_name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "variant": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -1021,6 +1444,32 @@
     }
   },
   {
+    "type": "variable_declaration_pattern",
+    "named": true,
+    "fields": {
+      "variable_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "variant",
     "named": true,
     "fields": {
@@ -1117,6 +1566,10 @@
     "named": false
   },
   {
+    "type": "::",
+    "named": false
+  },
+  {
     "type": ":::",
     "named": false
   },
@@ -1157,16 +1610,16 @@
     "named": false
   },
   {
+    "type": "_",
+    "named": false
+  },
+  {
     "type": "boxed",
     "named": false
   },
   {
     "type": "class",
     "named": false
-  },
-  {
-    "type": "discard_pattern",
-    "named": true
   },
   {
     "type": "extern",

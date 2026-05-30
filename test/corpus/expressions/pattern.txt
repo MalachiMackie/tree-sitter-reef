@@ -1,0 +1,136 @@
+==============
+Patterns
+==============
+
+match (x) {
+    _ => {},
+    var a => {},
+    mut var a => {},
+    string => {},
+    string var a => {},
+    SomeType::<string> => {},
+    SomeUnion::SomeVariant => {},
+    SomeUnion::SomeVariant var a => {},
+    SomeUnion::SomeVariant(var a, var b) => {},
+    SomeUnion::SomeVariant(var a, var b) var a => {},
+    SomeUnion::SomeVariant{_} => {},
+    SomeUnion::SomeVariant{x: var a, y: var b} => {},
+    SomeUnion::SomeVariant{x, y} => {},
+    SomeUnion::SomeVariant{x: var a, y: var b} var a => {},
+    SomeClass{_} => {},
+    SomeClass{x: var a, y: var b} => {},
+    SomeClass{x, y} => {},
+    SomeClass{x: var a, y: var b} var a => {},
+    SomeClass{x: SomeClass{x: var b}} => {}
+}
+
+---
+
+(source_file
+    (match
+        check: (variable_access (identifier))
+        (match_arm
+            (discard_pattern)
+            (block))
+        (match_arm
+            (variable_declaration_pattern variable_name: (identifier))
+            (block))
+        (match_arm
+            (variable_declaration_pattern (modifier) variable_name: (identifier))
+            (block))
+        (match_arm
+            (type_pattern type: (named_type_identifier (identifier)))
+            (block))
+        (match_arm
+            (type_pattern type: (named_type_identifier (identifier)) variable_name: (identifier))
+            (block))
+        (match_arm
+            (type_pattern
+                type: (named_type_identifier
+                    (identifier)
+                    type_arguments: (named_type_identifier (identifier))))
+            (block))
+        (match_arm
+            (union_variant_pattern
+                type: (named_type_identifier (identifier))
+                variant: (identifier))
+            (block))
+        (match_arm
+            (union_variant_pattern
+                type: (named_type_identifier (identifier))
+                variant: (identifier)
+                variable_name: (identifier))
+            (block))
+        (match_arm
+            (union_tuple_variant_pattern
+                type: (named_type_identifier (identifier))
+                variant: (identifier)
+                element_patterns: (variable_declaration_pattern variable_name: (identifier))
+                element_patterns: (variable_declaration_pattern variable_name: (identifier)))
+            (block))
+        (match_arm
+            (union_tuple_variant_pattern
+                type: (named_type_identifier (identifier))
+                variant: (identifier)
+                element_patterns: (variable_declaration_pattern variable_name: (identifier))
+                element_patterns: (variable_declaration_pattern variable_name: (identifier))
+                variable_name: (identifier))
+            (block))
+        (match_arm
+            (union_class_variant_pattern
+                type: (named_type_identifier (identifier))
+                variant: (identifier))
+            (block))
+        (match_arm
+            (union_class_variant_pattern
+                type: (named_type_identifier (identifier))
+                variant: (identifier)
+                field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
+                field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier))))
+            (block))
+        (match_arm
+            (union_class_variant_pattern
+                type: (named_type_identifier (identifier))
+                variant: (identifier)
+                field_patterns: (field_pattern field_name: (identifier))
+                field_patterns: (field_pattern field_name: (identifier)))
+            (block))
+        (match_arm
+            (union_class_variant_pattern
+                type: (named_type_identifier (identifier))
+                variant: (identifier)
+                field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
+                field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
+                variable_name: (identifier))
+            (block))
+        (match_arm
+            (class_pattern
+                type: (named_type_identifier (identifier)))
+            (block))
+        (match_arm
+            (class_pattern
+                type: (named_type_identifier (identifier))
+                field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
+                field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier))))
+            (block))
+        (match_arm
+            (class_pattern
+                type: (named_type_identifier (identifier))
+                field_patterns: (field_pattern field_name: (identifier))
+                field_patterns: (field_pattern field_name: (identifier)))
+            (block))
+        (match_arm
+            (class_pattern
+                type: (named_type_identifier (identifier))
+                field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
+                field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
+                variable_name: (identifier))
+            (block))
+        (match_arm
+            (class_pattern
+                type: (named_type_identifier (identifier))
+                field_patterns: (field_pattern field_name: (identifier) pattern: (class_pattern
+                    type: (named_type_identifier (identifier))
+                    field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier))))))
+            (block)))
+)
