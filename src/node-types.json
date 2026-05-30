@@ -78,6 +78,10 @@
           "named": true
         },
         {
+          "type": "method_call",
+          "named": true
+        },
+        {
           "type": "return",
           "named": true
         },
@@ -310,6 +314,10 @@
           },
           {
             "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
             "named": true
           },
           {
@@ -558,6 +566,10 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -613,6 +625,10 @@
         },
         {
           "type": "match",
+          "named": true
+        },
+        {
+          "type": "method_call",
           "named": true
         },
         {
@@ -675,6 +691,92 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "method_call",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      },
+      "method": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -832,6 +934,10 @@
             "named": true
           },
           {
+            "type": "method_call",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -909,6 +1015,10 @@
         },
         {
           "type": "match",
+          "named": true
+        },
+        {
+          "type": "method_call",
           "named": true
         },
         {
@@ -1485,6 +1595,10 @@
           },
           {
             "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
             "named": true
           },
           {

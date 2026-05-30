@@ -1,0 +1,23 @@
+===================
+Method Call
+===================
+
+x();
+
+x(a, b,);
+
+x()();
+
+---
+
+(source_file
+    (method_call
+        method: (variable_access (identifier)))
+    (method_call
+        method: (variable_access (identifier))
+        arguments: (variable_access (identifier))
+        arguments: (variable_access (identifier)))
+    (method_call
+        method: (method_call
+            method: (variable_access (identifier))))
+)

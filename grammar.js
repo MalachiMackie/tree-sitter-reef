@@ -176,9 +176,11 @@ export default grammar({
         $.variable_declaration,
         $.variable_access,
         $.return,
+        $.method_call,
       ),
 
-    return: ($) => seq("return", field("value", optional($._expression))),
+    return: ($) =>
+      prec.left(seq("return", field("value", optional($._expression)))),
 
     use_statement: ($) => seq("use", optional(":::"), $.use_segment),
 
@@ -200,6 +202,16 @@ export default grammar({
     _expression: ($) => choice($._block_expression, $._non_block_expression),
 
     variable_access: ($) => $.identifier,
+
+    method_call: ($) =>
+      prec.right(
+        seq(
+          field("method", $._expression),
+          "(",
+          field("arguments", comma_separated_list($._expression)),
+          ")",
+        ),
+      ),
 
     match: ($) =>
       seq(
@@ -390,11 +402,13 @@ export default grammar({
       ),
 
     variable_declaration: ($) =>
-      seq(
-        "var",
-        field("name", $.identifier),
-        field("type", optional(seq(":", $._type_identifier))),
-        field("value", optional(seq("=", $._expression))),
+      prec.left(
+        seq(
+          "var",
+          field("name", $.identifier),
+          field("type", optional(seq(":", $._type_identifier))),
+          field("value", optional(seq("=", $._expression))),
+        ),
       ),
 
     identifier: ($) => new RustRegex("[a-zA-Z_][a-zA-Z_0-9]*"),
