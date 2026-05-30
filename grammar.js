@@ -43,7 +43,7 @@ export default grammar({
       "field",
       "var",
       // "else",
-      // "return",
+      "return",
       // "true",
       // "false",
     ],
@@ -159,7 +159,9 @@ export default grammar({
 
     _statement: ($) =>
       choice(
+        // no semicolon needed
         $._block_expression,
+        // semicolons needed
         seq(optional(choice($._non_block_expression, $.use_statement)), ";"),
       ),
 
@@ -168,7 +170,15 @@ export default grammar({
 
     // expressions that need a semicolon to be a statement
     _non_block_expression: ($) =>
-      choice($.string, $.int, $.variable_declaration, $.variable_access),
+      choice(
+        $.string,
+        $.int,
+        $.variable_declaration,
+        $.variable_access,
+        $.return,
+      ),
+
+    return: ($) => seq("return", field("value", optional($._expression))),
 
     use_statement: ($) => seq("use", optional(":::"), $.use_segment),
 

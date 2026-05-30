@@ -78,6 +78,10 @@
           "named": true
         },
         {
+          "type": "return",
+          "named": true
+        },
+        {
           "type": "string",
           "named": true
         },
@@ -306,6 +310,10 @@
           },
           {
             "type": "match",
+            "named": true
+          },
+          {
+            "type": "return",
             "named": true
           },
           {
@@ -550,6 +558,10 @@
             "named": true
           },
           {
+            "type": "return",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -601,6 +613,10 @@
         },
         {
           "type": "match",
+          "named": true
+        },
+        {
+          "type": "return",
           "named": true
         },
         {
@@ -796,6 +812,46 @@
     }
   },
   {
+    "type": "return",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "return_type",
     "named": true,
     "fields": {},
@@ -853,6 +909,10 @@
         },
         {
           "type": "match",
+          "named": true
+        },
+        {
+          "type": "return",
           "named": true
         },
         {
@@ -1428,6 +1488,10 @@
             "named": true
           },
           {
+            "type": "return",
+            "named": true
+          },
+          {
             "type": "string",
             "named": true
           },
@@ -1651,6 +1715,10 @@
   },
   {
     "type": "pub",
+    "named": false
+  },
+  {
+    "type": "return",
     "named": false
   },
   {

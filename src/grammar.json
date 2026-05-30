@@ -1009,6 +1009,35 @@
         {
           "type": "SYMBOL",
           "name": "variable_access"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "return"
+        }
+      ]
+    },
+    "return": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "return"
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_expression"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         }
       ]
     },
@@ -2458,6 +2487,10 @@
       {
         "type": "STRING",
         "value": "var"
+      },
+      {
+        "type": "STRING",
+        "value": "return"
       }
     ]
   }

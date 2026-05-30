@@ -1,0 +1,13 @@
+=================
+Return
+=================
+
+return;
+return "a";
+
+---
+
+(source_file
+    (return)
+    (return value: (string))
+)
