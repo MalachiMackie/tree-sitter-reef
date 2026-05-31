@@ -78,6 +78,10 @@
           "named": true
         },
         {
+          "type": "object_initializer",
+          "named": true
+        },
+        {
           "type": "return",
           "named": true
         },
@@ -130,6 +134,10 @@
         },
         {
           "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "object_initializer",
           "named": true
         },
         {
@@ -373,6 +381,72 @@
           },
           {
             "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "field_initializer",
+    "named": true,
+    "fields": {
+      "field_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
             "named": true
           },
           {
@@ -629,6 +703,10 @@
             "named": true
           },
           {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -692,6 +770,10 @@
         },
         {
           "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "object_initializer",
           "named": true
         },
         {
@@ -789,6 +871,10 @@
             "named": true
           },
           {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -828,6 +914,10 @@
           },
           {
             "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
             "named": true
           },
           {
@@ -939,6 +1029,48 @@
     }
   },
   {
+    "type": "object_initializer",
+    "named": true,
+    "fields": {
+      "field_initializers": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "field_initializer",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "parameter",
     "named": true,
     "fields": {},
@@ -1010,6 +1142,10 @@
           },
           {
             "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
             "named": true
           },
           {
@@ -1098,6 +1234,10 @@
         },
         {
           "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "object_initializer",
           "named": true
         },
         {
@@ -1685,6 +1825,10 @@
             "named": true
           },
           {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -1940,6 +2084,10 @@
   },
   {
     "type": "mut",
+    "named": false
+  },
+  {
+    "type": "new",
     "named": false
   },
   {

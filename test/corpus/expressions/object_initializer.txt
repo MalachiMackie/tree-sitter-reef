@@ -1,0 +1,22 @@
+=====================
+Object Initializer
+=====================
+
+new x {};
+new x {a = 1, b = 2,};
+
+---
+
+(source_file
+    (object_initializer
+        type: (named_type_identifier (identifier)))
+    (object_initializer
+        type: (named_type_identifier (identifier))
+        field_initializers: (field_initializer
+            field_name: (identifier)
+            value: (int))
+        field_initializers: (field_initializer
+            field_name: (identifier)
+            value: (int))
+    )
+)

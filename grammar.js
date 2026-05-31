@@ -35,7 +35,7 @@ export default grammar({
       // "continue",
       "match",
       // "matches",
-      // "new",
+      "new",
       "static",
       "class",
       "pub",
@@ -187,6 +187,7 @@ export default grammar({
         $.return,
         $.method_call,
         $.binary_operator,
+        $.object_initializer,
       ),
 
     binary_operator: ($) =>
@@ -433,6 +434,22 @@ export default grammar({
           "type_arguments",
           optional(seq("::<", comma_separated_list($._type_identifier), ">")),
         ),
+      ),
+
+    object_initializer: ($) =>
+      seq(
+        "new",
+        field("type", $._type_identifier),
+        "{",
+        field("field_initializers", comma_separated_list($.field_initializer)),
+        "}",
+      ),
+
+    field_initializer: ($) =>
+      seq(
+        field("field_name", $.identifier),
+        "=",
+        field("value", $._expression),
       ),
 
     variable_declaration: ($) =>
