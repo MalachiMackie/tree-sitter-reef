@@ -1,0 +1,60 @@
+===================
+Binary Operators
+===================
+
+1 + 2;
+1 - 2;
+1 * 2;
+1 / 2;
+1 < 2;
+1 <= 2;
+1 > 2;
+1 >= 2;
+1 == 2;
+1 != 2;
+1 = 2;
+1 && 2;
+1 || 2;
+
+---
+(source_file
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+    (binary_operator
+        (int)
+        (int))
+)

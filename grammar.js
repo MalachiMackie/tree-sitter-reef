@@ -186,6 +186,31 @@ export default grammar({
         $.variable_access,
         $.return,
         $.method_call,
+        $.binary_operator,
+      ),
+
+    binary_operator: ($) =>
+      prec.left(
+        1,
+        seq(
+          $._expression,
+          choice(
+            "+",
+            "-",
+            "*",
+            "/",
+            ">",
+            "<",
+            "<=",
+            ">=",
+            "&&",
+            "||",
+            "=",
+            "==",
+            "!=",
+          ),
+          $._expression,
+        ),
       ),
 
     return: ($) =>
@@ -411,7 +436,7 @@ export default grammar({
       ),
 
     variable_declaration: ($) =>
-      prec.left(
+      prec.right(
         seq(
           "var",
           field("name", $.identifier),
