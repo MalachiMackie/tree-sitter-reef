@@ -1,0 +1,25 @@
+====================
+Comments
+====================
+
+var a =
+// this is a comment
+/*
+
+hi
+
+*/
+
+"";
+
+var a = "";
+
+---
+
+(source_file
+    (variable_declaration
+        name: (identifier)
+        value: (string))
+    (variable_declaration
+        name: (identifier)
+        value: (string)))

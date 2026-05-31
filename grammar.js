@@ -51,8 +51,17 @@ export default grammar({
 
   conflicts: ($) => [[$.named_type_identifier, $.type_constraint]],
 
+  word: ($) => $.identifier,
+
+  extras: ($) => [/\s/, $._comment],
+
   rules: {
     source_file: ($) => repeat(choice($._definition, $._statement)),
+
+    _comment: ($) =>
+      token(
+        choice(seq("//", /.*/), seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
+      ),
 
     _definition: ($) =>
       choice($.function_definition, $.class_definition, $.union_definition),
