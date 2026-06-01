@@ -1,0 +1,10 @@
+==========
+Grab
+==========
+
+grab 1;
+
+---
+(source_file
+    (grab (int))
+)

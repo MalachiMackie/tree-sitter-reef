@@ -1,3 +1,8 @@
+var a: u32 = {
+    print_string("hello world!");
+    grab 2;
+};
+
 class MyClass {
     #[other:::my_attribute]
     fn my_fn(){}
@@ -1242,7 +1247,7 @@ if (true) {}
 if (false) {}
 var a = true; if (a) {}
 if (true) {} else {}
-if (true) {var a = 2} else if (true) {var a = 3} else if (true) {var a = 4} else {var a = 5}
+if (true) {var a = 2;} else if (true) {var a = 3;} else if (true) {var a = 4;} else {var a = 5;}
 if (true) var a = 2
 var a: result::<i64, string>
 class Class1 { field someField: Class1,}
@@ -1534,7 +1539,7 @@ pub union MyUnion {
             MyUnion::A => 1,
             MyUnion::B => 2,
             MyUnion::C => 3
-        }
+        };
     }
 }
 
@@ -1554,6 +1559,7 @@ fn AnotherMethod(param: MyUnion) {
 var a = MyUnion::A;
 
 var c = new MyUnion::B{ MyField = ""};
+var a: string = {grab true;};
 class MyClass {
     #[other:::other_attribute]
     fn some_fn(){}
@@ -1917,7 +1923,7 @@ var a: Fn(i64) = SomeFn;
 fn SomeFn(a: i64){}
 var a: Fn(mut i64) = SomeFn;
 fn SomeFn(){}
-fn OtherFn(): i64{return 1}
+fn OtherFn(): i64{return 1;}
 var mut a = SomeFn;
 a = OtherFn;
 a = 2;
@@ -2513,9 +2519,9 @@ fn MyFn<T, T, T>() {}
 if (1) {}
 if (true) {} else if (1) {}
 if (true) {var a: string = 1;}
-if (true) {} else if (true) {var a: string = 1}
-if (true) {} else if (true) {} else {var a: string = 1}
-if (true) {} else if (true) {} else if (true) {var a: string = 1}
+if (true) {} else if (true) {var a: string = 1;}
+if (true) {} else if (true) {} else {var a: string = 1;}
+if (true) {} else if (true) {} else if (true) {var a: string = 1;}
 var a: result::<>
 var a: result
 var a = ok(1)

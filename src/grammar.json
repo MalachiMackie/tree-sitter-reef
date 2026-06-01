@@ -1146,6 +1146,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "grab"
+        },
+        {
+          "type": "SYMBOL",
           "name": "prefix_unary_operator"
         },
         {
@@ -1221,6 +1225,23 @@
           "name": "object_initializer"
         }
       ]
+    },
+    "grab": {
+      "type": "PREC",
+      "value": -1,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "grab"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        ]
+      }
     },
     "prefix_unary_operator": {
       "type": "PREC",
@@ -3593,6 +3614,10 @@
       {
         "type": "STRING",
         "value": "boxed"
+      },
+      {
+        "type": "STRING",
+        "value": "grab"
       },
       {
         "type": "STRING",

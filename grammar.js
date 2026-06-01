@@ -29,6 +29,7 @@ export default grammar({
       "union",
       "unboxed",
       "boxed",
+      "grab",
       "mut",
       "while",
       "break",
@@ -216,6 +217,7 @@ export default grammar({
       choice(
         $.string,
         $.todo,
+        $.grab,
         $.prefix_unary_operator,
         $.postfix_unary_operator,
         $.index,
@@ -236,6 +238,8 @@ export default grammar({
         $.binary_operator,
         $.object_initializer,
       ),
+
+    grab: ($) => prec(-1, seq("grab", $._expression)),
 
     prefix_unary_operator: ($) =>
       prec(-1, seq(choice("-", "!"), $._expression)),
