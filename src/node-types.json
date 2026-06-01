@@ -78,6 +78,10 @@
           "named": true
         },
         {
+          "type": "member_access",
+          "named": true
+        },
+        {
           "type": "method_call",
           "named": true
         },
@@ -138,6 +142,10 @@
         },
         {
           "type": "match",
+          "named": true
+        },
+        {
+          "type": "member_access",
           "named": true
         },
         {
@@ -346,6 +354,10 @@
             "named": true
           },
           {
+            "type": "member_access",
+            "named": true
+          },
+          {
             "type": "method_call",
             "named": true
           },
@@ -393,6 +405,10 @@
           },
           {
             "type": "match",
+            "named": true
+          },
+          {
+            "type": "member_access",
             "named": true
           },
           {
@@ -498,6 +514,10 @@
             "named": true
           },
           {
+            "type": "member_access",
+            "named": true
+          },
+          {
             "type": "method_call",
             "named": true
           },
@@ -561,6 +581,10 @@
           },
           {
             "type": "match",
+            "named": true
+          },
+          {
+            "type": "member_access",
             "named": true
           },
           {
@@ -825,6 +849,10 @@
             "named": true
           },
           {
+            "type": "member_access",
+            "named": true
+          },
+          {
             "type": "method_call",
             "named": true
           },
@@ -875,6 +903,10 @@
             "named": true
           },
           {
+            "type": "member_access",
+            "named": true
+          },
+          {
             "type": "method_call",
             "named": true
           },
@@ -922,6 +954,10 @@
           },
           {
             "type": "match",
+            "named": true
+          },
+          {
+            "type": "member_access",
             "named": true
           },
           {
@@ -988,6 +1024,10 @@
           },
           {
             "type": "match",
+            "named": true
+          },
+          {
+            "type": "member_access",
             "named": true
           },
           {
@@ -1065,6 +1105,10 @@
           "named": true
         },
         {
+          "type": "member_access",
+          "named": true
+        },
+        {
           "type": "method_call",
           "named": true
         },
@@ -1109,6 +1153,110 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "member_access",
+    "named": true,
+    "fields": {
+      "member_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "owner": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      },
+      "type_arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "::<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -1167,6 +1315,10 @@
             "named": true
           },
           {
+            "type": "member_access",
+            "named": true
+          },
+          {
             "type": "method_call",
             "named": true
           },
@@ -1214,6 +1366,10 @@
           },
           {
             "type": "match",
+            "named": true
+          },
+          {
+            "type": "member_access",
             "named": true
           },
           {
@@ -1449,6 +1605,10 @@
             "named": true
           },
           {
+            "type": "member_access",
+            "named": true
+          },
+          {
             "type": "method_call",
             "named": true
           },
@@ -1542,6 +1702,10 @@
         },
         {
           "type": "match",
+          "named": true
+        },
+        {
+          "type": "member_access",
           "named": true
         },
         {
@@ -2172,6 +2336,10 @@
             "named": true
           },
           {
+            "type": "member_access",
+            "named": true
+          },
+          {
             "type": "method_call",
             "named": true
           },
@@ -2341,6 +2509,10 @@
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
     "named": false
   },
   {

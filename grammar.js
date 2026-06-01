@@ -184,6 +184,7 @@ export default grammar({
         $.int,
         $.variable_declaration,
         $.variable_access,
+        $.member_access,
         $.return,
         $.method_call,
         $.binary_operator,
@@ -266,6 +267,17 @@ export default grammar({
     variable_access: ($) =>
       seq(
         $.identifier,
+        field(
+          "type_arguments",
+          optional(seq("::<", comma_separated_list($._type_identifier), ">")),
+        ),
+      ),
+
+    member_access: ($) =>
+      seq(
+        field("owner", $._expression),
+        ".",
+        field("member_name", $.identifier),
         field(
           "type_arguments",
           optional(seq("::<", comma_separated_list($._type_identifier), ">")),
