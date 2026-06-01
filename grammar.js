@@ -22,6 +22,7 @@ export default grammar({
   reserved: {
     global: ($) => [
       "attribute",
+      "todo!",
       "use",
       "extern",
       "where",
@@ -213,6 +214,7 @@ export default grammar({
     _non_block_expression: ($) =>
       choice(
         $.string,
+        $.todo,
         $.prefix_unary_operator,
         $.postfix_unary_operator,
         $.index,
@@ -637,6 +639,8 @@ export default grammar({
     int: ($) => new RustRegex("[0-9]+"),
 
     bool: ($) => choice("true", "false"),
+
+    todo: ($) => "todo!",
 
     tuple: ($) =>
       prec(4, seq("(", optional(comma_separated_list($._expression)), ")")),
