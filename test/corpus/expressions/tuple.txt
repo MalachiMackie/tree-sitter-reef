@@ -1,0 +1,17 @@
+=========
+Tuple
+=========
+
+();
+("");
+((), 1, "");
+(());
+
+---
+
+(source_file
+    (tuple)
+    (tuple (string))
+    (tuple (tuple) (int) (string))
+    (tuple (tuple))
+)

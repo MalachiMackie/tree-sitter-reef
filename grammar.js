@@ -183,6 +183,7 @@ export default grammar({
       choice(
         $.string,
         $.int,
+        $.tuple,
         $.matches,
         $.variable_declaration,
         $.variable_access,
@@ -539,5 +540,8 @@ export default grammar({
     string: ($) => new RustRegex('"[^"]*"'),
 
     int: ($) => new RustRegex("[0-9]+"),
+
+    tuple: ($) =>
+      prec(4, seq("(", optional(comma_separated_list($._expression)), ")")),
   },
 });
