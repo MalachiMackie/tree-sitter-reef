@@ -37,7 +37,22 @@
   {
     "type": "attribute",
     "named": true,
-    "fields": {},
+    "fields": {
+      "module_path": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ":::",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": false,
       "required": true,

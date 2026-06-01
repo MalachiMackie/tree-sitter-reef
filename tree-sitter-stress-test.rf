@@ -1,0 +1,2656 @@
+class MyClass {
+    #[other:::my_attribute]
+    fn my_fn(){}
+}
+pub attribute my_attribute{}
+union MyUnion {
+    #[other:::my_attribute]
+    fn my_fn(){}
+}
+pub attribute my_attribute{}
+fn top_level_fn() {
+    #[other:::my_attribute]
+    fn inner_fn() {
+    }
+}
+pub attribute my_attribute{}
+fn some_string_check(val: string): bool {
+    return true;
+}
+
+fn some_fn(): option::<string> {
+    return option::Some("hi");
+}
+
+if (some_fn() matches option::Some(var value) && some_string_check(value)) {
+    print_string(value);
+}
+attribute my_attribute{}
+
+#[my_attribute]
+fn my_fn() {}
+attribute other_attribute{}
+attribute my_attribute{}
+
+#[my_attribute]
+#[other_attribute]
+fn my_fn() {}
+#[other:::my_attribute]
+fn my_fn() {}
+pub attribute my_attribute{}
+use other:::*;
+
+#[my_attribute]
+fn my_fn() {}
+pub attribute my_attribute{}
+fn some_string_check(val: string): bool {
+    return true;
+}
+
+fn some_fn(): option::<string> {
+    return option::Some("hi");
+}
+
+if (some_fn() matches option::Some(var value) && true && some_string_check(value)) {
+    print_string(value);
+}
+fn some_string_check(val: string): bool {
+    return true;
+}
+
+fn some_fn(): option::<string> {
+    return option::Some("hi");
+}
+var a = some_fn() matches option::Some(var value) && true && some_string_check(value)
+fn some_string_check(val: string): bool {
+    return true;
+}
+
+fn some_fn(): option::<string> {
+    return option::Some("hi");
+}
+
+var a = some_fn() matches option::Some(var value) && some_string_check(value);
+fn some_fn(): option::<string> {
+    return option::Some("hi");
+}
+
+if (true && (some_fn() matches option::Some(var value))) {
+    print_string(value);
+}
+fn some_fn(): option::<string> {
+    return option::Some("hi");
+}
+
+if (true && some_fn() matches option::Some(var value)) {
+    print_string(value);
+}
+fn some_fn<T>() where T : boxed {
+}
+
+class MyClass{};
+
+some_fn::<string>();
+some_fn::<MyClass>();
+fn some_fn<T>(val: T): result::<T, T> {
+    return ok(val);
+}
+match (some_fn("")) {
+    result::Ok(var successful) => print_string(successful),
+    result::Error(var failure) => print_string(failure),
+}
+class MyClass<T1> {
+    pub field value: T1
+}
+
+fn some_fn<T>(val: T): MyClass::<T> {
+    return new MyClass { value = val};
+}
+match (some_fn("")) {
+    MyClass { value: var successful } => print_string(successful),
+}
+class MyClass<T> {
+    pub field some_fn: Fn(T): T
+}
+
+fn get_string(val: string): string {
+    return "hi";
+}
+fn get_number(val: i32): i32 {
+    return 1;
+}
+var a = new MyClass {some_fn = get_string};
+var b = new MyClass {some_fn = get_number};
+
+var a_value: string = a.some_fn("");
+var b_value: i32 = b.some_fn(1);
+union MyUnion<T> {
+    A(Fn(T): T)
+}
+
+fn get_string(val: string): string {
+    return "hi";
+}
+fn get_number(val: i32): i32 {
+    return 1;
+}
+var a = MyUnion::A(get_string);
+var b = MyUnion::A(get_number);
+
+if (a matches MyUnion::A(var a_fn)) {
+    var a_value: string = a_fn("");
+}
+
+if (b matches MyUnion::A(var b_fn)) {
+    var b_value: i32 = b_fn(1);
+}
+fn outer_fn<T>(val: T, inner: Fn(T): T): T {
+    return inner(val);
+}
+fn get_string(val: string): string {
+    return "hi";
+}
+fn get_number(val: i32): i32 {
+    return 1;
+}
+var a: string = outer_fn("", get_string);
+var b: i32 = outer_fn(1, get_number);
+pub fn someFn(a: otherModule:::MyClass){}
+pub class MyClass{}
+pub extern fn some_fn<T, T2>(param: T): T2 where T2: boxed T;
+
+var b: boxed i32 = some_fn(1);
+pub extern fn some_fn<T>(): T where T : unboxed i32;
+
+var b: i32 = some_fn();
+pub extern fn some_fn<T>(): T where T : boxed i32;
+
+var b: boxed i32 = some_fn();
+pub extern fn some_fn<T, T2>(param: T): T2 where T2: unboxed T;
+class MyClass{}
+
+var b: unboxed MyClass = some_fn(new MyClass{});
+pub extern fn some_fn<T, T2>(param: T): T2 where T2: unboxed T;
+class MyClass{}
+
+var b: unboxed MyClass = some_fn(new unboxed MyClass{});
+pub extern fn some_fn<T, T2>(param: T): T2 where T2: boxed T;
+class MyClass{}
+
+var b: MyClass = some_fn(new MyClass{});
+pub extern fn some_fn<T, T2>(param: T): T2
+    where T2: boxed T
+    where T: unboxed T2;
+
+class MyClass{}
+
+var b: MyClass = some_fn(new unboxed MyClass{});
+pub extern fn some_fn<T, T2>(): string where T: boxed T2;
+var a: [string] = ["hi"];
+var b: [string; 1] = ["hi"];
+use otherModule;
+
+otherModule:::subModule:::SomeFn();
+var a = new otherModule:::subModule:::MyClass{};
+pub fn SomeFn(){}
+pub class MyClass{}
+use otherModule:::subModule;
+
+subModule:::subSubModule:::SomeFn();
+var a = new subModule:::subSubModule:::MyClass{};
+pub fn SomeFn(){}
+pub class MyClass{}
+use otherModule:::subModule;
+
+subModule:::SomeFn();
+var a = new subModule:::MyClass{};
+pub fn SomeFn(){}
+pub class MyClass{}
+use otherModule:::subModule;
+
+otherModule:::subModule:::SomeFn();
+var a = new otherModule:::subModule:::MyClass{};
+pub fn SomeFn(){}
+pub class MyClass{}
+use otherModule:::{MyClass, MyUnion, SomeFn};
+
+var a = new MyClass{};
+var b = MyUnion::A;
+var c = SomeFn();
+pub class MyClass{}
+pub union MyUnion{A}
+pub fn SomeFn(){}
+var a = new otherModule:::MyClass{};
+var b = otherModule:::MyUnion::A;
+var c = otherModule:::SomeFn();
+pub class MyClass{}
+pub union MyUnion{A}
+pub fn SomeFn(){}
+class MyClass{}
+fn SomeFn(){}
+
+var a = new otherModule:::MyClass{};
+var b = otherModule:::MyUnion::A;
+:::main:::otherModule:::SomeFn();
+var d = new MyClass{};
+SomeFn();
+
+pub class MyClass{}
+pub union MyUnion{A}
+pub fn SomeFn(){}
+use someModule:::subModule:::{MyClass, MyUnion, SomeFn};
+
+var a = new MyClass{};
+var b = MyUnion::A;
+var c = SomeFn();
+pub class MyClass{}
+pub union MyUnion{A}
+pub fn SomeFn(){}
+use someModule:::{MyUnion, SomeFn, otherModule:::MyClass};
+
+var a = new MyClass{};
+var b = MyUnion::A;
+SomeFn();
+pub union MyUnion{A}
+pub fn SomeFn(){}
+pub class MyClass{}
+use someModule:::otherModule:::SomeFn;
+
+pub class MyClass{};
+
+SomeFn();
+use :::main:::MyClass;
+
+pub fn SomeFn() {
+    var a = new MyClass{};
+}
+use otherModule:::*;
+
+var a = new MyClass{};
+var b = MyUnion::A;
+var c = SomeFn();
+pub class MyClass{}
+pub union MyUnion{A}
+pub fn SomeFn(){}
+use otherModule:::{MyClass, MyUnion};
+
+var a = new MyClass{};
+var b = MyUnion::A;
+{
+    use otherModule:::SomeFn;
+    SomeFn();
+}
+pub class MyClass{}
+pub union MyUnion{A}
+pub fn SomeFn(){}
+use otherModule:::MyClass;
+
+pub fn SomeFn(): MyClass {
+    return new MyClass{};
+}
+
+use :::main:::SomeFn;
+
+pub class MyClass{};
+
+fn OtherFn() {
+    var a = SomeFn();
+}
+
+use someModule:::{subModule:::{SomeFn, subSubModule:::MyClass}};
+
+var a = new MyClass{};
+SomeFn();
+pub class MyClass{};
+use subSubModule:::MyClass;
+
+pub fn SomeFn() {
+    var a = new MyClass{};
+}
+use someModule:::SomeFn;
+
+var a = SomeFn();
+print_string(a.Something);
+pub class MyClass{pub field Something: string}
+pub fn SomeFn(): MyClass {
+    return new MyClass{Something = "hi"};
+}
+use otherModule:::SomeFn;
+
+pub class MyClass{};
+
+var a = SomeFn();
+
+use :::main:::MyClass;
+
+pub fn SomeFn(): MyClass
+{
+    return new MyClass{};
+}
+class FirstClass{ pub mut field FirstClassField: string }
+class MyClass{pub mut field MyField: FirstClass}
+var mut firstClass = new FirstClass{FirstClassField = ""};
+var secondClass = new MyClass{MyField = firstClass}
+class MyClass { pub mut field MyField: string, }
+var mut a = [new MyClass{MyField = "hi"}];
+a[0].MyField = "bye";
+fn someFn(): mut string { return ""; }
+var a: Fn(): mut string = someFn;
+fn someFn(): mut string { return ""; }
+var a: Fn(): string = someFn;
+fn someFn(): string { return ""; }
+var a: Fn(): string = someFn;
+var mut a = [""];
+a[0] = "x";
+var a: [string; 4] = [""; 4];
+var a: [i32; 3] = [1, 2, 3];
+var a: unboxed [i32; 2] = [unboxed; 1, 2];
+var a = [1, 4];
+var b: u32 = a[0];
+var a: [boxed i32; 2] = [box(2), box(3)];
+var b: boxed i32 = a[0];
+var a: i32 = 1;
+var b = -a;
+var a = 1;
+var b = -a;
+var a: boxed i32 = box(1);
+var b = unbox(a) == 1;
+class MyClass{}
+var a = unbox(new MyClass{});
+class MyClass{}
+var a: unboxed MyClass = unbox(new MyClass{});
+var a: boxed i32 = box(2);
+var a: boxed i32 = box(1);
+var b: unboxed i32 = unbox(a);
+var a = box(1);
+union MyUnion{A}
+var a: unboxed MyUnion = unboxed MyUnion::A;
+var a: unboxed i32 = 1;
+class MyClass{}
+var b: boxed MyClass = new MyClass{};
+while (true) {
+    continue;
+    break;
+}
+while (true) {
+    if (true) {
+        continue;
+        break;
+    }
+}
+while (true) {
+    while (true) {
+        if (true) {
+            continue;
+            break;
+        }
+    }
+}
+fn SomeFn<T>(param: T): T { return param; }
+var a: i64 = SomeFn(1);
+fn SomeFn<T>(param: T): T { return param; }
+var a = SomeFn(1);
+fn SomeFn<T>(param: T): T { return param; }
+var a = SomeFn(1);
+var c: u8 = a;
+var a = 1;
+var b = a;
+var c: i64 = b;
+var d: i64 = a * c;
+var a = 1;
+var b: i32 = a;
+var a = 1;
+var b: i64 = a;
+var a = 1;
+var b: i16 = a;
+var a = 1;
+var b: i8 = a;
+var a = 1;
+var b: u32 = a;
+var a = 1;
+var b: u64 = a;
+var a = 1;
+var b: u16 = a;
+var a = 1;
+var b: u8 = a;
+union MyUnion{A(string)}
+var a = MyUnion::A;
+var b = a("");
+var a = if (true) {} else {};
+var a = if (true) {} else if (true) {} else {}; 
+fn OtherFn(): result::<i64, i64>
+{
+    return ok(1);
+}
+fn SomeFn(): result::<string, i64>
+{
+    var a = OtherFn()?;
+    return ok("");
+}
+class MyClass
+{
+    field MyField: string,
+
+    fn MyFn(param: string)
+    {
+        var a = "";
+        fn MiddleFn(b: i64)
+        {
+            fn InnerFn()
+            {
+                var _a = a;
+                var _b = b;
+                var _param = param;
+                var _myField = MyField;
+            }
+            InnerFn();
+        }
+        MiddleFn(3);
+    }
+}
+var a = 1;
+fn SomeFn()
+{
+    fn InnerFn()
+    {
+        var b = a;
+    }
+    InnerFn();
+}
+SomeFn();
+class MyClass {
+    static mut field MyField: string = "",
+
+    // SomeFn doesn't need to be marked as mutable because it mutates a static field, not an instance field
+    fn SomeFn()
+    {
+        MyField = "hi";
+    }
+}
+var a = 1;
+SomeFn();
+fn SomeFn()
+{
+    var b = a;
+}
+class MyClass
+{
+    fn SomeFn()
+    {
+        TopLevelFn();
+    }
+}
+fn TopLevelFn()
+{
+}
+union MyUnion {
+    A(string)
+}
+var mut a = MyUnion::A("");
+if (a matches MyUnion::A(var mut str)) {
+    str = "hi";
+}
+var a: bool = true && true
+var a: bool = true || true
+class MyClass {
+    fn MyFn<T>() {}
+    fn OtherFn() {
+        MyFn::<string>();
+    }
+}
+union MyUnion {
+    pub static fn SomeFn(){}
+}
+MyUnion::SomeFn();
+class MyClass {
+    field MyField: string,
+
+    fn MyFn() {
+        var a = MyField;
+    }
+}
+union MyUnion {
+    pub static fn SomeFn(){}
+}
+var a = MyUnion::SomeFn;
+a();
+union MyUnion {A, pub fn MyFn(){}}
+var a = MyUnion::A;
+a.MyFn();
+class MyClass {
+    pub mut fn MyFn() {
+    }
+}
+var mut a = new MyClass{};
+var b: Fn() = a.MyFn;
+var mut a: Fn() = todo!;
+a();
+fn NonMutFn() {}
+var a: Fn() = NonMutFn;
+fn SomeFn(){}
+var a: () = SomeFn();
+fn SomeFn(): () {}
+fn SomeFn(){}
+fn OtherFn(){}
+var mut a = SomeFn;
+a = OtherFn;
+class MyClass{
+    pub fn InstanceFn(mut a: i64): string { return ""; }
+    pub static fn StaticFn(mut a: i64): string { return ""; }
+}
+fn GlobalFn(mut a: i64): string { return ""; }
+var instance = new MyClass{};
+var mut a = GlobalFn;
+a = instance.InstanceFn;
+a = MyClass::StaticFn;
+fn SomeFn(){}
+var a: Fn() = SomeFn;
+fn SomeFn(a: i64){}
+var a: Fn(i64) = SomeFn;
+fn SomeFn(a: i64): string {return "";}
+var a: Fn(i64): string = SomeFn;
+fn SomeFn(mut a: i64){}
+var a: Fn(mut i64) = SomeFn;
+var mut a = (1, "");
+a = (3, "hi");
+var a: (i64, string);
+a = (1, "");
+class MyClass<T> {
+    fn MyFn() {
+        fn InnerFn(param: T): T {
+            return param;
+        }
+
+        var a = InnerFn(todo!);
+    }
+}
+class MyClass<T> {
+    fn MyFn() {
+        var a = new MyClass::<string>{};
+    }
+}
+fn MyFn<T>() {
+    MyFn::<string>();
+}
+class MyClass {
+    fn MyFn() {
+        MyFn();
+    }
+}
+class MyClass {
+    fn OtherFn() {}
+    fn MyFn() {
+        OtherFn();
+    }
+}
+static fn Outer() {
+    var mut a = "";
+    fn InnerFn() {
+        a = "";
+    }
+    InnerFn();
+}
+class MyClass {
+    pub mut fn DoSomething() {}
+}
+var mut a = new MyClass{};
+var b = a.DoSomething;
+b();
+class MyClass { pub field Ignore: i64, pub field InstanceField: string, pub static field StaticField: i64 = 2 }
+var a = new MyClass {Ignore = 1, InstanceField = ""};
+static fn First(a: string) {
+    fn Second() {
+        fn Third() {
+            var c = 1;
+            fn Fourth() {
+                var b = a;
+                var d = c;
+            }
+
+            Fourth();
+        }
+        Third();
+    }
+    Second();
+}
+union SomeUnion {A, B, C}
+static fn SomeFn(): i64 {
+    var a = SomeUnion::A;
+    match (a) {
+        SomeUnion::A => return 1,
+        SomeUnion::B => return 2,
+        _ => return 3
+    }
+}
+static fn SomeFn(): i64 {
+    if (true) {
+        match (true) {
+            _ => return 3,
+        }
+    }
+    else {
+        if (true) {
+            return 1;
+        } else if (true) {
+            return 2;
+        } else {
+            return 3;
+        }
+    }
+}
+union MyUnion {A, B}
+class MyClass { pub field MyField: MyUnion }
+
+var a = new MyClass { MyField = MyUnion::A };
+match (a) {
+    MyClass { MyField: MyUnion } => 1,
+}
+union OtherUnion {A, B}
+union MyUnion {
+    A(OtherUnion)
+}
+var a = MyUnion::A(OtherUnion::A);
+match (a) {
+    MyUnion::A(OtherUnion::A) => 1,
+    MyUnion::A(OtherUnion::B) => 1,
+}
+union OtherUnion {A, B}
+union MyUnion {
+    A(OtherUnion)
+}
+var a = MyUnion::A(OtherUnion::A);
+match (a) {
+    MyUnion::A(OtherUnion::A) => 1,
+    MyUnion::A(var b) => 1,
+}
+union OtherUnion {A, B}
+union MyUnion {
+    A(OtherUnion)
+}
+var a = MyUnion::A(OtherUnion::A);
+match (a) {
+    MyUnion::A(OtherUnion::A) => 1,
+    MyUnion::A(var b) => 1,
+}
+union OtherUnion {A, B}
+union MyUnion {
+    A(OtherUnion)
+}
+var a = MyUnion::A(OtherUnion::A);
+match (a) {
+    MyUnion::A(OtherUnion::A) => 1,
+    MyUnion::A(_) => 1,
+}
+union MyUnion {
+    A(string)
+}
+var a = MyUnion::A("");
+match (a) {
+    MyUnion::A(string) => 1,
+}
+class MyClass {
+    pub field MyField: string,
+    pub field OtherField: i64
+}
+var a = new MyClass { MyField = "", OtherField = 2 };
+match (a) {
+    MyClass => 1
+}
+class MyClass {
+    pub field MyField: string,
+    pub field OtherField: i64
+}
+var a = new MyClass { MyField = "", OtherField = 2 };
+match (a) {
+    MyClass {_} => 1
+}
+class MyClass {
+    pub field MyField: string,
+    pub field OtherField: i64
+}
+var a = new MyClass { MyField = "", OtherField = 2 };
+match (a) {
+    MyClass {MyField: _, OtherField: _} => 1
+}
+class MyClass {
+    pub field MyField: string,
+    pub field OtherField: i64
+}
+var a = new MyClass { MyField = "", OtherField = 2 };
+match (a) {
+    MyClass {MyField: _, _} => 1
+}
+class MyClass {
+    pub field MyField: string,
+    pub field OtherField: i64
+}
+var a = new MyClass { MyField = "", OtherField = 2 };
+match (a) {
+    MyClass {MyField: string, OtherField: i64} => 1
+}
+class MyClass {
+    pub field MyField: string,
+}
+var a = new MyClass { MyField = "" };
+match (a) {
+    MyClass { MyField: string } => 1
+}
+// double field match fully exhausted
+union OtherUnion {A, B}
+class MyClass {
+    pub field MyField: OtherUnion,
+    pub field OtherField: OtherUnion
+}
+var a = new MyClass { MyField = OtherUnion::A, OtherField = OtherUnion::B };
+match (a) {
+    MyClass { MyField: OtherUnion::A, OtherField: OtherUnion::A } => 1,
+    MyClass { MyField: OtherUnion::B, OtherField: OtherUnion::A } => 1,
+    MyClass { MyField: OtherUnion::A, OtherField: OtherUnion::B } => 1,
+    MyClass { MyField: OtherUnion::B, OtherField: OtherUnion::B } => 1,
+}
+union OtherUnion {A, B}
+class MyClass {
+    pub field MyField: OtherUnion,
+    pub field OtherField: OtherUnion
+}
+var a = new MyClass { MyField = OtherUnion::A, OtherField = OtherUnion::B };
+match (a) {
+    MyClass { MyField: OtherUnion::A, OtherField: _} => 1,
+    MyClass { MyField: OtherUnion::B, OtherField: OtherUnion::A } => 1,
+    MyClass { MyField: OtherUnion::B, OtherField: OtherUnion::B } => 1,
+}
+union OtherUnion {A, B}
+class MyClass {
+    pub field MyField: OtherUnion,
+    pub field OtherField: OtherUnion
+}
+var a = new MyClass { MyField = OtherUnion::A, OtherField = OtherUnion::B };
+match (a) {
+    MyClass { MyField: OtherUnion::A, OtherField: _ } => 1,
+    MyClass { MyField: OtherUnion::B, OtherField: _ } => 1,
+}
+union ThirdUnion { A, B }
+union OtherUnion {
+    A { field MyField: ThirdUnion },
+    B
+}
+union MyUnion {
+    A { field MyField: OtherUnion },
+    B
+}
+var a = new MyUnion::A { MyField = OtherUnion::B };
+match (a) {
+    MyUnion::A { MyField: OtherUnion::A { MyField: ThirdUnion::A } } => 1,
+    MyUnion::A { MyField: OtherUnion::A { MyField: ThirdUnion::B } } => 1,
+    MyUnion::A { MyField: OtherUnion::B } => 1,
+    MyUnion::B => 1,
+}
+// single field match fully exhaustive
+union MyUnion {A, B}
+class MyClass { pub field MyField: MyUnion }
+
+var a = new MyClass { MyField = MyUnion::A };
+match (a) {
+    MyClass { MyField: MyUnion::A } => 1,
+    MyClass { MyField: MyUnion::B } => 1,
+}
+var a;
+if (true) {
+    a = "";
+}
+else if (true) {
+    a = "";
+}
+else {
+    a = "";
+}
+var b = a;
+var a;
+if (true) {
+    a = "";
+}
+else {
+    a = "";
+}
+var b: string;
+var a;
+a = "";
+union MyEnum {
+    A(i64)
+}
+
+var a = MyEnum::A(1);
+union MyUnion {
+    A(i64)
+}
+
+var a = MyUnion::A(1);
+if (a matches MyUnion::A(_) var b) {
+}
+fn SomeFn<T>(param: T){}
+
+SomeFn::<>("");
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+var z = a matches MyUnion::A(string var b);
+// b is never used
+var a = "";
+// match that exactly matches type is exhaustive if it's not a union
+match (a) {
+    string => 1
+}
+union MyUnion {A, B}
+class MyClass {pub field MyField: MyUnion}
+var a = new MyClass {MyField = MyUnion::A};
+match (a) {
+    MyClass { MyField: MyUnion::A } => 1,
+    MyClass { MyField: MyUnion::B } => 1,
+}
+union MyUnion {A, B}
+class MyClass {pub field MyField: MyUnion}
+var a = new MyClass {MyField = MyUnion::A};
+match (a) {
+    MyClass => 1
+}
+union MyUnion {A, B}
+class MyClass {pub field MyField: MyUnion}
+var a = new MyClass {MyField = MyUnion::A};
+match (a) {
+    MyClass { MyField: _ } => 1
+}
+union MyUnion {A, B}
+class MyClass {pub field MyField: MyUnion}
+var a = new MyClass {MyField = MyUnion::A};
+match (a) {
+    MyClass { MyField: var b } => b
+}
+union MyUnion {A, B}
+class MyClass {pub field MyField: MyUnion}
+var a = new MyClass {MyField = MyUnion::A};
+match (a) {
+    var b => b
+}
+union MyUnion {A, B, C}
+class MyClass {pub field MyField: MyUnion}
+var a = new MyClass {MyField = MyUnion::A};
+match (a) {
+    MyClass { MyField: MyUnion::A } => 1,
+    MyClass { MyField: var b } => 1
+}
+fn MyFn() {
+}
+
+// type parameters can have the same name as Functions
+class MyClass<MyFn> {}
+// type parameters can have the same name as Functions
+class MyClass<MyFn> {
+    fn MyFn() {}
+}
+class MyClass {
+    pub field MyField: string,
+    field OtherField: bool,
+
+    pub static fn Create(): MyClass {
+        return new MyClass {
+            MyField = "",
+            OtherField = true
+        };
+    }
+}
+var a = MyClass::Create();
+var b: bool = a matches MyClass { MyField: string };
+var mut a = ok(1);
+a = ok(2);
+a = error("");
+var a = SomeFn;
+
+var b: string = a();
+var c: string = a();
+
+fn SomeFn<T>(): T {
+    return todo!;
+}
+fn OtherFn<T2>(param2: T2): T2 {
+    return ThirdFn(param2);
+
+    fn ThirdFn<T3>(param3: T3): T3 {
+        return param3;
+    }
+}
+fn SomeFn<T>(param: T) {
+    fn OtherFn<T2>(param2: T2) {
+        fn ThirdFn<T3>(param3: T3) {
+            var a: T = param;
+            var b: T2 = param2;
+            var c: T3 = param3;
+        }
+    }
+}
+fn SomeFn<T>(): i64 {
+    var a = OtherFn();
+    return a;
+}
+
+fn OtherFn<T>(): T {
+    return todo!;
+}
+var a = SomeFn();
+var a2 = SomeFn();
+var b = a;
+var b2 = a2;
+
+var c = OtherFn(b);
+var c2 = OtherFn(b2);
+
+var d: string = c;
+var d2: i64 = c2;
+
+fn OtherFn<T>(param: T): T {
+    return param;
+}
+
+fn SomeFn<T>(): T {
+    return todo!;
+}
+var a: string = todo!
+fn SomeFn() {
+    return todo!;
+}
+fn SomeFn(): string {
+    return todo!;
+}
+fn SomeFn<T>(param: T): T {
+    return param;
+}
+
+var a = SomeFn("");
+var b = SomeFn(2);
+var c = b + b;
+class MyClass<T> {
+    fn SomeFn(param: T): result::<T, string> {
+        if (true) {
+            return ok(param);
+        }
+        return error("some error");
+    }
+}
+var a: result::<i64, bool> = error(false);
+var a: result::<i64, bool> = ok(1);
+var a = match ("") {
+    var b => ok(1),
+    _ => error("")
+};
+fn SomeFn(): result::<i64, bool> {
+    if (true) {
+        return ok(1);
+    }
+
+    return error(false);
+}
+fn SomeFn(param: result::<i64, bool>) {
+}
+
+var a = ok(1);
+SomeFn(a);
+var b = error(false);
+SomeFn(b);
+class MyClass {
+    fn SomeFn() {
+        var a: MyClass = this;
+    }
+}
+union MyUnion {
+    A,
+
+    fn SomeFn() {
+        var a: MyUnion = this;
+    }
+}
+union MyUnion {
+    A,
+    B(i64),
+    C { field MyField: i64 }
+}
+var a = MyUnion::A;
+match (a) {
+    MyUnion::A => 1,
+    MyUnion::B(var b) => b,
+    MyUnion::C { MyField } => MyField,
+}
+union MyUnion {
+    A,
+    B(i64),
+    C { field MyField: i64 }
+}
+var a = MyUnion::A;
+match (a) {
+    MyUnion::A => 1,
+    MyUnion::B(var b) => b,
+    _ => 2,
+}
+union MyUnion {
+    A,
+    B(i64),
+    C { field MyField: i64 }
+}
+var a = MyUnion::A;
+var d: i64 = match (a) {
+    MyUnion::A => 1,
+    MyUnion::B(var b) => b,
+    MyUnion::C { MyField } => MyField,
+};
+var a: bool = !(true);
+var a = (1, true, "");
+var b: i64 = a.Item0;
+var c: bool = a.Item1;
+var d: string = a.Item2;
+var a: i64 = (1 + 2) * 3;
+var a: bool = !true;
+var a = "";
+var b: bool = a matches string;
+var a = 1;
+var b: bool = a matches i64;
+union MyUnion {A}
+var a = MyUnion::A;
+var b: bool = a matches MyUnion;
+union MyUnion {A}
+var a = MyUnion::A;
+var b: bool = a matches _;
+union MyUnion {A, B(string)}
+var a = MyUnion::B("");
+var b: bool = a matches MyUnion::B(_);
+union MyUnion {A { field MyField: string }}
+var a = new MyUnion::A { MyField = "" };
+var b: bool = a matches MyUnion::A { MyField: _ };
+union MyUnion {A { field MyField: string, field OtherField: bool }}
+var a = new MyUnion::A { MyField = "", OtherField = true };
+var b: bool = a matches MyUnion::A { MyField: _, _ };
+class MyClass {pub field MyField: string}
+var a = new MyClass { MyField = "" };
+var b: bool = a matches MyClass { MyField: _ };
+class MyClass {pub field MyField: string}
+var a = new MyClass { MyField = "" };
+var b: bool = a matches MyClass;
+;;;;;;;;
+var a: string;
+a = "";
+class MyClass {
+    mut field MyField: string,
+
+    mut fn MyFn() {
+        MyField = "";
+    }
+}
+class MyClass {
+    mut field MyField: string,
+
+    mut fn MyFn() {
+        mut fn InnerFn() {
+            MyField = "";
+        }
+    }
+}
+class MyClass {
+    static field MyField: string = "",
+
+    // instance functions have access to static fields
+    fn MyFn(): string {
+        return MyField;
+    }
+}
+class MyClass {
+    field MyField: string,
+
+    // instance functions have access to instance fields
+    fn MyFn(): string {
+        return MyField;
+    }
+}
+class MyClass {
+    pub mut field MyField: string
+}
+
+var mut a = new MyClass {
+    MyField = ""
+};
+
+a.MyField = "";
+class MyClass { pub mut field MyField: string }
+var mut a = new MyClass { MyField = "" };
+
+// a is not marked as mutable
+a.MyField = "";
+var mut a = "";
+a = "";
+class MyClass {
+    pub static mut field MyField: string = ""
+}
+
+MyClass::MyField = "";
+class MyClass {
+    pub mut field MyField: string
+}
+fn MyFn(mut param: MyClass) {
+    param.MyField = "";
+}
+fn MyFn(mut param: string) {
+   param = "";
+}
+fn MyFn(mut param: string) {
+}
+var mut a = "";
+
+MyFn(a);
+union MyUnion {A}
+
+var a: MyUnion = MyUnion::A;
+union MyUnion<T> {
+    A {
+        field MyField: T,
+    }
+}
+var a: MyUnion::<string> = new MyUnion::<string>::A {
+    MyField = ""
+};
+var b: MyUnion::<i64> = new MyUnion::<i64>::A {
+    MyField = 1
+};
+union MyUnion {
+    A {
+        field MyField: string,
+    }
+}
+var a: MyUnion = new MyUnion::A {
+    MyField = ""
+};
+union MyUnion {}
+union MyUnion {
+    A,
+}
+union myUnion {
+    A(string)
+}
+class MyClass {}
+union MyUnion {
+    A(MyClass, string)
+}
+union MyUnion {
+    A {
+        field myField: string
+    }
+}
+union MyUnion {
+    A
+}
+var a: MyUnion;
+union MyUnion {
+    A(string)
+}
+var a = MyUnion::A("");
+fn MyFn(): result::<string, i64> {
+    var a: string = OtherFn()?;
+    return ok(a);
+}
+
+fn OtherFn(): result::<string, i64> {
+    return result::<string, i64>::Error(1);
+}
+MyClass::StaticMethod();
+
+class MyClass {
+    pub static fn StaticMethod() {}
+}
+var a: string = MyClass::<string>::StaticMethod("");
+
+class MyClass<T> {
+    pub static fn StaticMethod(param: T): T { return param; }
+}
+var a: i64 = MyClass::<string>::StaticMethod::<i64>("", 1);
+
+class MyClass<T> {
+    pub static fn StaticMethod<T2>(param: T, param2: T2): T2 { return param2; }
+}
+var a = 2
+var a: i64 = 2
+var b: string = "somestring"
+var a = 2; var b: i64 = a
+fn MyFn(): i64 { return 1; }
+fn MyFn<T>(param: T): T {return param;}
+var a: string = MyFn::<string>("");
+class MyClass<T> {
+    fn MyFn<T2>(param1: T, param2: T2) {
+    }
+}
+
+var a = new MyClass::<i64>{};
+a.MyFn::<string>(1, "");
+fn MyFn(){}
+MyFn();
+var a = 2;{var b = a;}
+fn Fn1(){Fn2();} fn Fn2(){}
+fn MyFn() {fn InnerFn() {OuterFn();}} fn OuterFn() {}
+fn MyFn() {fn InnerFn() {} InnerFn();}
+fn MyFn(param: i64) {var a: i64 = param;}
+fn MyFn(param1: string, param2: i64) {} MyFn("value", 3);
+fn MyFn(param: result::<string, i64>) {}
+fn Fn1<T1>(){} Fn1::<string>();
+fn Fn1<T1, T2>(){} Fn1::<string, i64>();
+fn Fn1<T1>(param: T1): T1 { return param; }
+var a: string = Fn1::<string>("");
+var b: i64 = Fn1::<i64>(1);
+if (true) {}
+if (false) {}
+var a = true; if (a) {}
+if (true) {} else {}
+if (true) {var a = 2} else if (true) {var a = 3} else if (true) {var a = 4} else {var a = 5}
+if (true) var a = 2
+var a: result::<i64, string>
+class Class1 { field someField: Class1,}
+class Class2 { }
+var a: bool = 1 < 2;
+var a: bool = 2 > 2;
+var a: i64 = 2 + 2;
+var a: i64 = 2 - 2;
+var a: i64 = 2 * 2;
+var a: i64 = 2 / 2;
+var a: bool = 2 == 2;
+var a: bool = 2 != 2;
+var mut a = 2; a = 3;
+class MyClass {pub field myField: i64, pub field otherField: string,}
+var a = new MyClass { myField = 1, otherField = "" };
+class MyClass {} var a: MyClass = new MyClass {};
+unboxed class MyClass {} var a: unboxed MyClass = new MyClass {};
+boxed class MyClass {} var a: boxed MyClass = new MyClass {};
+class MyClass {pub field someField: i64,}
+var a = new MyClass { someField = 1 };
+var b: i64 = a.someField;
+class MyClass { static field someField: i64 = 3, }
+var a: i64 = MyClass::someField;
+class MyClass<T> {
+    fn MyFn(param: T): T {
+        return param;
+    }
+}
+
+var a = new MyClass::<string>{};
+
+var b = a.MyFn;
+
+var c = b("");
+class MyClass<T> { static field someField: i64 = 1, }
+var a = MyClass::<string>::someField;
+class MyClass<T> { pub field someField: T, }
+var a = new MyClass::<i64> {someField = 1};
+class MyClass<T> { pub field someField: T, }
+var a = new MyClass::<string> {someField = ""};
+var b: string = a.someField;
+union MyUnion {
+    A,
+
+    fn SomeMethod() {
+    }
+}
+class MyClass {
+    field someField: string,
+
+    pub static fn New(): MyClass {
+        return new MyClass {
+            someField = ""
+        };
+    }
+}
+class MyClass<T> {}
+class OtherClass<T> {}
+class MyClass<T> {
+     fn MyFn<T2>() {
+     }
+}
+
+var a = new MyClass::<string>{};
+var b = a.MyFn::<i64>();
+fn OuterFn() {
+   var a = new MyClass{};
+   a.MyFn();
+}
+class MyClass {
+    fn MyFn() {
+        OuterFn();
+    }
+}
+class MyClass {
+    fn MyFn() {
+        var a = new MyClass{};
+    }
+}
+fn MyFn(): string {
+    fn InnerFn(): i64 { return 1; }
+    return "";
+}
+fn MyFn(): result::<string, i64> {
+    if (true) {
+        return result::<string, i64>::Ok("someValue");
+    }
+
+    return result::<string, i64>::Error(1);
+}
+union MyUnion { A }
+var a = MyUnion::A;
+if (a matches MyUnion::A var b) {
+    var c: MyUnion = b;
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+if (a matches MyUnion::A(_) var b) {
+    var c: MyUnion = b;
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+if (a matches MyUnion::A(string var b)) {
+    var c: string = b;
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+if (a matches MyUnion::A(string var b)) {
+    var c: string = b;
+}
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+if (a matches MyUnion::A { MyField }) {
+    var c: string = MyField;
+}
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+if (a matches MyUnion::A { MyField: var b }) {
+    var c: string = b;
+}
+union MyUnion { A }
+var a = MyUnion::A;
+if (a matches var b) {
+    var c: MyUnion = b;
+}
+union MyUnion { A }
+var a = MyUnion::A;
+if (a matches MyUnion var b) {
+    var c: MyUnion = b;
+}
+union MyUnion { A }
+union OtherUnion { B(MyUnion) }
+var a = OtherUnion::B(MyUnion::A);
+if (a matches OtherUnion::B(MyUnion::A var c) var b) {
+    var d: OtherUnion = b;
+    var e: MyUnion = c;
+}
+union MyUnion { A }
+var a = MyUnion::A;
+if (false) {}
+else if (a matches MyUnion::A var b) {
+    var c: MyUnion = b;
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+if (false) {}
+else if (a matches MyUnion::A(_) var b) {
+    var c: MyUnion = b;
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+if (false) {}
+else if (a matches MyUnion::A(string var b)) {
+    var c: string = b;
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+if (false) {}
+else if (a matches MyUnion::A(string var b)) {
+    var c: string = b;
+}
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+if (false) {}
+else if (a matches MyUnion::A { MyField }) {
+    var c: string = MyField;
+}
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+if (false) {}
+else if (a matches MyUnion::A { MyField: var b }) {
+    var c: string = b;
+}
+union MyUnion { A }
+var a = MyUnion::A;
+if (false) {}
+else if (a matches var b) {
+    var c: MyUnion = b;
+}
+union MyUnion { A }
+var a = MyUnion::A;
+if (false) {}
+else if (a matches MyUnion var b) {
+    var c: MyUnion = b;
+}
+union MyUnion { A }
+union OtherUnion { B(MyUnion) }
+var a = OtherUnion::B(MyUnion::A);
+if (false) {}
+else if (a matches OtherUnion::B(MyUnion::A var c) var b) {
+    var d: OtherUnion = b;
+    var e: MyUnion = c;
+}
+var a: i64;
+fn SomeFn() {
+    var b = a;
+}
+a = 1;
+// SomeFn can be called safely now because a has been initialized
+SomeFn();
+var a: i64;
+fn SomeFn() {
+    var b = a;
+}
+a = 1;
+// SomeFn can safely be accessed because a has been initialized
+var c = SomeFn;
+pub fn DoSomething(inner_a: i64): result::<i64, string> {
+    var mut inner_b: i64 = 2;
+
+    if (inner_a > inner_b) {
+        return ok(inner_a);
+    }
+    else if (inner_a == inner_b) {
+        return result::<i64, string>::Ok(inner_b);
+    }
+
+    inner_b = 3;
+
+    var thing = new Class2 {
+        A = "thing"
+    };
+
+    MyClass::StaticMethod();
+
+    PrivateFn::<string>();
+
+    if (false) {
+        // lowercase error keyword
+        return error("something wrong");
+    }
+
+    // Capital Error for fully resolved variant
+    return result::<i64, string>::Error("something wrong");
+}
+
+fn PrivateFn<T>() {
+}
+
+pub fn SomethingElse(inner_a: i64): result::<i64, string> {
+    var inner_b = DoSomething(inner_a)?;
+    var mut inner_d = 2;
+
+    return result::<i64, string>::Ok(inner_b);
+}
+
+pub class MyClass {
+    pub fn PublicMethod() {
+    }
+
+    pub static fn StaticMethod() {
+
+    }
+
+    field FieldA: string,
+    mut field FieldB: string,
+    pub mut field FieldC: string,
+    pub field FieldD: string,
+    pub static field FieldE: string = "something",
+    pub static mut field FieldF: string = "something",
+}
+
+pub class GenericClass<T> {
+    pub fn PublicMethod<T1>() {
+    }
+}
+
+// a class
+pub class Class2 {
+    pub field A: string,
+}
+
+/*
+    A union
+*/
+pub union MyUnion {
+    A,
+    B { field MyField: string, },
+    C(string),
+
+    fn SomeMethod() {
+        var foo = match (this) {
+            MyUnion::A => "",
+            MyUnion::B { MyField } => MyField,
+            MyUnion::C(var value) => value
+        };
+
+        var bar = match (this) {
+            MyUnion::A => 1,
+            MyUnion::B => 2,
+            MyUnion::C => 3
+        }
+    }
+}
+
+fn AnotherMethod(param: MyUnion) {
+    if (param matches MyUnion::A) {
+    }
+    else if (param matches MyUnion::B { MyField }) {
+    }
+
+    var inner_a = match (param) {
+        MyUnion::A => 1,
+        MyUnion::B { MyField } => 2,
+        MyUnion::C(var value) => 3
+    };
+}
+
+var a = MyUnion::A;
+
+var c = new MyUnion::B{ MyField = ""};
+class MyClass {
+    #[other:::other_attribute]
+    fn some_fn(){}
+}
+attribute other_attribute{}
+union MyUnion {
+    #[other:::other_attribute]
+    fn some_fn(){}
+}
+attribute other_attribute{}
+fn some_fn() {
+    #[other:::other_attribute]
+    fn inner_fn() {
+    }
+}
+attribute other_attribute{}
+#[my_attribute]
+fn my_fn(){}
+    use other:::*;
+
+#[private_attribute]
+fn my_fn(){}
+attribute private_attribute{}
+#[other:::private_attribute]
+fn my_fn(){}
+attribute private_attribute{}
+
+fn some_string_check(val: string): bool {
+    return true;
+}
+
+fn some_fn(): option::<string> {
+    return option::Some("hi");
+}
+
+if (some_string_check(value) && some_fn() matches option::Some(var value)) {
+    print_string(value);
+}
+fn some_fn(): option::<string> {
+    return option::Some("hi");
+}
+
+if (true || some_fn() matches option::Some(var value)) {
+    print_string(value);
+}
+fn some_fn<T>() where T : boxed {
+}
+
+unboxed class MyClass{};
+
+some_fn::<MyClass>();
+fn some_result(): result::<string, string> {
+    return ok("hi");
+}
+fn some_fn(): string {
+    var value = some_result()?;
+    print_string(value);
+    return "hi";
+}
+fn some_result(): result::<string, string> {
+    var a = ""?;
+    return ok("hi");
+}
+pub extern fn some_fn<T>(): T where T : unboxed i32;
+
+var b: boxed i32 = some_fn();
+pub extern fn some_fn<T>(): T where T : boxed i32;
+
+var b: i32 = some_fn();
+pub extern fn some_fn<T>() where T: unboxed [string]
+pub extern fn some_fn<T>() where int: unboxed T;
+pub extern fn some_fn<T>() where T: unboxed T2;
+pub extern fn some_fn(){}
+pub fn some_fn()
+var a = "";
+var b = 2;
+var a = new MyClass{};
+var b = MyUnion::A;
+SomeFn();
+pub class MyClass{}
+pub union MyUnion{A}
+pub fn SomeFn(){}
+use subModule:::*;
+use subModule:::*;
+pub fn SomeFn(){}
+use missing;
+use otherModule:::foo;
+{
+    use otherModule:::bar;
+}
+
+use otherModule:::{MyClass, MyUnion, SomeFn};
+class MyClass{}
+union MyUnion{A}
+fn SomeFn(){}
+use otherModule:::*;
+var a = new MyClass{};
+var b = MyUnion::A;
+SomeFn();
+pub class MyClass{}
+pub union MyUnion{A}
+fn SomeFn(){}
+use otherModule:::*;
+var a = new MyClass{};
+var b = MyUnion::A;
+SomeFn();
+pub class MyClass{}
+pub union MyUnion{A}
+fn SomeFn(){}
+fn someFn(): string { return ""; }
+var a: Fn(): mut string = someFn;
+class FirstClass{ pub mut field FirstClassField: string }
+class MyClass{pub mut field MyField: FirstClass}
+var firstClass = new FirstClass{FirstClassField = ""};
+var secondClass = new MyClass{MyField = firstClass}
+class MyClass {pub mut field MyField: string, }
+fn someFn(myClass: MyClass): mut MyClass
+{
+    return myClass;
+}
+
+var outer = new MyClass{MyField = ""};
+var mut a = someFn(outer);
+a.MyField = "bye";
+class MyClass{pub mut field MyField: string, }
+var a = new MyClass{MyField = ""};
+var mut b = a;
+b.MyField = "bye";
+class MyClass { pub mut field MyField: string, }
+var a = [new MyClass{MyField = "hi"}];
+a[0].MyField = "bye";
+var a = [""];
+a[0] = "hi";
+var a: [string; 3] = [1, 2, 3];
+var a: [string; 3] = ["hi", "bye"];
+var a: [string; 3] = ["hi"; 2];
+var a = ["", 1];
+var a: unboxed [string; 2] = ["", ""];
+var a: [string; 2] = [unboxed; "", ""];
+class MyClass{}
+var a: [MyClass; 1] = [new unboxed MyClass{}];
+var a: [i32; 1] = [box(1)];
+class MyClass{}
+var a: boxed MyClass = unbox(new MyClass{});
+class MyClass{}
+var a: unboxed MyClass = unbox(new unboxed MyClass{});
+var a: unboxed i32 = box(1);
+var number: boxed i32 = todo!;
+var a: boxed i32 = box(number);
+while (1) {
+}
+break;
+continue;
+var a: i64 = 1;
+var b: i32 = a;
+var a = 1;
+fn SomeFn<T>(param: T): T { return param; }
+var b: i32 = SomeFn(a);
+var c: u8 = a;
+var a = 1;
+var b = 2;
+var c: u8 = a * b;
+var d: u16 = a;
+var e: i32 = b;
+union MyUnion{A(string)}
+var a = MyUnion::A;
+var b = a("", "");
+union MyUnion{A(string)}
+var a = MyUnion::A;
+var b = a();
+union MyUnion{A(string)}
+var a = MyUnion::A;
+var b = a(1);
+union MyUnion{A()}
+var a = if (true) {} else if (true) {};
+var a = if (true) {};
+var a = "";
+var a = "";
+class MyClass
+{
+    mut fn SomeFn()
+    {
+        this = new MyClass{};
+    }
+}
+fn MyFn()
+{
+    var b = a;
+}
+MyFn();
+
+var a = 1;
+fn MyFn()
+{
+    var b = a;
+}
+var c = MyFn;
+
+var a = 1;
+MyFn();
+var a = 1;
+fn MyFn()
+{
+    var b = a;
+}
+var a = 1;
+if (a matches var mut b) {}
+var a = 1;
+if (a matches i64 var mut b) {}
+class MyClass{}
+var a = new MyClass{};
+if (a matches MyClass{} var mut b) {}
+class MyClass {pub field MyField: string}
+var a = new MyClass { MyField = "" };
+if (a matches MyClass{MyField: var mut b}) {}
+union MyUnion{A}
+var a = MyUnion::A;
+if (a matches MyUnion::A var mut b) {
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("");
+if (a matches MyUnion::A(_) var mut b) {
+}
+union MyUnion {
+    A(string)
+}
+var a = MyUnion::A("");
+if (a matches MyUnion::A(var mut str)) {
+    str = "hi";
+}
+union MyUnion {A{field MyField: string}}
+var a = new MyUnion::A { MyField = "" };
+if (a matches MyUnion::A{_} var mut b) {}
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+if (a matches MyUnion::A { MyField: var mut b }) {}
+var a = 1;
+match (a) { var mut b => {}}
+var a = 1;
+match (a) { i64 var mut b => {}}
+class MyClass{}
+var a = new MyClass{};
+match (a) { MyClass{} var mut b => {}}
+class MyClass {pub field MyField: string}
+var a = new MyClass { MyField = "" };
+match (a) { MyClass{MyField: var mut b} => {}}
+union MyUnion{A}
+var a = MyUnion::A;
+match (a) { MyUnion::A var mut b => {}}
+union MyUnion { A(string) }
+var a = MyUnion::A("");
+match (a) { MyUnion::A(_) var mut b => {}}
+union MyUnion {
+    A(string)
+}
+var a = MyUnion::A("");
+match (a) { MyUnion::A(var mut str) => {}}
+union MyUnion {A{field MyField: string}}
+var a = new MyUnion::A { MyField = "" };
+match (a) { MyUnion::A{_} var mut b => {}}
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+match (a) {MyUnion::A { MyField: var mut b } => {}}
+union MyUnion {
+    A(string)
+}
+var a = MyUnion::A("");
+if (a matches MyUnion::A(var str)) {
+    str = "hi";
+}
+class MyClass {
+    pub static field MyField: string = ""
+}
+var a = new MyClass{};
+if (a matches MyClass { MyField }){}
+var a = 1 || true
+var a = true || 1
+var a = 1 && true
+var a = true && 1
+class MyClass {
+    field MyField: string,
+
+    fn MyFn() {
+        var a = MyField_;
+    }
+}
+var a = 1;
+fn MyFn() {
+    a = 2;
+}
+class MyClass{}
+var a = MyClass::A;
+class MyClass{}
+var a = new MyClass{};
+var b = a.b;
+union MyUnion{}
+var a = MyUnion::A;
+union MyUnion{A}
+var a = MyUnion::A;
+var b = a.b;
+union MyUnion {
+    A {field MyField: string}
+}
+var a = MyUnion::A;
+class MyClass{pub static fn MyFn(){}}
+var a = new MyClass{};
+a.MyFn();
+class MyClass{pub static field MyField: string = ""}
+var a = new MyClass{};
+a.MyField;
+union MyUnion { A, pub static fn MyFn(){} }
+var a = MyUnion::A;
+a.MyFn();
+class MyClass {pub fn MyFn(){}}
+MyClass::MyFn();
+class MyClass {pub field MyField: string}
+var a = MyClass::MyField;
+union MyUnion {A, pub fn MyFn(){}}
+MyUnion::MyFn();
+var a = 1;
+var b = a::<string>;
+fn MyFn<T>(){}
+var a = MyFn::<string>;
+var b = a::<string>;
+class MyClass{pub field MyField: string};
+var a = new MyClass{MyField = ""};
+var b = a.MyField::<string>;
+union MyUnion{A}
+var a = MyUnion::A::<>;
+union MyUnion{A(string)}
+var a = MyUnion::A::<>("");
+union MyUnion{A}
+var a = MyUnion::A::<>;
+class MyClass {
+    pub mut field MyField: string,
+
+    pub mut fn MyFn() {
+        MyField = "";
+    }
+}
+var a = new MyClass {MyField = ""};
+var b = a.MyFn;
+var a: () = 1;
+var a: (i64, string) = ("", 1);
+var a: (i64, string) = (1, "", 2);
+var a: (i64, string, string) = (1, "");
+fn SomeFn(a: i64){}
+var a: Fn() = SomeFn;
+fn SomeFn(a: i64){}
+var a: Fn(string) = SomeFn;
+fn SomeFn(){}
+var a: Fn(i64) = SomeFn;
+fn SomeFn(a: i64): string {return "";}
+var a: Fn(i64) = SomeFn;
+fn SomeFn(a: i64) {}
+var a: Fn(i64): string = SomeFn;
+fn SomeFn(a: i64): i64 {return 1;}
+var a: Fn(i64): string = SomeFn;
+fn SomeFn(mut a: i64){}
+var a: Fn(i64) = SomeFn;
+fn SomeFn(a: i64){}
+var a: Fn(mut i64) = SomeFn;
+fn SomeFn(){}
+fn OtherFn(): i64{return 1}
+var mut a = SomeFn;
+a = OtherFn;
+a = 2;
+fn MyFn<T>() {
+    MyFn();
+}
+class MyClass {
+    static fn StaticFn() {
+        InstanceFn();
+    }
+
+    fn InstanceFn() {}
+}
+union MyUnion {
+    static fn StaticFn() {
+        InstanceFn();
+    }
+
+    fn InstanceFn() {}
+}
+mut fn MyFn() {
+}
+static fn SomeFn(): i64 {
+    if (true) {
+        match (true) {
+            _ => return 3,
+        }
+    }
+    else {
+        if (true) {
+            return 1;
+        } else if (true) {
+        } else {
+            return 3;
+        }
+    }
+}
+static fn SomeFn(): i64 {}
+class MyClass { static fn SomeFn(): i64 {}}
+union MyUnion { static fn SomeFn(): i64 {}}
+static fn SomeFn(): i64 {
+    if (true) {
+        return 1;
+    }
+}
+static fn SomeFn(): i64 {
+    if (true) {
+        return 1;
+    } else if (true) {
+        return 1;
+    }
+}
+static fn SomeFn(): i64 {
+    if (true) {
+    }
+    else {
+        return 1;
+    }
+}
+static fn SomeFn(): i64 {
+    if (true) {
+        return 1;
+    }
+    else if (true) {
+    }
+    else {
+        return 1;
+    }
+}
+class MyClass {
+    mut field MyField: string,
+
+    mut fn MyFn() {
+        fn InnerFn() {
+            MyField = "";
+        }
+    }
+}
+class MyClass {
+    mut field MyField: string,
+
+    fn MyFn() {
+        mut fn InnerFn() {
+            MyField = "";
+        }
+    }
+}
+class MyClass {
+    pub static mut fn SomeFn() {}
+}
+class MyClass {
+    pub mut field SomeField: string,
+
+    pub mut fn DoSomething() {
+        SomeField = "";
+    }
+}
+var a = new MyClass { SomeField = "" };
+a.DoSomething();
+var a = -"";
+var a: u16 = 1;
+var b = -a;
+class MyClass {
+    pub mut fn DoSomething() {}
+}
+var a = new MyClass{};
+var b = a.DoSomething;
+class MyClass {
+    pub mut field SomeField: string,
+
+    pub fn DoSomething() {
+        SomeField = "";
+    }
+}
+
+var a = new MyClass { SomeField = "" };
+a.DoSomething();
+union MyUnion {A, B}
+class MyClass { pub field MyField: MyUnion }
+
+var a = new MyClass { MyField = MyUnion::A };
+match (a) {
+    MyClass { MyField: MyUnion::A } => 1,
+}
+union OtherUnion {A, B}
+class MyClass {
+    pub field MyField: OtherUnion,
+    pub field OtherField: OtherUnion
+}
+var a = new MyClass { MyField = OtherUnion::A, OtherField = OtherUnion::B };
+match (a) {
+    MyClass { MyField: OtherUnion::A, OtherField: OtherUnion::A } => 1,
+    MyClass { MyField: OtherUnion::B, OtherField: OtherUnion::A } => 1,
+    MyClass { MyField: OtherUnion::A, OtherField: OtherUnion::B } => 1,
+}
+union ThirdUnion { A, B }
+union OtherUnion {
+    A { field MyField: ThirdUnion },
+    B
+}
+union MyUnion {
+    A { field MyField: OtherUnion },
+    B
+}
+var a = new MyUnion::A { MyField = OtherUnion::B };
+match (a) {
+    MyUnion::A { MyField: OtherUnion::A { MyField: ThirdUnion::B } } => 1,
+    MyUnion::A { MyField: OtherUnion::B } => 1,
+    MyUnion::B => 1,
+}
+union OtherUnion {A, B}
+union MyUnion {
+    A(OtherUnion)
+}
+var a = MyUnion::A(OtherUnion::A);
+match (a) {
+    MyUnion::A(OtherUnion::A) => 1,
+}
+var a = SomeFn;
+
+var b: string = a();
+var c: i64 = a();
+
+fn SomeFn<T>(): T {
+    return todo!;
+}
+pub static fn SomeFn() {
+    var a = "";
+    static fn InnerFn(): string {
+        return a;
+    }
+}
+fn SomeFn<T>(param: T) {
+    fn OtherFn<T2>(param2: T2) {
+        fn ThirdFn<T3>(param3: T3): T2 {
+            var a: T = param;
+            var b: T2 = param2;
+            var c: T3 = param3;
+
+            return a;
+        }
+    }
+}
+var mut a = ok(1);
+a = ok(true);
+a = error("");
+var a: result::<i64, string> = error(1);
+var a = this;
+class MyClass {
+    static fn SomeFn() {
+        var a = this;
+    }
+}
+union MyUnion {
+    static fn SomeFn() {
+        var a = this;
+    }
+}
+union MyUnion {
+    A,
+    B(i64),
+    C { field MyField: i64 }
+}
+var a = MyUnion::A;
+match (a) {
+    MyUnion::A => 1,
+    MyUnion::B(var b) => b,
+    MyUnion::C { MyField } => b,// b not available in this arm
+}
+union MyUnion {
+    A,
+    B(i64),
+    C { field MyField: i64 }
+}
+var a = MyUnion::A;
+match (a) {
+    MyUnion::A => 1,
+    MyUnion::B(var b) => b,
+    // non exhaustive
+}
+union MyUnion {A, B}
+class MyClass {pub field MyField: MyUnion}
+var a = new MyClass {MyField = MyUnion::A};
+match (a) {
+    MyClass { MyField: MyUnion::A } => 1
+}
+var a = "";
+match (a) {
+    i64 => 1, // incompatible pattern
+    _ => 2
+}
+var a = "";
+match (a) {
+    SomeType => 1, // missing type
+    _ => 1
+}
+union MyUnion {A, B}
+var a = MyUnion::A;
+var b = match (a) {
+    MyUnion::A => 1,
+    MyUnion::B => "" // mismatched arm expression types
+}
+union MyUnion { A }
+var a = MyUnion::A;
+var z = a matches MyUnion::A var b;
+
+var c: MyUnion = b;
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+var z = a matches MyUnion::A(_) var b;
+var c: MyUnion = b;
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+var z = a matches MyUnion::A(string var b);
+var c: string = b;
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+var z = a matches MyUnion::A(string var b);
+var c: string = b;
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+var z = a matches MyUnion::A { MyField };
+var c: string = MyField;
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+var z = a matches MyUnion::A { MyField: var b };
+var c: string = b;
+union MyUnion { A }
+var a = MyUnion::A;
+var z = a matches var b;
+var c: MyUnion = b;
+union MyUnion { A }
+var a = MyUnion::A;
+var z = a matches MyUnion var b;
+var c: MyUnion = b;
+union MyUnion { A }
+union OtherUnion { B(MyUnion) }
+var a = OtherUnion::B(MyUnion::A);
+var z = a matches OtherUnion::B(MyUnion::A var c) var b;
+var d: OtherUnion = b;
+var e: MyUnion = c;
+union MyUnion { A }
+var a = MyUnion::A;
+if (!(a matches MyUnion::A var b)) {
+    var c: MyUnion = b;
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+if (!(a matches MyUnion::A(_) var b)) {
+    var c: MyUnion = b;
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+if (!(a matches MyUnion::A(string var b))) {
+    var c: string = b;
+}
+union MyUnion { A(string) }
+var a = MyUnion::A("hi");
+if (!(a matches MyUnion::A(string var b))) {
+    var c: string = b;
+}
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+if (!(a matches MyUnion::A { MyField })) {
+    var c: string = MyField;
+}
+union MyUnion { A { field MyField: string } }
+var a = new MyUnion::A { MyField = "" };
+if (!(a matches MyUnion::A { MyField: var b })) {
+    var c: string = b;
+}
+union MyUnion { A }
+var a = MyUnion::A;
+if (!(a matches var b)) {
+    var c: MyUnion = b;
+}
+union MyUnion { A }
+var a = MyUnion::A;
+if (!(a matches MyUnion var b)) {
+    var c: MyUnion = b;
+}
+union MyUnion { A }
+union OtherUnion { B(MyUnion) }
+var a = OtherUnion::B(MyUnion::A);
+if (!(a matches OtherUnion::B(MyUnion::A var c) var b)) {
+    var d: OtherUnion = b;
+    var e: MyUnion = c;
+}
+union MyUnion {
+    A,
+
+    fn SomeMethod() {
+        var a: bool = 1;
+    }
+}
+var a = !1
+var b: bool = 1 matches MissingType;
+union MyUnion {A, B(string)}
+var a = MyUnion::B("");
+var b: bool = a matches MyUnion::B(_, _);
+union MyUnion {A, B(string, bool, i64)}
+var a = MyUnion::B("", true, 1);
+var b: bool = a matches MyUnion::B(_, _);
+union MyUnion {A, B(string)}
+var a = MyUnion::B("");
+var b: bool = a matches MyUnion::C;
+union MyUnion {A { field MyField: string }}
+var a = new MyUnion::A { MyField = "" };
+var b: bool = a matches MyUnion::A { MyField: i64 };
+union MyUnion {A { field MyField: string }}
+var a = new MyUnion::A { MyField = "" };
+var b: bool = a matches MyUnion { MyField: i64 };
+union MyUnion {A { field MyField: string, field OtherField: bool }}
+var a = new MyUnion::A { MyField = "", OtherField = true };
+var b: bool = a matches MyUnion::A { MyField: _ };
+class MyClass {pub field MyField: string}
+var a = new MyClass { MyField = "" };
+var b: bool = a matches MyClass { MyField: i64 };
+class MyClass {pub field MyField: string, pub field OtherField: bool}
+var a = new MyClass { MyField = "", OtherField = true };
+var b: bool = a matches MyClass { MyField: string };
+class MyClass {
+    pub field MyField: string,
+    field OtherField: bool,
+
+    pub static fn Create(): MyClass {
+        return new MyClass {
+            MyField = "",
+            OtherField = true
+        };
+    }
+}
+var a = MyClass::Create();
+var b: bool = a matches MyClass { MyField: string, OtherField: _ };
+class MyClass {pub field MyField: string, pub field OtherField: bool}
+var a = new MyClass { MyField = "", OtherField = true };
+var b: bool = a matches string;
+class MyClass {
+    field MyField: string
+}
+
+// MyField is not accessible
+var a = new MyClass { MyField = "" };
+class MyClass {
+    field MyField: string,
+
+    mut fn MyFn() {
+        MyField = "";
+    }
+}
+class MyClass {
+    field MyField: string,
+
+    static fn MyFn() {
+        var a = MyField;
+    }
+}
+var a: string;
+// initial assignment succeeds
+a = "";
+// second assignment fails because it's not mutable
+a = ";";
+class MyClass {
+    pub field MyField: string
+}
+
+var mut a = new MyClass {
+    MyField = ""
+};
+
+// MyField is not mutable
+a.MyField = "";
+class MyClass { pub mut field MyField: string }
+var a = new MyClass { MyField = "" };
+
+// a is not marked as mutable
+a.MyField = "";
+var a = "";
+// a is not marked as mutable
+a = "";
+class MyClass {
+    pub static field MyField: string = ""
+}
+
+// MyField is not marked as mutable
+MyClass::MyField = "";
+class MyClass {
+    pub mut field MyField: string
+}
+fn MyFn(param: MyClass) {
+    // param is not marked as mutable
+    param.MyField = "";
+}
+fn MyFn(param: string) {
+   // param is not marked as mutable
+   param = "";
+}
+fn MyFn(mut param: string) {
+}
+var a = "";
+
+// param is mut, but a is not marked as mutable
+MyFn(a);
+union MyUnion<T> {
+    A {
+        field MyField: T,
+    }
+}
+var a: MyUnion::<string> = new MyUnion::<string>::A {
+    MyField = 2
+};
+union MyUnion {
+    A {
+        field MyField: string
+    }
+}
+var a: MyUnion = new MyUnion::A {
+    MyField_ = ""
+};
+union MyUnion {
+    A {
+        field MyField: string
+    }
+}
+var a: MyUnion = new MyUnion::B {
+    MyField = ""
+};
+union MyUnion {
+    A {
+        field MyField: string
+    }
+}
+var a: MyUnion = new MyUnion::A {
+    MyField = 2
+};
+union MyUnion {
+    A(string)
+}
+var a: MyUnion = new MyUnion::A {
+    MyField = 2
+};
+union MyUnion {
+    A {
+        field MyField: string,
+    }
+}
+var a: MyUnion = new MyUnion::A {
+    MyField = 2
+};
+union MyUnion {
+    A(string)
+}
+var a = MyUnion::A(1);
+union MyUnion {
+    A,
+    A
+}
+union MyUnion {} union MyUnion {}
+union MyUnion {A, A} union MyUnion {B, B}
+union MyUnion {} class MyUnion {}
+class MyClass {
+    fn MyFn() {},
+    fn MyFn() {}
+}
+class MyClass {
+    fn OtherFn() {},
+    fn OtherFn() {}
+}
+union MyUnion {
+    A {
+        field MyField: string,
+        field MyField: string,
+    }
+}
+fn MyFn(): result::<i64, string> {
+    if (true) {
+        return result::<string, i64>::Ok("someValue");
+    }
+
+    return result::<string, i64>::Error(1);
+}
+var a = result::<string, i64>::Ok(1);
+class MyClass<T> {
+    fn MyFn<T2>(param1: T, param2: T2) {
+    }
+}
+
+var a = new MyClass::<i64>{};
+a.MyFn::<string>("", 1);
+class MyClass<T> {
+    fn MyFn<T2>(param1: T, param2: T2) {
+    }
+}
+
+var a = new MyClass::<i64>{};
+a.MyFn::<string>("", "");
+class MyClass<T> {
+    fn MyFn<T2>(param1: T, param2: T2) {
+    }
+}
+
+var a = new MyClass::<i64>{};
+a.MyFn::<string>(1, 1);
+var a: string = 2
+var a: i64 = "somestring"
+var b;
+var a;
+if (true) {
+    a = "";
+}
+else if (true) {
+    a = "";
+}
+var b = a;
+var b;
+if (true) {
+    b = "";
+}
+var a: string = b;
+var b;
+if (true) {
+    b = "";
+}
+else {
+    var c = b;
+}
+fn MyFn(): i64 { return "something"; }
+fn MyFn() { return 1; }
+fn MyFn() {} fn MyFn() {}
+union MyUnion {fn MyFn() {} fn MyFn() {}}
+class MyClass {fn MyFn() {} fn MyFn() {}}
+fn SomeFn(a: i64, a: string) {
+    // verify first duplicate parameter is accepted
+    var b: i64 = a;
+    var c: string = a;
+}
+fn MyFn(): string { return; }
+var a = 2; var b: string = a
+var a: i64; var b = a
+fn MyFn(){fn InnerFn() {}} InnerFn();
+CallMissingMethod(b);
+var a = new MyClass::<i64> {someField = true};
+var a = new MyClass::<i64> {someField = b};
+fn MyFn(param1: string, param2: i64) {} MyFn(3, "value");
+fn MyFn(param1: string, param2: i64) {} MyFn();
+fn MyFn(param1: string, param2: i64) {} MyFn("value", 3, 2);
+fn MyFn<T1>(param: T1) {var a = param.something;}
+fn MyFn<T1>() {var a = T1::something;}
+fn MyFn<T1>(param: T1): i64 { return param; }
+fn MyFn<T, T>() {}
+fn MyFn<T, T, T1, T1>() {}
+fn MyFn<T, T, T>() {}
+if (1) {}
+if (true) {} else if (1) {}
+if (true) {var a: string = 1;}
+if (true) {} else if (true) {var a: string = 1}
+if (true) {} else if (true) {} else {var a: string = 1}
+if (true) {} else if (true) {} else if (true) {var a: string = 1}
+var a: result::<>
+var a: result
+var a = ok(1)
+var a: result::<string>
+union MyUnion{A} var a = MyUnion::<string>::A
+class MyClass{} var a = new MyClass::<string>{}
+class MyClass<T, T2>{} var a = new MyClass::<string>{}
+var a: result::<string, string, string>
+fn Fn1<T1>(){} Fn1::<>();
+class MyClass
+{
+    pub fn MyFn<T>(){}
+}
+var a = new MyClass{};
+a.MyFn();
+class MyClass
+{
+    pub static fn MyFn<T>(){}
+}
+MyClass::MyFn();
+fn Fn1<T1>(){} Fn1::<string, bool>();
+fn Fn1<T1>(){} Fn1();
+class MyClass {
+    pub field someField: string,
+}
+var a = new MyClass { someField = 1 };
+class MyClass {
+    pub field someField: string,
+}
+var a = new MyClass { someField = "value", someField = "value" };
+class MyClass {
+    pub field someField: string,
+}
+var a = new MyClass { someField = "value", extraField = 1 };
+class MyClass {
+    pub field someField: string,
+}
+var a = new MyClass {};
+class MyClass { static field someField: string = 1, }
+class MyClass<T> {
+    fn MyFn<T>(){}
+}
+class MyClass<T, T>{}
+class MyClass<T, T, T1, T1>{}
+class MyClass<T, T, T>{}
+class MyClass{}
+class OtherClass<MyClass>{}
+class MyClass{}
+fn MyFn<MyClass>(){}
+class MyClass{}
+class SomeClass {fn MyFn<MyClass>(){}}
+class MyClass{}
+union SomeUnion {fn MyFn<MyClass>(){}}
+class MyClass{}
+fn SomeFn() {fn MyFn<MyClass>(){}}
+class MyClass{}
+union MyUnion<MyClass>{}
+union OtherUnion{}
+union MyUnion<OtherUnion>{}
+class OtherClass<MyClass>{}
+class MyClass{}
+class MyClass {
+    fn MyFn(): i64 { return ""; }
+}
+var a = 1 < true;
+var a = true < 1;
+var a: i64 = 1 < 2
+var a = true > 1;
+var a = 2 > true
+var a: i64 = 2 > 2
+var a = true + 1;
+var a = 2 + true
+var a: bool = 2 + 2
+var a = true - 1;
+var a = 2 - true
+var a: bool = 2 - 2
+var a = true * 1;
+var a = 2 * true
+var a: bool = 2 * 2
+var a = true / 1;
+var a = 2 / true
+var a: bool = 2 / 2
+var a = true == 1;
+var a = true != 1;
+var a = 2 == true
+var a = 2 != true
+var a: i64 = 2 == 2
+var a: i64 = 2 != 2
+var mut a = 2; a = true
+true = false
+class MyClass { pub static field someField: i64 = 3, }
+var a: string = MyClass::someField;
+class MyClass { pub field someField: i64, }
+var a: MyClass = new MyClass { someField = 3 };
+var b: string = a.someField;
+class MyClass { pub field someField: i64, }
+var a: MyClass = new MyClass { someField = 3 };
+var b = a matches MyClass {};
+var a: i64;
+fn SomeFn() {
+    var b = a;
+}
+SomeFn();
+a = 1;
+var a: i64;
+fn SomeFn()
+{
+    fn InnerFn()
+    {
+        var b = a;
+    }
+    InnerFn();
+}
+SomeFn();
+a = 1;
+var a: i64;
+fn SomeFn() {
+    var b = a;
+}
+var c = SomeFn;
+a = 1;
+var a: boxed i32 = todo!;
+var b: unboxed i32 = a;
+var a: unboxed i32 = todo!;
+var b: boxed i32 = a;
+var a: i32 = todo!;
+var b: boxed i32 = a;
+class MyClass {}
+var a: unboxed MyClass = todo!;
+var b: boxed MyClass = a;
+class MyClass {}
+var a: MyClass = todo!;
+var b: unboxed MyClass = a;
+class MyClass {}
+var a: unboxed MyClass = todo!;
+var b: MyClass = a;
+class MyClass {}
+unboxed MyClass

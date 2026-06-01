@@ -156,7 +156,24 @@ export default grammar({
 
     return_type: ($) => seq(":", optional($.modifier), $._type_identifier),
 
-    attribute: ($) => seq("#", "[", $.identifier, "]"),
+    attribute: ($) =>
+      seq(
+        "#",
+        "[",
+        choice(
+          $.identifier,
+          seq(
+            optional(":::"),
+            field(
+              "module_path",
+              seq($.identifier, repeat(seq(":::", $.identifier))),
+            ),
+            ":::",
+            $.identifier,
+          ),
+        ),
+        "]",
+      ),
 
     attribute_definition: ($) =>
       seq(

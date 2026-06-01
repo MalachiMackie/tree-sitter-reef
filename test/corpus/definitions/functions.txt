@@ -21,7 +21,8 @@ fn fn_5(): string {}
 fn fn_5(): mut string {}
 
 #[my_attribute]
-#[my_attribute_2]
+#[:::some:::path:::my_attribute_2]
+#[some:::path:::my_attribute_2]
 fn fn_6() {}
 
 fn some_generic_fn<T, T2,>(){}
@@ -78,7 +79,8 @@ fn some_fn<TParam, TReturn>()
         body: (block))
     (function_definition
         attributes: (attribute (identifier))
-        attributes: (attribute (identifier))
+        attributes: (attribute module_path: (identifier) module_path: (identifier) (identifier))
+        attributes: (attribute module_path: (identifier) module_path: (identifier) (identifier))
         name: (identifier)
         parameters: (parameter_list)
         body: (block))
