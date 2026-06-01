@@ -92,6 +92,10 @@
           "named": true
         },
         {
+          "type": "bool",
+          "named": true
+        },
+        {
           "type": "if",
           "named": true
         },
@@ -167,6 +171,10 @@
           "named": true
         },
         {
+          "type": "bool",
+          "named": true
+        },
+        {
           "type": "class_definition",
           "named": true
         },
@@ -236,6 +244,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "bool",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "boxing_specifier",
@@ -396,6 +409,10 @@
             "named": true
           },
           {
+            "type": "bool",
+            "named": true
+          },
+          {
             "type": "if",
             "named": true
           },
@@ -459,6 +476,10 @@
           },
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
             "named": true
           },
           {
@@ -580,6 +601,10 @@
             "named": true
           },
           {
+            "type": "bool",
+            "named": true
+          },
+          {
             "type": "if",
             "named": true
           },
@@ -659,6 +684,10 @@
           },
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
             "named": true
           },
           {
@@ -939,6 +968,10 @@
             "named": true
           },
           {
+            "type": "bool",
+            "named": true
+          },
+          {
             "type": "if",
             "named": true
           },
@@ -1005,6 +1038,10 @@
             "named": true
           },
           {
+            "type": "bool",
+            "named": true
+          },
+          {
             "type": "if",
             "named": true
           },
@@ -1068,6 +1105,10 @@
           },
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
             "named": true
           },
           {
@@ -1153,6 +1194,10 @@
             "named": true
           },
           {
+            "type": "bool",
+            "named": true
+          },
+          {
             "type": "if",
             "named": true
           },
@@ -1232,6 +1277,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -1331,6 +1380,10 @@
           },
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
             "named": true
           },
           {
@@ -1447,6 +1500,10 @@
           },
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
             "named": true
           },
           {
@@ -1583,6 +1640,10 @@
             "named": true
           },
           {
+            "type": "bool",
+            "named": true
+          },
+          {
             "type": "if",
             "named": true
           },
@@ -1646,6 +1707,10 @@
           },
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
             "named": true
           },
           {
@@ -1897,6 +1962,10 @@
             "named": true
           },
           {
+            "type": "bool",
+            "named": true
+          },
+          {
             "type": "if",
             "named": true
           },
@@ -2002,6 +2071,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -2161,6 +2234,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
           "named": true
         },
         {
@@ -2799,6 +2876,10 @@
             "named": true
           },
           {
+            "type": "bool",
+            "named": true
+          },
+          {
             "type": "if",
             "named": true
           },
@@ -3091,6 +3172,10 @@
     "named": false
   },
   {
+    "type": "false",
+    "named": false
+  },
+  {
     "type": "field",
     "named": false
   },
@@ -3141,6 +3226,10 @@
   {
     "type": "string",
     "named": true
+  },
+  {
+    "type": "true",
+    "named": false
   },
   {
     "type": "unboxed",

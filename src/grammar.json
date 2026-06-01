@@ -1071,6 +1071,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "bool"
+        },
+        {
+          "type": "SYMBOL",
           "name": "tuple"
         },
         {
@@ -3037,6 +3041,19 @@
       "type": "PATTERN",
       "value": "[0-9]+"
     },
+    "bool": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "true"
+        },
+        {
+          "type": "STRING",
+          "value": "false"
+        }
+      ]
+    },
     "tuple": {
       "type": "PREC",
       "value": 4,
@@ -3204,6 +3221,14 @@
       {
         "type": "STRING",
         "value": "return"
+      },
+      {
+        "type": "STRING",
+        "value": "true"
+      },
+      {
+        "type": "STRING",
+        "value": "false"
       }
     ]
   }

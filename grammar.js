@@ -44,8 +44,8 @@ export default grammar({
       "if",
       "else",
       "return",
-      // "true",
-      // "false",
+      "true",
+      "false",
     ],
   },
 
@@ -197,6 +197,7 @@ export default grammar({
       choice(
         $.string,
         $.int,
+        $.bool,
         $.tuple,
         $.matches,
         $.variable_declaration,
@@ -554,6 +555,8 @@ export default grammar({
     string: ($) => new RustRegex('"[^"]*"'),
 
     int: ($) => new RustRegex("[0-9]+"),
+
+    bool: ($) => choice("true", "false"),
 
     tuple: ($) =>
       prec(4, seq("(", optional(comma_separated_list($._expression)), ")")),

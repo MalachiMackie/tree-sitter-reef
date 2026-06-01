@@ -4,9 +4,13 @@ Literals
 
 1;
 "hi";
+true;
+false;
 
 ---
 
 (source_file
     (int)
-    (string))
+    (string)
+    (bool)
+    (bool))
