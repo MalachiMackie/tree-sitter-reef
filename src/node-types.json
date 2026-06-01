@@ -159,6 +159,14 @@
           "named": true
         },
         {
+          "type": "postfix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "prefix_unary_operator",
+          "named": true
+        },
+        {
           "type": "return",
           "named": true
         },
@@ -267,6 +275,14 @@
         },
         {
           "type": "object_initializer",
+          "named": true
+        },
+        {
+          "type": "postfix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "prefix_unary_operator",
           "named": true
         },
         {
@@ -523,6 +539,14 @@
           "named": true
         },
         {
+          "type": "postfix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "prefix_unary_operator",
+          "named": true
+        },
+        {
           "type": "return",
           "named": true
         },
@@ -622,6 +646,14 @@
             "named": true
           },
           {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -713,6 +745,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -831,6 +871,14 @@
             "named": true
           },
           {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -922,6 +970,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -1071,6 +1127,14 @@
             "named": true
           },
           {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -1178,6 +1242,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -1486,6 +1558,14 @@
             "named": true
           },
           {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -1580,6 +1660,14 @@
             "named": true
           },
           {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -1671,6 +1759,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -1784,6 +1880,14 @@
             "named": true
           },
           {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -1875,6 +1979,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -1975,6 +2087,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -2096,6 +2216,14 @@
           "named": true
         },
         {
+          "type": "postfix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "prefix_unary_operator",
+          "named": true
+        },
+        {
           "type": "return",
           "named": true
         },
@@ -2212,6 +2340,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -2356,6 +2492,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -2520,6 +2664,14 @@
             "named": true
           },
           {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -2611,6 +2763,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -2822,6 +2982,220 @@
     }
   },
   {
+    "type": "postfix_unary_operator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "collection_fill",
+          "named": true
+        },
+        {
+          "type": "continue",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "matches",
+          "named": true
+        },
+        {
+          "type": "member_access",
+          "named": true
+        },
+        {
+          "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "object_initializer",
+          "named": true
+        },
+        {
+          "type": "postfix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "prefix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "static_member_access",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "variable_access",
+          "named": true
+        },
+        {
+          "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "prefix_unary_operator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "collection_fill",
+          "named": true
+        },
+        {
+          "type": "continue",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "matches",
+          "named": true
+        },
+        {
+          "type": "member_access",
+          "named": true
+        },
+        {
+          "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "object_initializer",
+          "named": true
+        },
+        {
+          "type": "postfix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "prefix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "static_member_access",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "variable_access",
+          "named": true
+        },
+        {
+          "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "return",
     "named": true,
     "fields": {
@@ -2887,6 +3261,14 @@
           },
           {
             "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
             "named": true
           },
           {
@@ -3031,6 +3413,14 @@
         },
         {
           "type": "object_initializer",
+          "named": true
+        },
+        {
+          "type": "postfix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "prefix_unary_operator",
           "named": true
         },
         {
@@ -3210,6 +3600,14 @@
         },
         {
           "type": "object_initializer",
+          "named": true
+        },
+        {
+          "type": "postfix_unary_operator",
+          "named": true
+        },
+        {
+          "type": "prefix_unary_operator",
           "named": true
         },
         {
@@ -3890,6 +4288,14 @@
             "named": true
           },
           {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -4108,6 +4514,14 @@
             "named": true
           },
           {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
             "type": "return",
             "named": true
           },
@@ -4138,6 +4552,10 @@
         ]
       }
     }
+  },
+  {
+    "type": "!",
+    "named": false
   },
   {
     "type": "!=",
@@ -4229,6 +4647,10 @@
   },
   {
     "type": ">=",
+    "named": false
+  },
+  {
+    "type": "?",
     "named": false
   },
   {

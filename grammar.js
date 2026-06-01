@@ -213,6 +213,8 @@ export default grammar({
     _non_block_expression: ($) =>
       choice(
         $.string,
+        $.prefix_unary_operator,
+        $.postfix_unary_operator,
         $.index,
         $.break,
         $.collection,
@@ -231,6 +233,11 @@ export default grammar({
         $.binary_operator,
         $.object_initializer,
       ),
+
+    prefix_unary_operator: ($) =>
+      prec(-1, seq(choice("-", "!"), $._expression)),
+
+    postfix_unary_operator: ($) => prec(-2, seq($._expression, "?")),
 
     collection: ($) =>
       seq(
