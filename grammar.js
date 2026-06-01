@@ -323,9 +323,23 @@ export default grammar({
     _expression: ($) => choice($._block_expression, $._non_block_expression),
 
     variable_access: ($) =>
-      seq(
-        $.identifier,
-        field("type_arguments", optional($._type_argument_list)),
+      prec.right(
+        2,
+        seq(
+          choice(
+            $.identifier,
+            seq(
+              optional(":::"),
+              field(
+                "module_path",
+                seq($.identifier, repeat(seq(":::", $.identifier))),
+              ),
+              ":::",
+              $.identifier,
+            ),
+          ),
+          field("type_arguments", optional($._type_argument_list)),
+        ),
       ),
 
     static_member_access: ($) =>
@@ -538,8 +552,6 @@ export default grammar({
       seq("(", comma_separated_list($.fn_type_parameter), ")"),
 
     fn_type_parameter: ($) => seq(optional($.modifier), $._type_identifier),
-
-    module_path: ($) => seq($.identifier, repeat(seq(":::", $.identifier))),
 
     named_type_identifier: ($) =>
       prec.right(

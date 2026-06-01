@@ -3443,6 +3443,20 @@
     "type": "variable_access",
     "named": true,
     "fields": {
+      "module_path": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ":::",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
       "type_arguments": {
         "multiple": true,
         "required": false,
