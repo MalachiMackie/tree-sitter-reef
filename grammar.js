@@ -49,8 +49,6 @@ export default grammar({
     ],
   },
 
-  conflicts: ($) => [[$.named_type_identifier, $.type_constraint]],
-
   word: ($) => $.identifier,
 
   extras: ($) => [/\s/, $._comment],
@@ -167,11 +165,14 @@ export default grammar({
     parameter: ($) => seq($.identifier, ":", $._type_identifier),
 
     _statement: ($) =>
-      choice(
-        // no semicolon needed
-        $._block_expression,
-        // semicolons needed
-        seq(optional(choice($._non_block_expression, $.use_statement)), ";"),
+      prec(
+        -1,
+        choice(
+          // no semicolon needed
+          $._block_expression,
+          // semicolons needed
+          seq(optional(choice($._non_block_expression, $.use_statement)), ";"),
+        ),
       ),
 
     // expressions that don't need a semicolon to be a statement
@@ -182,9 +183,11 @@ export default grammar({
       choice(
         $.string,
         $.int,
+        $.matches,
         $.variable_declaration,
         $.variable_access,
         $.member_access,
+        $.static_member_access,
         $.return,
         $.method_call,
         $.binary_operator,
@@ -267,21 +270,26 @@ export default grammar({
     variable_access: ($) =>
       seq(
         $.identifier,
-        field(
-          "type_arguments",
-          optional(seq("::<", comma_separated_list($._type_identifier), ">")),
-        ),
+        field("type_arguments", optional($._type_argument_list)),
       ),
+
+    static_member_access: ($) =>
+      seq(
+        field("owner_type", $._type_identifier),
+        "::",
+        field("member_name", $.identifier),
+        field("type_arguments", optional($._type_argument_list)),
+      ),
+
+    _type_argument_list: ($) =>
+      seq("::<", comma_separated_list($._type_identifier), ">"),
 
     member_access: ($) =>
       seq(
         field("owner", $._expression),
         ".",
         field("member_name", $.identifier),
-        field(
-          "type_arguments",
-          optional(seq("::<", comma_separated_list($._type_identifier), ">")),
-        ),
+        field("type_arguments", optional($._type_argument_list)),
       ),
 
     method_call: ($) =>
@@ -293,6 +301,13 @@ export default grammar({
           field("arguments", comma_separated_list($._expression)),
           ")",
         ),
+      ),
+
+    matches: ($) =>
+      seq(
+        field("check", $._expression),
+        "matches",
+        field("pattern", $._pattern),
       ),
 
     match: ($) =>
@@ -322,17 +337,17 @@ export default grammar({
     discard_pattern: ($) => "_",
 
     variable_declaration_pattern: ($) =>
-      seq(optional($.modifier), "var", field("variable_name", $.identifier)),
+      seq("var", optional($.modifier), field("variable_name", $.identifier)),
 
     type_pattern: ($) =>
-      prec(
+      prec.right(
         0,
         seq(
           field("type", $._type_identifier),
           optional(
             seq(
-              optional($.modifier),
               "var",
+              optional($.modifier),
               field("variable_name", $.identifier),
             ),
           ),
@@ -340,7 +355,7 @@ export default grammar({
       ),
 
     class_pattern: ($) =>
-      prec(
+      prec.right(
         1,
         seq(
           field("type", $._type_identifier),
@@ -361,7 +376,7 @@ export default grammar({
       ),
 
     union_class_variant_pattern: ($) =>
-      prec(
+      prec.right(
         3,
         seq(
           field("type", $._type_identifier),
@@ -384,7 +399,7 @@ export default grammar({
       ),
 
     union_variant_pattern: ($) =>
-      prec(
+      prec.right(
         2,
         seq(
           field("type", $._type_identifier),
@@ -401,8 +416,8 @@ export default grammar({
       ),
 
     union_tuple_variant_pattern: ($) =>
-      prec(
-        2,
+      prec.right(
+        3,
         seq(
           field("type", $._type_identifier),
           "::",
@@ -435,24 +450,33 @@ export default grammar({
       ),
 
     array_type_identifier: ($) =>
-      seq(
-        optional($.boxing_specifier),
-        "[",
-        $._type_identifier,
-        optional(seq(";", $.int)),
-        "]",
+      prec(
+        1,
+        seq(
+          optional($.boxing_specifier),
+          "[",
+          $._type_identifier,
+          optional(seq(";", $.int)),
+          "]",
+        ),
       ),
 
     tuple_type_identifier: ($) =>
-      seq(
-        optional($.boxing_specifier),
-        seq("(", comma_separated_list($._type_identifier), ")"),
+      prec(
+        1,
+        seq(
+          optional($.boxing_specifier),
+          seq("(", comma_separated_list($._type_identifier), ")"),
+        ),
       ),
 
     fn_type_identifier: ($) =>
-      seq(
-        optional($.boxing_specifier),
-        seq("Fn", $.fn_type_parameter_list, optional($.return_type)),
+      prec(
+        1,
+        seq(
+          optional($.boxing_specifier),
+          seq("Fn", $.fn_type_parameter_list, optional($.return_type)),
+        ),
       ),
 
     fn_type_parameter_list: ($) =>
@@ -463,23 +487,23 @@ export default grammar({
     module_path: ($) => seq($.identifier, repeat(seq(":::", $.identifier))),
 
     named_type_identifier: ($) =>
-      seq(
-        optional($.boxing_specifier),
-        choice(
-          $.identifier,
-          seq(
-            optional(":::"),
-            field(
-              "module_path",
-              seq($.identifier, repeat(seq(":::", $.identifier))),
-            ),
-            ":::",
+      prec.right(
+        1,
+        seq(
+          optional($.boxing_specifier),
+          choice(
             $.identifier,
+            seq(
+              optional(":::"),
+              field(
+                "module_path",
+                seq($.identifier, repeat(seq(":::", $.identifier))),
+              ),
+              ":::",
+              $.identifier,
+            ),
           ),
-        ),
-        field(
-          "type_arguments",
-          optional(seq("::<", comma_separated_list($._type_identifier), ">")),
+          field("type_arguments", optional($._type_argument_list)),
         ),
       ),
 

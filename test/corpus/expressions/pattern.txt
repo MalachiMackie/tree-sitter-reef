@@ -5,7 +5,7 @@ Patterns
 match (x) {
     _ => {},
     var a => {},
-    mut var a => {},
+    var mut a => {},
     string => {},
     string var a => {},
     SomeType::<string> => {},

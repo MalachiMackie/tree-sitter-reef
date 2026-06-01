@@ -1,0 +1,20 @@
+===============
+Matches
+===============
+
+a matches _;
+a matches MyUnion::A(var b);
+
+---
+
+(source_file
+    (matches
+        check: (variable_access (identifier))
+        pattern: (discard_pattern))
+    (matches
+        check: (variable_access (identifier))
+        pattern: (union_tuple_variant_pattern
+            type: (named_type_identifier (identifier))
+            variant: (identifier)
+            element_patterns: (variable_declaration_pattern variable_name: (identifier))))
+)

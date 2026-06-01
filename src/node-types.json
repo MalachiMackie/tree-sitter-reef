@@ -78,6 +78,10 @@
           "named": true
         },
         {
+          "type": "matches",
+          "named": true
+        },
+        {
           "type": "member_access",
           "named": true
         },
@@ -91,6 +95,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "static_member_access",
           "named": true
         },
         {
@@ -145,6 +153,10 @@
           "named": true
         },
         {
+          "type": "matches",
+          "named": true
+        },
+        {
           "type": "member_access",
           "named": true
         },
@@ -158,6 +170,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "static_member_access",
           "named": true
         },
         {
@@ -354,6 +370,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -367,6 +387,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -408,6 +432,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -421,6 +449,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -514,6 +546,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -527,6 +563,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -584,6 +624,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -597,6 +641,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -849,6 +897,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -862,6 +914,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -903,6 +959,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -916,6 +976,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -957,6 +1021,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -970,6 +1038,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -1027,6 +1099,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -1040,6 +1116,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -1105,6 +1185,10 @@
           "named": true
         },
         {
+          "type": "matches",
+          "named": true
+        },
+        {
           "type": "member_access",
           "named": true
         },
@@ -1118,6 +1202,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "static_member_access",
           "named": true
         },
         {
@@ -1153,6 +1241,108 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "matches",
+    "named": true,
+    "fields": {
+      "check": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "matches",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "class_pattern",
+            "named": true
+          },
+          {
+            "type": "discard_pattern",
+            "named": true
+          },
+          {
+            "type": "type_pattern",
+            "named": true
+          },
+          {
+            "type": "union_class_variant_pattern",
+            "named": true
+          },
+          {
+            "type": "union_tuple_variant_pattern",
+            "named": true
+          },
+          {
+            "type": "union_variant_pattern",
+            "named": true
+          },
+          {
+            "type": "variable_declaration_pattern",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -1194,6 +1384,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -1207,6 +1401,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -1315,6 +1513,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -1328,6 +1530,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -1369,6 +1575,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -1382,6 +1592,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -1605,6 +1819,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -1618,6 +1836,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -1705,6 +1927,10 @@
           "named": true
         },
         {
+          "type": "matches",
+          "named": true
+        },
+        {
           "type": "member_access",
           "named": true
         },
@@ -1718,6 +1944,10 @@
         },
         {
           "type": "return",
+          "named": true
+        },
+        {
+          "type": "static_member_access",
           "named": true
         },
         {
@@ -1741,6 +1971,78 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "static_member_access",
+    "named": true,
+    "fields": {
+      "member_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "owner_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "type_arguments": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "::<",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -2336,6 +2638,10 @@
             "named": true
           },
           {
+            "type": "matches",
+            "named": true
+          },
+          {
             "type": "member_access",
             "named": true
           },
@@ -2349,6 +2655,10 @@
           },
           {
             "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
             "named": true
           },
           {
@@ -2621,6 +2931,10 @@
   },
   {
     "type": "match",
+    "named": false
+  },
+  {
+    "type": "matches",
     "named": false
   },
   {
