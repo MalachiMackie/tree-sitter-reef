@@ -21,7 +21,6 @@ export default grammar({
 
   reserved: {
     global: ($) => [
-      // "if",
       // "attribute",
       "use",
       "extern",
@@ -42,7 +41,8 @@ export default grammar({
       "fn",
       "field",
       "var",
-      // "else",
+      "if",
+      "else",
       "return",
       // "true",
       // "false",
@@ -175,7 +175,7 @@ export default grammar({
       ),
 
     // expressions that don't need a semicolon to be a statement
-    _block_expression: ($) => choice($.block, $.match),
+    _block_expression: ($) => choice($.block, $.match, $.if),
 
     // expressions that need a semicolon to be a statement
     _non_block_expression: ($) =>
@@ -188,6 +188,33 @@ export default grammar({
         $.method_call,
         $.binary_operator,
         $.object_initializer,
+      ),
+
+    if: ($) =>
+      prec.right(
+        0,
+        seq(
+          "if",
+          "(",
+          field("check", $._expression),
+          ")",
+          field("body", $._expression),
+          field("else_ifs", repeat($.else_if)),
+          optional(seq("else", field("else", $._expression))),
+        ),
+      ),
+
+    else_if: ($) =>
+      prec.right(
+        1,
+        seq(
+          "else",
+          "if",
+          "(",
+          field("check", $._expression),
+          ")",
+          field("body", $._expression),
+        ),
       ),
 
     binary_operator: ($) =>
@@ -239,13 +266,11 @@ export default grammar({
     variable_access: ($) => $.identifier,
 
     method_call: ($) =>
-      prec.right(
-        seq(
-          field("method", $._expression),
-          "(",
-          field("arguments", comma_separated_list($._expression)),
-          ")",
-        ),
+      seq(
+        field("method", $._expression),
+        "(",
+        field("arguments", comma_separated_list($._expression)),
+        ")",
       ),
 
     match: ($) =>
@@ -456,6 +481,7 @@ export default grammar({
       prec.right(
         seq(
           "var",
+          optional($.modifier),
           field("name", $.identifier),
           field("type", optional(seq(":", $._type_identifier))),
           field("value", optional(seq("=", $._expression))),

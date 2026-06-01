@@ -66,6 +66,10 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "int",
           "named": true
         },
@@ -122,6 +126,10 @@
         },
         {
           "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "if",
           "named": true
         },
         {
@@ -310,6 +318,112 @@
     "fields": {}
   },
   {
+    "type": "else_if",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      },
+      "check": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "field",
     "named": true,
     "fields": {
@@ -372,6 +486,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -431,6 +549,10 @@
           },
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
             "named": true
           },
           {
@@ -675,6 +797,172 @@
     }
   },
   {
+    "type": "if",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      },
+      "check": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      },
+      "else": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          }
+        ]
+      },
+      "else_ifs": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "else_if",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "match",
     "named": true,
     "fields": {
@@ -688,6 +976,10 @@
           },
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
             "named": true
           },
           {
@@ -758,6 +1050,10 @@
         },
         {
           "type": "discard_pattern",
+          "named": true
+        },
+        {
+          "type": "if",
           "named": true
         },
         {
@@ -859,6 +1155,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -902,6 +1202,10 @@
           },
           {
             "type": "block",
+            "named": true
+          },
+          {
+            "type": "if",
             "named": true
           },
           {
@@ -1133,6 +1437,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -1222,6 +1530,10 @@
         },
         {
           "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "if",
           "named": true
         },
         {
@@ -1813,6 +2125,10 @@
             "named": true
           },
           {
+            "type": "if",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -1846,6 +2162,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2059,6 +2385,10 @@
     "named": false
   },
   {
+    "type": "else",
+    "named": false
+  },
+  {
     "type": "extern",
     "named": false
   },
@@ -2073,6 +2403,10 @@
   {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "if",
+    "named": false
   },
   {
     "type": "int",

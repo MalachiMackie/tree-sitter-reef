@@ -1,0 +1,42 @@
+=============
+If
+=============
+
+if (1) {}
+
+if (1) {} else {}
+
+if (1) {} else if(1) {} else if(1) {} else {}
+
+if (1) {} else if(1) {} else if(1) {}
+
+---
+
+(source_file
+    (if
+        check: (int)
+        body: (block))
+    (if
+        check: (int)
+        body: (block)
+        else: (block))
+    (if
+        check: (int)
+        body: (block)
+        else_ifs: (else_if
+            check: (int)
+            body: (block))
+        else_ifs: (else_if
+            check: (int)
+            body: (block))
+        else: (block))
+    (if
+        check: (int)
+        body: (block)
+        else_ifs: (else_if
+            check: (int)
+            body: (block))
+        else_ifs: (else_if
+            check: (int)
+            body: (block)))
+)

@@ -4,6 +4,7 @@ Variable Declarations
 
 var a = 1;
 var b;
+var mut b;
 var b: type;
 var b: type = 2;
 
@@ -14,6 +15,9 @@ var b: type = 2;
         name: (identifier)
         value: (int))
     (variable_declaration
+        name: (identifier))
+    (variable_declaration
+        (modifier)
         name: (identifier))
     (variable_declaration
         name: (identifier)
