@@ -213,6 +213,7 @@ export default grammar({
     _non_block_expression: ($) =>
       choice(
         $.string,
+        $.index,
         $.break,
         $.collection,
         $.collection_fill,
@@ -321,6 +322,14 @@ export default grammar({
       ),
 
     _expression: ($) => choice($._block_expression, $._non_block_expression),
+
+    index: ($) =>
+      seq(
+        field("owner", $._expression),
+        "[",
+        field("index", $._expression),
+        "]",
+      ),
 
     variable_access: ($) =>
       prec.right(

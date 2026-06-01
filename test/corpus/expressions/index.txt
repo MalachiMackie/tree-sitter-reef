@@ -1,0 +1,17 @@
+============
+Index
+============
+
+x[0];
+x[a];
+
+---
+
+(source_file
+    (index
+        owner: (variable_access (identifier))
+        index: (int))
+    (index
+        owner: (variable_access (identifier))
+        index: (variable_access (identifier)))
+)

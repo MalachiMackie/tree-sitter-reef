@@ -131,6 +131,10 @@
           "named": true
         },
         {
+          "type": "index",
+          "named": true
+        },
+        {
           "type": "int",
           "named": true
         },
@@ -235,6 +239,10 @@
         },
         {
           "type": "if",
+          "named": true
+        },
+        {
+          "type": "index",
           "named": true
         },
         {
@@ -487,6 +495,10 @@
           "named": true
         },
         {
+          "type": "index",
+          "named": true
+        },
+        {
           "type": "int",
           "named": true
         },
@@ -582,6 +594,10 @@
             "named": true
           },
           {
+            "type": "index",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -669,6 +685,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
             "named": true
           },
           {
@@ -783,6 +803,10 @@
             "named": true
           },
           {
+            "type": "index",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -870,6 +894,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
             "named": true
           },
           {
@@ -1015,6 +1043,10 @@
             "named": true
           },
           {
+            "type": "index",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -1118,6 +1150,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
             "named": true
           },
           {
@@ -1422,6 +1458,10 @@
             "named": true
           },
           {
+            "type": "index",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -1509,6 +1549,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
             "named": true
           },
           {
@@ -1602,6 +1646,10 @@
             "named": true
           },
           {
+            "type": "index",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -1668,6 +1716,200 @@
     }
   },
   {
+    "type": "index",
+    "named": true,
+    "fields": {
+      "index": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "matches",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "owner": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "matches",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "match",
     "named": true,
     "fields": {
@@ -1705,6 +1947,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
             "named": true
           },
           {
@@ -1822,6 +2068,10 @@
           "named": true
         },
         {
+          "type": "index",
+          "named": true
+        },
+        {
           "type": "int",
           "named": true
         },
@@ -1934,6 +2184,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
             "named": true
           },
           {
@@ -2074,6 +2328,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
             "named": true
           },
           {
@@ -2234,6 +2492,10 @@
             "named": true
           },
           {
+            "type": "index",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -2321,6 +2583,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
             "named": true
           },
           {
@@ -2596,6 +2862,10 @@
             "named": true
           },
           {
+            "type": "index",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -2733,6 +3003,10 @@
         },
         {
           "type": "if",
+          "named": true
+        },
+        {
+          "type": "index",
           "named": true
         },
         {
@@ -2908,6 +3182,10 @@
         },
         {
           "type": "if",
+          "named": true
+        },
+        {
+          "type": "index",
           "named": true
         },
         {
@@ -3584,6 +3862,10 @@
             "named": true
           },
           {
+            "type": "index",
+            "named": true
+          },
+          {
             "type": "int",
             "named": true
           },
@@ -3795,6 +4077,10 @@
           },
           {
             "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
             "named": true
           },
           {
