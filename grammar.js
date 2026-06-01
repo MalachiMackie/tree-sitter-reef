@@ -29,9 +29,9 @@ export default grammar({
       "unboxed",
       "boxed",
       "mut",
-      // "while",
-      // "break",
-      // "continue",
+      "while",
+      "break",
+      "continue",
       "match",
       "matches",
       "new",
@@ -190,12 +190,14 @@ export default grammar({
       ),
 
     // expressions that don't need a semicolon to be a statement
-    _block_expression: ($) => choice($.block, $.match, $.if),
+    _block_expression: ($) => choice($.block, $.match, $.if, $.while),
 
     // expressions that need a semicolon to be a statement
     _non_block_expression: ($) =>
       choice(
         $.string,
+        $.break,
+        $.continue,
         $.int,
         $.bool,
         $.tuple,
@@ -548,6 +550,19 @@ export default grammar({
           field("type", optional(seq(":", $._type_identifier))),
           field("value", optional(seq("=", $._expression))),
         ),
+      ),
+
+    break: ($) => "break",
+
+    continue: ($) => "continue",
+
+    while: ($) =>
+      seq(
+        "while",
+        "(",
+        field("check", $._expression),
+        ")",
+        field("body", $.block),
       ),
 
     identifier: ($) => new RustRegex("[a-zA-Z_][a-zA-Z_0-9]*"),
