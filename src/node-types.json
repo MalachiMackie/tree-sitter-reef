@@ -50,6 +50,32 @@
     }
   },
   {
+    "type": "attribute_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "modifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "binary_operator",
     "named": true,
     "fields": {},
@@ -128,6 +154,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "attribute_definition",
+          "named": true
+        },
         {
           "type": "binary_operator",
           "named": true
@@ -1963,6 +1993,10 @@
       "required": false,
       "types": [
         {
+          "type": "attribute_definition",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -3034,6 +3068,10 @@
   },
   {
     "type": "_",
+    "named": false
+  },
+  {
+    "type": "attribute",
     "named": false
   },
   {

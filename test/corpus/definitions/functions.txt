@@ -20,8 +20,8 @@ fn fn_5(): string {}
 
 fn fn_5(): mut string {}
 
-#[attribute]
-#[attribute_2]
+#[my_attribute]
+#[my_attribute_2]
 fn fn_6() {}
 
 fn some_generic_fn<T, T2,>(){}

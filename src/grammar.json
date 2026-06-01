@@ -71,6 +71,10 @@
         {
           "type": "SYMBOL",
           "name": "union_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "attribute_definition"
         }
       ]
     },
@@ -785,6 +789,43 @@
         {
           "type": "STRING",
           "value": "]"
+        }
+      ]
+    },
+    "attribute_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "modifier"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "attribute"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
         }
       ]
     },
@@ -3086,6 +3127,10 @@
     "global": [
       {
         "type": "STRING",
+        "value": "attribute"
+      },
+      {
+        "type": "STRING",
         "value": "use"
       },
       {
@@ -3115,6 +3160,10 @@
       {
         "type": "STRING",
         "value": "match"
+      },
+      {
+        "type": "STRING",
+        "value": "matches"
       },
       {
         "type": "STRING",

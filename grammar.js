@@ -21,7 +21,7 @@ export default grammar({
 
   reserved: {
     global: ($) => [
-      // "attribute",
+      "attribute",
       "use",
       "extern",
       "where",
@@ -33,7 +33,7 @@ export default grammar({
       // "break",
       // "continue",
       "match",
-      // "matches",
+      "matches",
       "new",
       "static",
       "class",
@@ -62,7 +62,12 @@ export default grammar({
       ),
 
     _definition: ($) =>
-      choice($.function_definition, $.class_definition, $.union_definition),
+      choice(
+        $.function_definition,
+        $.class_definition,
+        $.union_definition,
+        $.attribute_definition,
+      ),
 
     modifier: ($) => choice("extern", "pub", "mut", "static"),
 
@@ -152,6 +157,15 @@ export default grammar({
     return_type: ($) => seq(":", optional($.modifier), $._type_identifier),
 
     attribute: ($) => seq("#", "[", $.identifier, "]"),
+
+    attribute_definition: ($) =>
+      seq(
+        optional($.modifier),
+        "attribute",
+        field("name", $.identifier),
+        "{",
+        "}",
+      ),
 
     modifier_list: ($) => repeat1($.modifier),
 

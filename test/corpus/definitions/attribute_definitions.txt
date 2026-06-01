@@ -1,0 +1,16 @@
+========================
+Attribute Definition
+========================
+
+attribute x{}
+pub attribute x{}
+
+---
+
+(source_file
+    (attribute_definition
+        name: (identifier))
+    (attribute_definition
+        (modifier)
+        name: (identifier))
+)
