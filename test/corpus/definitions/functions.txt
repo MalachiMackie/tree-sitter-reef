@@ -14,7 +14,7 @@ extern fn fn_3() {}
 
 pub static extern fn fn_3() {}
 
-fn fn_4(a: string, b: int,) {}
+fn fn_4(a: string, mut b: int,) {}
 
 fn fn_5(): string {}
 
@@ -64,7 +64,7 @@ fn some_fn<TParam, TReturn>()
         name: (identifier)
         parameters: (parameter_list
             (parameter (identifier) (named_type_identifier (identifier)))
-            (parameter (identifier) (named_type_identifier (identifier)))
+            (parameter (modifier) (identifier) (named_type_identifier (identifier)))
             )
         body: (block))
     (function_definition

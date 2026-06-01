@@ -3036,6 +3036,10 @@
           "named": true
         },
         {
+          "type": "modifier",
+          "named": true
+        },
+        {
           "type": "named_type_identifier",
           "named": true
         },

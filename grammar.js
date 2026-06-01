@@ -194,7 +194,8 @@ export default grammar({
 
     parameter_list: ($) => seq("(", comma_separated_list($.parameter), ")"),
 
-    parameter: ($) => seq($.identifier, ":", $._type_identifier),
+    parameter: ($) =>
+      seq(optional($.modifier), $.identifier, ":", $._type_identifier),
 
     _statement: ($) =>
       prec(
