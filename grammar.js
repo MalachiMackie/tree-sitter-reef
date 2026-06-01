@@ -597,6 +597,7 @@ export default grammar({
       seq(
         "new",
         field("type", $._type_identifier),
+        field("variant", optional(seq("::", $.identifier))),
         "{",
         field("field_initializers", comma_separated_list($.field_initializer)),
         "}",

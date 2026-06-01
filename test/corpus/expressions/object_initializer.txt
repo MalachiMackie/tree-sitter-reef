@@ -4,6 +4,7 @@ Object Initializer
 
 new x {};
 new x {a = 1, b = 2,};
+new x::v {};
 
 ---
 
@@ -19,4 +20,7 @@ new x {a = 1, b = 2,};
             field_name: (identifier)
             value: (int))
     )
+    (object_initializer
+        type: (named_type_identifier (identifier))
+        variant: (identifier))
 )
