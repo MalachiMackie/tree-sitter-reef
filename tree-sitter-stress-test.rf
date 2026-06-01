@@ -66,7 +66,7 @@ fn some_string_check(val: string): bool {
 fn some_fn(): option::<string> {
     return option::Some("hi");
 }
-var a = some_fn() matches option::Some(var value) && true && some_string_check(value)
+var a = some_fn() matches option::Some(var value) && true && some_string_check(value);
 fn some_string_check(val: string): bool {
     return true;
 }
@@ -422,7 +422,7 @@ union MyUnion{A(string)}
 var a = MyUnion::A;
 var b = a("");
 var a = if (true) {} else {};
-var a = if (true) {} else if (true) {} else {}; 
+var a = if (true) {} else if (true) {} else {};
 fn OtherFn(): result::<i64, i64>
 {
     return ok(1);
@@ -495,8 +495,8 @@ var mut a = MyUnion::A("");
 if (a matches MyUnion::A(var mut str)) {
     str = "hi";
 }
-var a: bool = true && true
-var a: bool = true || true
+var a: bool = true && true;
+var a: bool = true || true;
 class MyClass {
     fn MyFn<T>() {}
     fn OtherFn() {
@@ -957,7 +957,7 @@ fn OtherFn<T>(param: T): T {
 fn SomeFn<T>(): T {
     return todo!;
 }
-var a: string = todo!
+var a: string = todo!;
 fn SomeFn() {
     return todo!;
 }
@@ -1215,11 +1215,11 @@ var a: i64 = MyClass::<string>::StaticMethod::<i64>("", 1);
 class MyClass<T> {
     pub static fn StaticMethod<T2>(param: T, param2: T2): T2 { return param2; }
 }
-var a = 2
-var a: i64 = 2
-var b: string = "somestring"
-var a = 2; var b: i64 = a
-fn MyFn(): i64 { return 1; }
+var a = 2;
+var a: i64 = 2;
+var b: string = "somestring";
+var a = 2; var b: i64 = a;
+fn MyFn(): i64 { return 1; };
 fn MyFn<T>(param: T): T {return param;}
 var a: string = MyFn::<string>("");
 class MyClass<T> {
@@ -1249,7 +1249,7 @@ var a = true; if (a) {}
 if (true) {} else {}
 if (true) {var a = 2;} else if (true) {var a = 3;} else if (true) {var a = 4;} else {var a = 5;}
 if (true) var a = 2
-var a: result::<i64, string>
+var a: result::<i64, string>;
 class Class1 { field someField: Class1,}
 class Class2 { }
 var a: bool = 1 < 2;
@@ -1560,6 +1560,7 @@ var a = MyUnion::A;
 
 var c = new MyUnion::B{ MyField = ""};
 var a: string = {grab true;};
+var a: string = {grab true; print_string("hi");};
 class MyClass {
     #[other:::other_attribute]
     fn some_fn(){}
@@ -1835,10 +1836,10 @@ class MyClass {
 }
 var a = new MyClass{};
 if (a matches MyClass { MyField }){}
-var a = 1 || true
-var a = true || 1
-var a = 1 && true
-var a = true && 1
+var a = 1 || true;
+var a = true || 1;
+var a = 1 && true;
+var a = true && 1;
 class MyClass {
     field MyField: string,
 
@@ -2259,7 +2260,7 @@ union MyUnion {
         var a: bool = 1;
     }
 }
-var a = !1
+var a = !1;
 var b: bool = 1 matches MissingType;
 union MyUnion {A, B(string)}
 var a = MyUnion::B("");
@@ -2467,8 +2468,8 @@ class MyClass<T> {
 
 var a = new MyClass::<i64>{};
 a.MyFn::<string>(1, 1);
-var a: string = 2
-var a: i64 = "somestring"
+var a: string = 2;
+var a: i64 = "somestring";
 var b;
 var a;
 if (true) {
@@ -2501,8 +2502,8 @@ fn SomeFn(a: i64, a: string) {
     var c: string = a;
 }
 fn MyFn(): string { return; }
-var a = 2; var b: string = a
-var a: i64; var b = a
+var a = 2; var b: string = a;
+var a: i64; var b = a;
 fn MyFn(){fn InnerFn() {}} InnerFn();
 CallMissingMethod(b);
 var a = new MyClass::<i64> {someField = true};
@@ -2522,11 +2523,11 @@ if (true) {var a: string = 1;}
 if (true) {} else if (true) {var a: string = 1;}
 if (true) {} else if (true) {} else {var a: string = 1;}
 if (true) {} else if (true) {} else if (true) {var a: string = 1;}
-var a: result::<>
-var a: result
-var a = ok(1)
-var a: result::<string>
-union MyUnion{A} var a = MyUnion::<string>::A
+var a: result::<>;
+var a: result;
+var a = ok(1);
+var a: result::<string>;
+union MyUnion{A} var a = MyUnion::<string>::A;
 class MyClass{} var a = new MyClass::<string>{}
 class MyClass<T, T2>{} var a = new MyClass::<string>{}
 var a: result::<string, string, string>
@@ -2588,30 +2589,30 @@ class MyClass {
 }
 var a = 1 < true;
 var a = true < 1;
-var a: i64 = 1 < 2
+var a: i64 = 1 < 2;
 var a = true > 1;
-var a = 2 > true
-var a: i64 = 2 > 2
+var a = 2 > true;
+var a: i64 = 2 > 2;
 var a = true + 1;
-var a = 2 + true
-var a: bool = 2 + 2
+var a = 2 + true;
+var a: bool = 2 + 2;
 var a = true - 1;
-var a = 2 - true
-var a: bool = 2 - 2
+var a = 2 - true;
+var a: bool = 2 - 2;
 var a = true * 1;
-var a = 2 * true
-var a: bool = 2 * 2
+var a = 2 * true;
+var a: bool = 2 * 2;
 var a = true / 1;
-var a = 2 / true
-var a: bool = 2 / 2
+var a = 2 / true;
+var a: bool = 2 / 2;
 var a = true == 1;
 var a = true != 1;
-var a = 2 == true
-var a = 2 != true
-var a: i64 = 2 == 2
-var a: i64 = 2 != 2
-var mut a = 2; a = true
-true = false
+var a = 2 == true;
+var a = 2 != true;
+var a: i64 = 2 == 2;
+var a: i64 = 2 != 2;
+var mut a = 2; a = true;
+true = false;
 class MyClass { pub static field someField: i64 = 3, }
 var a: string = MyClass::someField;
 class MyClass { pub field someField: i64, }
@@ -2659,4 +2660,4 @@ class MyClass {}
 var a: unboxed MyClass = todo!;
 var b: MyClass = a;
 class MyClass {}
-unboxed MyClass
+unboxed MyClass;

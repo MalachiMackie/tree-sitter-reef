@@ -459,8 +459,8 @@ export default grammar({
           "}",
           optional(
             seq(
-              optional($.modifier),
               "var",
+              optional($.modifier),
               field("variable_name", $.identifier),
             ),
           ),
@@ -482,8 +482,8 @@ export default grammar({
           "}",
           optional(
             seq(
-              optional($.modifier),
               "var",
+              optional($.modifier),
               field("variable_name", $.identifier),
             ),
           ),
@@ -499,8 +499,8 @@ export default grammar({
           field("variant", $.identifier),
           optional(
             seq(
-              optional($.modifier),
               "var",
+              optional($.modifier),
               field("variable_name", $.identifier),
             ),
           ),
@@ -519,8 +519,8 @@ export default grammar({
           ")",
           optional(
             seq(
-              optional($.modifier),
               "var",
+              optional($.modifier),
               field("variable_name", $.identifier),
             ),
           ),
