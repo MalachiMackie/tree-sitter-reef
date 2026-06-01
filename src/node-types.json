@@ -115,6 +115,14 @@
           "named": true
         },
         {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "collection_fill",
+          "named": true
+        },
+        {
           "type": "continue",
           "named": true
         },
@@ -207,6 +215,14 @@
         },
         {
           "type": "class_definition",
+          "named": true
+        },
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "collection_fill",
           "named": true
         },
         {
@@ -427,6 +443,301 @@
     }
   },
   {
+    "type": "collection",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "boxing_specifier",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "collection_fill",
+          "named": true
+        },
+        {
+          "type": "continue",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "matches",
+          "named": true
+        },
+        {
+          "type": "member_access",
+          "named": true
+        },
+        {
+          "type": "method_call",
+          "named": true
+        },
+        {
+          "type": "object_initializer",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "static_member_access",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "variable_access",
+          "named": true
+        },
+        {
+          "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "collection_fill",
+    "named": true,
+    "fields": {
+      "length": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "matches",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "matches",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "boxing_specifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "discard_pattern",
     "named": true,
     "fields": {}
@@ -453,6 +764,14 @@
           },
           {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
             "named": true
           },
           {
@@ -535,6 +854,14 @@
           },
           {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
             "named": true
           },
           {
@@ -672,6 +999,14 @@
             "named": true
           },
           {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -767,6 +1102,14 @@
           },
           {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
             "named": true
           },
           {
@@ -1063,6 +1406,14 @@
             "named": true
           },
           {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -1145,6 +1496,14 @@
             "named": true
           },
           {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -1224,6 +1583,14 @@
           },
           {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
             "named": true
           },
           {
@@ -1322,6 +1689,14 @@
           },
           {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
             "named": true
           },
           {
@@ -1424,6 +1799,14 @@
         },
         {
           "type": "class_pattern",
+          "named": true
+        },
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "collection_fill",
           "named": true
         },
         {
@@ -1535,6 +1918,14 @@
           },
           {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
             "named": true
           },
           {
@@ -1667,6 +2058,14 @@
           },
           {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
             "named": true
           },
           {
@@ -1819,6 +2218,14 @@
             "named": true
           },
           {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -1898,6 +2305,14 @@
           },
           {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
             "named": true
           },
           {
@@ -2165,6 +2580,14 @@
             "named": true
           },
           {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -2290,6 +2713,14 @@
         },
         {
           "type": "class_definition",
+          "named": true
+        },
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "collection_fill",
           "named": true
         },
         {
@@ -2461,6 +2892,14 @@
         },
         {
           "type": "break",
+          "named": true
+        },
+        {
+          "type": "collection",
+          "named": true
+        },
+        {
+          "type": "collection_fill",
           "named": true
         },
         {
@@ -3115,6 +3554,14 @@
             "named": true
           },
           {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
             "type": "continue",
             "named": true
           },
@@ -3318,6 +3765,14 @@
           },
           {
             "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
             "named": true
           },
           {

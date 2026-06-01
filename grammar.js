@@ -214,6 +214,8 @@ export default grammar({
       choice(
         $.string,
         $.break,
+        $.collection,
+        $.collection_fill,
         $.continue,
         $.int,
         $.bool,
@@ -227,6 +229,24 @@ export default grammar({
         $.method_call,
         $.binary_operator,
         $.object_initializer,
+      ),
+
+    collection: ($) =>
+      seq(
+        "[",
+        optional(seq($.boxing_specifier, ";")),
+        comma_separated_list($._expression),
+        "]",
+      ),
+
+    collection_fill: ($) =>
+      seq(
+        "[",
+        optional(seq($.boxing_specifier, ";")),
+        field("value", $._expression),
+        ";",
+        field("length", $._expression),
+        "]",
       ),
 
     if: ($) =>
