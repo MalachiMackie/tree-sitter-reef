@@ -8,6 +8,8 @@ x(a, b,);
 
 x()();
 
+x::<string>();
+
 ---
 
 (source_file
@@ -20,4 +22,8 @@ x()();
     (method_call
         method: (method_call
             method: (variable_access (identifier))))
+    (method_call
+        method: (variable_access
+            (identifier)
+            type_arguments: (named_type_identifier (identifier))))
 )

@@ -106,7 +106,7 @@ export default grammar({
         field("body", $.member_list),
       ),
 
-    member_list: ($) => seq("{", comma_separated_list($._member), "}"),
+    member_list: ($) => seq("{", repeat(seq($._member, optional(","))), "}"),
 
     _member: ($) => choice($.field, $.function_definition, $.variant),
 
@@ -263,14 +263,24 @@ export default grammar({
 
     _expression: ($) => choice($._block_expression, $._non_block_expression),
 
-    variable_access: ($) => $.identifier,
+    variable_access: ($) =>
+      seq(
+        $.identifier,
+        field(
+          "type_arguments",
+          optional(seq("::<", comma_separated_list($._type_identifier), ">")),
+        ),
+      ),
 
     method_call: ($) =>
-      seq(
-        field("method", $._expression),
-        "(",
-        field("arguments", comma_separated_list($._expression)),
-        ")",
+      prec(
+        1,
+        seq(
+          field("method", $._expression),
+          "(",
+          field("arguments", comma_separated_list($._expression)),
+          ")",
+        ),
       ),
 
     match: ($) =>

@@ -29,6 +29,7 @@ class MyClass {
 
 class MyClass {
     fn some_fn(){}
+    fn some_fn(){}
 }
 
 ---
@@ -87,6 +88,10 @@ class MyClass {
     (class_definition
         name: (identifier)
         body: (member_list
+                (function_definition
+                    name: (identifier)
+                    parameters: (parameter_list)
+                    body: (block))
                 (function_definition
                     name: (identifier)
                     parameters: (parameter_list)
