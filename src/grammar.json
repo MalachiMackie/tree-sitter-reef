@@ -1158,6 +1158,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "type_identifier_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "index"
         },
         {
@@ -2287,6 +2291,14 @@
           }
         }
       ]
+    },
+    "type_identifier_expression": {
+      "type": "PREC",
+      "value": -1,
+      "content": {
+        "type": "SYMBOL",
+        "name": "_type_identifier"
+      }
     },
     "type_pattern": {
       "type": "PREC_RIGHT",

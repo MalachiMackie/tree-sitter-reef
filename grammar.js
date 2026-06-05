@@ -220,6 +220,7 @@ export default grammar({
         $.grab,
         $.prefix_unary_operator,
         $.postfix_unary_operator,
+        $.type_identifier_expression,
         $.index,
         $.break,
         $.collection,
@@ -430,6 +431,8 @@ export default grammar({
 
     variable_declaration_pattern: ($) =>
       seq("var", optional($.modifier), field("variable_name", $.identifier)),
+
+    type_identifier_expression: ($) => prec(-1, $._type_identifier),
 
     type_pattern: ($) =>
       prec.right(

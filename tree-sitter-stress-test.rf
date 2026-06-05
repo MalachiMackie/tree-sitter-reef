@@ -335,7 +335,7 @@ pub fn SomeFn(): MyClass
 class FirstClass{ pub mut field FirstClassField: string }
 class MyClass{pub mut field MyField: FirstClass}
 var mut firstClass = new FirstClass{FirstClassField = ""};
-var secondClass = new MyClass{MyField = firstClass}
+var secondClass = new MyClass{MyField = firstClass};
 class MyClass { pub mut field MyField: string, }
 var mut a = [new MyClass{MyField = "hi"}];
 a[0].MyField = "bye";
@@ -422,7 +422,7 @@ union MyUnion{A(string)}
 var a = MyUnion::A;
 var b = a("");
 var a = if (true) {} else {};
-var a = if (true) {} else if (true) {} else {};
+var a = if (true) {} else if (true) {} else {}; 
 fn OtherFn(): result::<i64, i64>
 {
     return ok(1);
@@ -1675,7 +1675,7 @@ var a: Fn(): mut string = someFn;
 class FirstClass{ pub mut field FirstClassField: string }
 class MyClass{pub mut field MyField: FirstClass}
 var firstClass = new FirstClass{FirstClassField = ""};
-var secondClass = new MyClass{MyField = firstClass}
+var secondClass = new MyClass{MyField = firstClass};
 class MyClass {pub mut field MyField: string, }
 fn someFn(myClass: MyClass): mut MyClass
 {
@@ -2166,7 +2166,7 @@ var a = MyUnion::A;
 var b = match (a) {
     MyUnion::A => 1,
     MyUnion::B => "" // mismatched arm expression types
-}
+};
 union MyUnion { A }
 var a = MyUnion::A;
 var z = a matches MyUnion::A var b;
@@ -2528,9 +2528,9 @@ var a: result;
 var a = ok(1);
 var a: result::<string>;
 union MyUnion{A} var a = MyUnion::<string>::A;
-class MyClass{} var a = new MyClass::<string>{}
-class MyClass<T, T2>{} var a = new MyClass::<string>{}
-var a: result::<string, string, string>
+class MyClass{} var a = new MyClass::<string>{};
+class MyClass<T, T2>{} var a = new MyClass::<string>{};
+var a: result::<string, string, string>;
 fn Fn1<T1>(){} Fn1::<>();
 class MyClass
 {
