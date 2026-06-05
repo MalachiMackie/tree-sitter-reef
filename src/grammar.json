@@ -447,28 +447,28 @@
         },
         {
           "type": "SYMBOL",
-          "name": "variant"
+          "name": "_variant"
         }
       ]
     },
-    "variant": {
+    "_variant": {
       "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_unitVariant"
+          "name": "unit_variant"
         },
         {
           "type": "SYMBOL",
-          "name": "_tupleVariant"
+          "name": "tuple_variant"
         },
         {
           "type": "SYMBOL",
-          "name": "_classVariant"
+          "name": "class_variant"
         }
       ]
     },
-    "_unitVariant": {
+    "unit_variant": {
       "type": "FIELD",
       "name": "name",
       "content": {
@@ -476,7 +476,7 @@
         "name": "identifier"
       }
     },
-    "_tupleVariant": {
+    "tuple_variant": {
       "type": "SEQ",
       "members": [
         {
@@ -551,7 +551,7 @@
         }
       ]
     },
-    "_classVariant": {
+    "class_variant": {
       "type": "SEQ",
       "members": [
         {

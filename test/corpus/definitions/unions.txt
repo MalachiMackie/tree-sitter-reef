@@ -69,14 +69,14 @@ union MyUnion
     (union_definition
         name: (identifier)
         body: (member_list
-            (variant
+            (unit_variant
                 name: (identifier))
-            (variant
+            (unit_variant
                 name: (identifier))))
     (union_definition
         name: (identifier)
         body: (member_list
-            (variant
+            (tuple_variant
                 name: (identifier)
                 tuple_members:
                     (named_type_identifier (identifier))
@@ -85,7 +85,7 @@ union MyUnion
     (union_definition
         name: (identifier)
         body: (member_list
-            (variant
+            (class_variant
                 name: (identifier)
                 fields:
                     (field

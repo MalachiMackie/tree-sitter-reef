@@ -113,13 +113,13 @@ export default grammar({
 
     member_list: ($) => seq("{", repeat(seq($._member, optional(","))), "}"),
 
-    _member: ($) => choice($.field, $.function_definition, $.variant),
+    _member: ($) => choice($.field, $.function_definition, $._variant),
 
-    variant: ($) => choice($._unitVariant, $._tupleVariant, $._classVariant),
+    _variant: ($) => choice($.unit_variant, $.tuple_variant, $.class_variant),
 
-    _unitVariant: ($) => field("name", $.identifier),
+    unit_variant: ($) => field("name", $.identifier),
 
-    _tupleVariant: ($) =>
+    tuple_variant: ($) =>
       seq(
         field("name", $.identifier),
         field(
@@ -128,7 +128,7 @@ export default grammar({
         ),
       ),
 
-    _classVariant: ($) =>
+    class_variant: ($) =>
       seq(
         field("name", $.identifier),
         field("fields", seq("{", comma_separated_list($.field), "}")),

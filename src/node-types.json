@@ -491,6 +491,44 @@
     }
   },
   {
+    "type": "class_variant",
+    "named": true,
+    "fields": {
+      "fields": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "{",
+            "named": false
+          },
+          {
+            "type": "}",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "collection",
     "named": true,
     "fields": {},
@@ -2912,6 +2950,10 @@
       "required": false,
       "types": [
         {
+          "type": "class_variant",
+          "named": true
+        },
+        {
           "type": "field",
           "named": true
         },
@@ -2920,7 +2962,11 @@
           "named": true
         },
         {
-          "type": "variant",
+          "type": "tuple_variant",
+          "named": true
+        },
+        {
+          "type": "unit_variant",
           "named": true
         }
       ]
@@ -4110,6 +4156,56 @@
     }
   },
   {
+    "type": "tuple_variant",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "tuple_members": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "type_constraint",
     "named": true,
     "fields": {},
@@ -4546,6 +4642,22 @@
     }
   },
   {
+    "type": "unit_variant",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "use_segment",
     "named": true,
     "fields": {},
@@ -4837,78 +4949,6 @@
           "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "variant",
-    "named": true,
-    "fields": {
-      "fields": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "field",
-            "named": true
-          },
-          {
-            "type": "{",
-            "named": false
-          },
-          {
-            "type": "}",
-            "named": false
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "tuple_members": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "(",
-            "named": false
-          },
-          {
-            "type": ")",
-            "named": false
-          },
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "array_type_identifier",
-            "named": true
-          },
-          {
-            "type": "fn_type_identifier",
-            "named": true
-          },
-          {
-            "type": "named_type_identifier",
-            "named": true
-          },
-          {
-            "type": "tuple_type_identifier",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {
