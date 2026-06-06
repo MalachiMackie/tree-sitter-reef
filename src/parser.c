@@ -1431,81 +1431,81 @@ static const TSMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
   [123] = {.index = 385, .length = 2},
   [124] = {.index = 387, .length = 4},
   [125] = {.index = 391, .length = 4},
-  [126] = {.index = 395, .length = 1},
-  [127] = {.index = 396, .length = 2},
-  [128] = {.index = 398, .length = 3},
-  [129] = {.index = 401, .length = 5},
-  [130] = {.index = 406, .length = 4},
-  [131] = {.index = 410, .length = 4},
-  [132] = {.index = 414, .length = 4},
-  [133] = {.index = 418, .length = 3},
-  [134] = {.index = 421, .length = 6},
-  [135] = {.index = 427, .length = 6},
-  [136] = {.index = 433, .length = 6},
-  [137] = {.index = 439, .length = 6},
-  [138] = {.index = 445, .length = 6},
-  [139] = {.index = 451, .length = 2},
-  [140] = {.index = 453, .length = 3},
-  [141] = {.index = 456, .length = 2},
-  [142] = {.index = 458, .length = 3},
-  [143] = {.index = 461, .length = 6},
-  [144] = {.index = 467, .length = 6},
-  [145] = {.index = 473, .length = 6},
-  [146] = {.index = 479, .length = 6},
-  [147] = {.index = 485, .length = 6},
-  [148] = {.index = 491, .length = 6},
-  [149] = {.index = 497, .length = 6},
-  [150] = {.index = 503, .length = 6},
-  [151] = {.index = 509, .length = 6},
-  [152] = {.index = 515, .length = 6},
-  [153] = {.index = 521, .length = 5},
-  [154] = {.index = 526, .length = 5},
-  [155] = {.index = 531, .length = 3},
-  [156] = {.index = 534, .length = 2},
-  [157] = {.index = 536, .length = 4},
-  [158] = {.index = 540, .length = 5},
-  [159] = {.index = 545, .length = 7},
-  [160] = {.index = 552, .length = 3},
-  [161] = {.index = 555, .length = 2},
-  [162] = {.index = 557, .length = 4},
-  [163] = {.index = 561, .length = 3},
-  [164] = {.index = 564, .length = 3},
-  [165] = {.index = 567, .length = 3},
-  [166] = {.index = 570, .length = 7},
-  [167] = {.index = 577, .length = 7},
-  [168] = {.index = 584, .length = 7},
-  [169] = {.index = 591, .length = 7},
-  [170] = {.index = 598, .length = 7},
-  [171] = {.index = 605, .length = 4},
-  [172] = {.index = 609, .length = 6},
-  [173] = {.index = 615, .length = 6},
-  [174] = {.index = 621, .length = 6},
-  [175] = {.index = 627, .length = 3},
-  [176] = {.index = 630, .length = 4},
-  [177] = {.index = 634, .length = 3},
-  [178] = {.index = 637, .length = 4},
-  [179] = {.index = 641, .length = 4},
-  [180] = {.index = 645, .length = 8},
-  [181] = {.index = 653, .length = 5},
-  [182] = {.index = 658, .length = 4},
-  [183] = {.index = 662, .length = 5},
-  [184] = {.index = 667, .length = 4},
-  [185] = {.index = 671, .length = 3},
-  [186] = {.index = 674, .length = 5},
-  [187] = {.index = 679, .length = 4},
-  [188] = {.index = 683, .length = 5},
-  [189] = {.index = 688, .length = 2},
-  [190] = {.index = 690, .length = 5},
-  [191] = {.index = 695, .length = 4},
-  [192] = {.index = 699, .length = 5},
-  [193] = {.index = 704, .length = 4},
-  [194] = {.index = 708, .length = 5},
-  [195] = {.index = 713, .length = 5},
-  [196] = {.index = 718, .length = 6},
-  [197] = {.index = 724, .length = 5},
-  [198] = {.index = 729, .length = 6},
-  [199] = {.index = 735, .length = 6},
-  [200] = {.index = 741, .length = 6},
+  [126] = {.index = 395, .length = 2},
+  [127] = {.index = 397, .length = 2},
+  [128] = {.index = 399, .length = 3},
+  [129] = {.index = 402, .length = 5},
+  [130] = {.index = 407, .length = 4},
+  [131] = {.index = 411, .length = 4},
+  [132] = {.index = 415, .length = 4},
+  [133] = {.index = 419, .length = 3},
+  [134] = {.index = 422, .length = 6},
+  [135] = {.index = 428, .length = 6},
+  [136] = {.index = 434, .length = 6},
+  [137] = {.index = 440, .length = 6},
+  [138] = {.index = 446, .length = 6},
+  [139] = {.index = 452, .length = 2},
+  [140] = {.index = 454, .length = 3},
+  [141] = {.index = 457, .length = 2},
+  [142] = {.index = 459, .length = 3},
+  [143] = {.index = 462, .length = 6},
+  [144] = {.index = 468, .length = 6},
+  [145] = {.index = 474, .length = 6},
+  [146] = {.index = 480, .length = 6},
+  [147] = {.index = 486, .length = 6},
+  [148] = {.index = 492, .length = 6},
+  [149] = {.index = 498, .length = 6},
+  [150] = {.index = 504, .length = 6},
+  [151] = {.index = 510, .length = 6},
+  [152] = {.index = 516, .length = 6},
+  [153] = {.index = 522, .length = 5},
+  [154] = {.index = 527, .length = 5},
+  [155] = {.index = 532, .length = 3},
+  [156] = {.index = 535, .length = 3},
+  [157] = {.index = 538, .length = 4},
+  [158] = {.index = 542, .length = 5},
+  [159] = {.index = 547, .length = 7},
+  [160] = {.index = 554, .length = 3},
+  [161] = {.index = 557, .length = 2},
+  [162] = {.index = 559, .length = 4},
+  [163] = {.index = 563, .length = 3},
+  [164] = {.index = 566, .length = 3},
+  [165] = {.index = 569, .length = 3},
+  [166] = {.index = 572, .length = 7},
+  [167] = {.index = 579, .length = 7},
+  [168] = {.index = 586, .length = 7},
+  [169] = {.index = 593, .length = 7},
+  [170] = {.index = 600, .length = 7},
+  [171] = {.index = 607, .length = 4},
+  [172] = {.index = 611, .length = 6},
+  [173] = {.index = 617, .length = 6},
+  [174] = {.index = 623, .length = 6},
+  [175] = {.index = 629, .length = 3},
+  [176] = {.index = 632, .length = 4},
+  [177] = {.index = 636, .length = 3},
+  [178] = {.index = 639, .length = 4},
+  [179] = {.index = 643, .length = 4},
+  [180] = {.index = 647, .length = 8},
+  [181] = {.index = 655, .length = 5},
+  [182] = {.index = 660, .length = 4},
+  [183] = {.index = 664, .length = 5},
+  [184] = {.index = 669, .length = 4},
+  [185] = {.index = 673, .length = 3},
+  [186] = {.index = 676, .length = 5},
+  [187] = {.index = 681, .length = 4},
+  [188] = {.index = 685, .length = 5},
+  [189] = {.index = 690, .length = 2},
+  [190] = {.index = 692, .length = 5},
+  [191] = {.index = 697, .length = 4},
+  [192] = {.index = 701, .length = 5},
+  [193] = {.index = 706, .length = 4},
+  [194] = {.index = 710, .length = 5},
+  [195] = {.index = 715, .length = 5},
+  [196] = {.index = 720, .length = 6},
+  [197] = {.index = 726, .length = 5},
+  [198] = {.index = 731, .length = 6},
+  [199] = {.index = 737, .length = 6},
+  [200] = {.index = 743, .length = 6},
 };
 
 static const TSFieldMapEntry ts_field_map_entries[] = {
@@ -2031,188 +2031,190 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_tuple_members, 3},
   [395] =
     {field_module_path, 3},
-  [396] =
+    {field_name, 5},
+  [397] =
     {field_length, 5},
     {field_value, 3},
-  [398] =
+  [399] =
     {field_body, 4},
     {field_check, 2},
     {field_else, 6},
-  [401] =
+  [402] =
     {field_name, 2},
     {field_type, 3},
     {field_type, 4},
     {field_value, 5},
     {field_value, 6},
-  [406] =
+  [407] =
     {field_field_initializers, 3},
     {field_field_initializers, 4},
     {field_field_initializers, 5},
     {field_type, 1},
-  [410] =
+  [411] =
     {field_field_initializers, 5},
     {field_type, 1},
     {field_variant, 2},
     {field_variant, 3},
-  [414] =
+  [415] =
     {field_module_path, 2},
     {field_module_path, 3},
     {field_name, 5},
     {field_type_arguments, 6},
-  [418] =
+  [419] =
     {field_module_path, 2},
     {field_module_path, 3},
     {field_type_arguments, 6},
-  [421] =
+  [422] =
     {field_body, 6},
     {field_modifiers, 0},
     {field_name, 2},
     {field_parameters, 4},
     {field_type_constraints, 5},
     {field_type_parameters, 3},
-  [427] =
+  [428] =
     {field_modifiers, 0},
     {field_name, 2},
     {field_parameters, 4},
     {field_return_type, 5},
     {field_type_constraints, 6},
     {field_type_parameters, 3},
-  [433] =
+  [434] =
     {field_body, 6},
     {field_modifiers, 0},
     {field_name, 2},
     {field_parameters, 4},
     {field_return_type, 5},
     {field_type_parameters, 3},
-  [439] =
+  [440] =
     {field_body, 6},
     {field_modifiers, 0},
     {field_name, 2},
     {field_parameters, 3},
     {field_return_type, 4},
     {field_type_constraints, 5},
-  [445] =
+  [446] =
     {field_body, 6},
     {field_boxing_specifier, 1},
     {field_modifiers, 0},
     {field_name, 3},
     {field_type_constraints, 5},
     {field_type_parameters, 4},
-  [451] =
+  [452] =
     {field_type, 0},
     {field_variable_name, 4},
-  [453] =
+  [454] =
     {field_field_patterns, 2},
     {field_field_patterns, 3},
     {field_type, 0},
-  [456] =
+  [457] =
     {field_field_name, 0},
     {field_pattern, 2},
-  [458] =
+  [459] =
     {field_type, 0},
     {field_variable_name, 4},
     {field_variant, 2},
-  [461] =
+  [462] =
     {field_attributes, 0},
     {field_body, 6},
     {field_name, 2},
     {field_parameters, 4},
     {field_type_constraints, 5},
     {field_type_parameters, 3},
-  [467] =
+  [468] =
     {field_attributes, 0},
     {field_name, 2},
     {field_parameters, 4},
     {field_return_type, 5},
     {field_type_constraints, 6},
     {field_type_parameters, 3},
-  [473] =
+  [474] =
     {field_attributes, 0},
     {field_body, 6},
     {field_name, 2},
     {field_parameters, 4},
     {field_return_type, 5},
     {field_type_parameters, 3},
-  [479] =
+  [480] =
     {field_attributes, 0},
     {field_body, 6},
     {field_name, 2},
     {field_parameters, 3},
     {field_return_type, 4},
     {field_type_constraints, 5},
-  [485] =
+  [486] =
     {field_attributes, 0},
     {field_modifiers, 1},
     {field_name, 3},
     {field_parameters, 5},
     {field_type_constraints, 6},
     {field_type_parameters, 4},
-  [491] =
+  [492] =
     {field_attributes, 0},
     {field_modifiers, 1},
     {field_name, 3},
     {field_parameters, 5},
     {field_return_type, 6},
     {field_type_parameters, 4},
-  [497] =
+  [498] =
     {field_attributes, 0},
     {field_body, 6},
     {field_modifiers, 1},
     {field_name, 3},
     {field_parameters, 5},
     {field_type_parameters, 4},
-  [503] =
+  [504] =
     {field_attributes, 0},
     {field_body, 6},
     {field_modifiers, 1},
     {field_name, 3},
     {field_parameters, 4},
     {field_type_constraints, 5},
-  [509] =
+  [510] =
     {field_attributes, 0},
     {field_modifiers, 1},
     {field_name, 3},
     {field_parameters, 4},
     {field_return_type, 5},
     {field_type_constraints, 6},
-  [515] =
+  [516] =
     {field_attributes, 0},
     {field_body, 6},
     {field_modifiers, 1},
     {field_name, 3},
     {field_parameters, 4},
     {field_return_type, 5},
-  [521] =
+  [522] =
     {field_fields, 1},
     {field_fields, 2},
     {field_fields, 3},
     {field_fields, 4},
     {field_name, 0},
-  [526] =
+  [527] =
     {field_name, 0},
     {field_tuple_members, 1},
     {field_tuple_members, 2},
     {field_tuple_members, 3},
     {field_tuple_members, 4},
-  [531] =
+  [532] =
     {field_modifiers, 0},
     {field_name, 2},
     {field_type, 4},
-  [534] =
+  [535] =
     {field_module_path, 3},
     {field_module_path, 4},
-  [536] =
+    {field_name, 6},
+  [538] =
     {field_body, 4},
     {field_check, 2},
     {field_else, 7},
     {field_else_ifs, 5},
-  [540] =
+  [542] =
     {field_field_initializers, 5},
     {field_field_initializers, 6},
     {field_type, 1},
     {field_variant, 2},
     {field_variant, 3},
-  [545] =
+  [547] =
     {field_body, 7},
     {field_modifiers, 0},
     {field_name, 2},
@@ -2220,31 +2222,31 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_return_type, 5},
     {field_type_constraints, 6},
     {field_type_parameters, 3},
-  [552] =
+  [554] =
     {field_field_patterns, 2},
     {field_type, 0},
     {field_variable_name, 5},
-  [555] =
+  [557] =
     {field_type, 0},
     {field_variable_name, 5},
-  [557] =
+  [559] =
     {field_field_patterns, 2},
     {field_field_patterns, 3},
     {field_field_patterns, 4},
     {field_type, 0},
-  [561] =
+  [563] =
     {field_field_patterns, 4},
     {field_type, 0},
     {field_variant, 2},
-  [564] =
+  [566] =
     {field_element_patterns, 4},
     {field_type, 0},
     {field_variant, 2},
-  [567] =
+  [569] =
     {field_type, 0},
     {field_variable_name, 5},
     {field_variant, 2},
-  [570] =
+  [572] =
     {field_attributes, 0},
     {field_body, 7},
     {field_name, 2},
@@ -2252,7 +2254,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_return_type, 5},
     {field_type_constraints, 6},
     {field_type_parameters, 3},
-  [577] =
+  [579] =
     {field_attributes, 0},
     {field_body, 7},
     {field_modifiers, 1},
@@ -2260,7 +2262,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_parameters, 5},
     {field_type_constraints, 6},
     {field_type_parameters, 4},
-  [584] =
+  [586] =
     {field_attributes, 0},
     {field_modifiers, 1},
     {field_name, 3},
@@ -2268,7 +2270,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_return_type, 6},
     {field_type_constraints, 7},
     {field_type_parameters, 4},
-  [591] =
+  [593] =
     {field_attributes, 0},
     {field_body, 7},
     {field_modifiers, 1},
@@ -2276,7 +2278,7 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_parameters, 5},
     {field_return_type, 6},
     {field_type_parameters, 4},
-  [598] =
+  [600] =
     {field_attributes, 0},
     {field_body, 7},
     {field_modifiers, 1},
@@ -2284,56 +2286,56 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_parameters, 4},
     {field_return_type, 5},
     {field_type_constraints, 6},
-  [605] =
+  [607] =
     {field_name, 1},
     {field_type, 3},
     {field_value, 4},
     {field_value, 5},
-  [609] =
+  [611] =
     {field_fields, 1},
     {field_fields, 2},
     {field_fields, 3},
     {field_fields, 4},
     {field_fields, 5},
     {field_name, 0},
-  [615] =
+  [617] =
     {field_name, 0},
     {field_tuple_members, 1},
     {field_tuple_members, 2},
     {field_tuple_members, 3},
     {field_tuple_members, 4},
     {field_tuple_members, 5},
-  [621] =
+  [623] =
     {field_field_initializers, 5},
     {field_field_initializers, 6},
     {field_field_initializers, 7},
     {field_type, 1},
     {field_variant, 2},
     {field_variant, 3},
-  [627] =
+  [629] =
     {field_field_patterns, 2},
     {field_type, 0},
     {field_variable_name, 6},
-  [630] =
+  [632] =
     {field_field_patterns, 2},
     {field_field_patterns, 3},
     {field_type, 0},
     {field_variable_name, 6},
-  [634] =
+  [636] =
     {field_type, 0},
     {field_variable_name, 6},
     {field_variant, 2},
-  [637] =
+  [639] =
     {field_field_patterns, 4},
     {field_field_patterns, 5},
     {field_type, 0},
     {field_variant, 2},
-  [641] =
+  [643] =
     {field_element_patterns, 4},
     {field_element_patterns, 5},
     {field_type, 0},
     {field_variant, 2},
-  [645] =
+  [647] =
     {field_attributes, 0},
     {field_body, 8},
     {field_modifiers, 1},
@@ -2342,114 +2344,114 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_return_type, 6},
     {field_type_constraints, 7},
     {field_type_parameters, 4},
-  [653] =
+  [655] =
     {field_modifiers, 0},
     {field_name, 2},
     {field_type, 4},
     {field_value, 5},
     {field_value, 6},
-  [658] =
+  [660] =
     {field_field_patterns, 2},
     {field_field_patterns, 3},
     {field_type, 0},
     {field_variable_name, 7},
-  [662] =
+  [664] =
     {field_field_patterns, 2},
     {field_field_patterns, 3},
     {field_field_patterns, 4},
     {field_type, 0},
     {field_variable_name, 7},
-  [667] =
+  [669] =
     {field_field_patterns, 4},
     {field_type, 0},
     {field_variable_name, 7},
     {field_variant, 2},
-  [671] =
+  [673] =
     {field_type, 0},
     {field_variable_name, 7},
     {field_variant, 2},
-  [674] =
+  [676] =
     {field_field_patterns, 4},
     {field_field_patterns, 5},
     {field_field_patterns, 6},
     {field_type, 0},
     {field_variant, 2},
-  [679] =
+  [681] =
     {field_element_patterns, 4},
     {field_type, 0},
     {field_variable_name, 7},
     {field_variant, 2},
-  [683] =
+  [685] =
     {field_element_patterns, 4},
     {field_element_patterns, 5},
     {field_element_patterns, 6},
     {field_type, 0},
     {field_variant, 2},
-  [688] =
+  [690] =
     {field_body, 5},
     {field_check, 3},
-  [690] =
+  [692] =
     {field_field_patterns, 2},
     {field_field_patterns, 3},
     {field_field_patterns, 4},
     {field_type, 0},
     {field_variable_name, 8},
-  [695] =
+  [697] =
     {field_field_patterns, 4},
     {field_type, 0},
     {field_variable_name, 8},
     {field_variant, 2},
-  [699] =
+  [701] =
     {field_field_patterns, 4},
     {field_field_patterns, 5},
     {field_type, 0},
     {field_variable_name, 8},
     {field_variant, 2},
-  [704] =
+  [706] =
     {field_element_patterns, 4},
     {field_type, 0},
     {field_variable_name, 8},
     {field_variant, 2},
-  [708] =
+  [710] =
     {field_element_patterns, 4},
     {field_element_patterns, 5},
     {field_type, 0},
     {field_variable_name, 8},
     {field_variant, 2},
-  [713] =
+  [715] =
     {field_field_patterns, 4},
     {field_field_patterns, 5},
     {field_type, 0},
     {field_variable_name, 9},
     {field_variant, 2},
-  [718] =
+  [720] =
     {field_field_patterns, 4},
     {field_field_patterns, 5},
     {field_field_patterns, 6},
     {field_type, 0},
     {field_variable_name, 9},
     {field_variant, 2},
-  [724] =
+  [726] =
     {field_element_patterns, 4},
     {field_element_patterns, 5},
     {field_type, 0},
     {field_variable_name, 9},
     {field_variant, 2},
-  [729] =
+  [731] =
     {field_element_patterns, 4},
     {field_element_patterns, 5},
     {field_element_patterns, 6},
     {field_type, 0},
     {field_variable_name, 9},
     {field_variant, 2},
-  [735] =
+  [737] =
     {field_field_patterns, 4},
     {field_field_patterns, 5},
     {field_field_patterns, 6},
     {field_type, 0},
     {field_variable_name, 10},
     {field_variant, 2},
-  [741] =
+  [743] =
     {field_element_patterns, 4},
     {field_element_patterns, 5},
     {field_element_patterns, 6},
@@ -79892,7 +79894,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [3092] = {.entry = {.count = 1, .reusable = true}}, SHIFT(434),
   [3094] = {.entry = {.count = 1, .reusable = false}}, SHIFT(1433),
   [3096] = {.entry = {.count = 1, .reusable = false}}, SHIFT(436),
-  [3098] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attribute, 6, 0, 63),
+  [3098] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attribute, 6, 0, 62),
   [3100] = {.entry = {.count = 1, .reusable = false}}, SHIFT(449),
   [3102] = {.entry = {.count = 1, .reusable = true}}, SHIFT(1291),
   [3104] = {.entry = {.count = 1, .reusable = true}}, SHIFT(451),
@@ -79923,8 +79925,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [3154] = {.entry = {.count = 1, .reusable = false}}, SHIFT(1387),
   [3156] = {.entry = {.count = 1, .reusable = false}}, SHIFT(813),
   [3158] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attribute, 7, 0, 126),
-  [3160] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attribute, 7, 0, 99),
-  [3162] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attribute, 4, 0, 0),
+  [3160] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attribute, 7, 0, 98),
+  [3162] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_attribute, 4, 0, 8),
   [3164] = {.entry = {.count = 1, .reusable = true}}, SHIFT(1309),
   [3166] = {.entry = {.count = 1, .reusable = true}}, SHIFT(1373),
   [3168] = {.entry = {.count = 1, .reusable = true}}, SHIFT(1374),

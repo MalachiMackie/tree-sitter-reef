@@ -163,7 +163,7 @@ export default grammar({
         "#",
         "[",
         choice(
-          $.identifier,
+          field("name", $.identifier),
           seq(
             optional(":::"),
             field(
@@ -171,7 +171,7 @@ export default grammar({
               seq($.identifier, repeat(seq(":::", $.identifier))),
             ),
             ":::",
-            $.identifier,
+            field("name", $.identifier),
           ),
         ),
         "]",
