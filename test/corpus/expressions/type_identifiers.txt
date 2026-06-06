@@ -32,73 +32,75 @@ var x: unboxed Fn();
 (source_file
     (variable_declaration
         name: (identifier)
-        type: (builtin_type_identifier))
+        type: (builtin_type_identifier
+            (builtin_type_identifier_name)))
     (variable_declaration
         name: (identifier)
         type: (named_type_identifier
-            (identifier)
-            type_arguments: (named_type_identifier (identifier))
-            type_arguments: (named_type_identifier (identifier))))
+            name: (identifier)
+            type_arguments: (named_type_identifier name:  (identifier))
+            type_arguments: (named_type_identifier name:  (identifier))))
     (variable_declaration
         name: (identifier)
         type: (named_type_identifier
-            (identifier)
+            name: (identifier)
             type_arguments:
                 (named_type_identifier
-                    (identifier)
-                    type_arguments: (named_type_identifier (identifier)))
-            type_arguments: (named_type_identifier (identifier))))
+                    name: (identifier)
+                    type_arguments: (named_type_identifier name:  (identifier)))
+            type_arguments: (named_type_identifier name:  (identifier))))
     (variable_declaration
         name: (identifier)
         type: (named_type_identifier
             module_path: (identifier)
             module_path: (identifier)
-            (identifier)))
+            name: (identifier)))
     (variable_declaration
         name: (identifier)
         type: (named_type_identifier
             module_path: (identifier)
             module_path: (identifier)
-            (identifier)))
-    (variable_declaration
-        name: (identifier)
-        type: (named_type_identifier
-            (boxing_specifier)
-            (identifier)))
+            name: (identifier)))
     (variable_declaration
         name: (identifier)
         type: (named_type_identifier
             (boxing_specifier)
-            (identifier)))
+            name: (identifier)))
+    (variable_declaration
+        name: (identifier)
+        type: (named_type_identifier
+            (boxing_specifier)
+            name: (identifier)))
     (variable_declaration
         name: (identifier)
         type: (array_type_identifier
-            (named_type_identifier (identifier))))
+            (named_type_identifier name:  (identifier))))
     (variable_declaration
         name: (identifier)
         type: (array_type_identifier
-            (named_type_identifier (identifier))
+            (named_type_identifier name:  (identifier))
             (int)))
     (variable_declaration
         name: (identifier)
         type: (array_type_identifier
             (boxing_specifier)
-            (named_type_identifier (identifier))
+            (named_type_identifier name:  (identifier))
             (int)))
     (variable_declaration
         name: (identifier)
         type: (tuple_type_identifier
-            (named_type_identifier (identifier))
-            (named_type_identifier (identifier))))
+            (named_type_identifier name:  (identifier))
+            (named_type_identifier name:  (identifier))))
     (variable_declaration
         name: (identifier)
         type: (tuple_type_identifier
             (boxing_specifier)
-            (named_type_identifier (identifier))
-            (named_type_identifier (identifier))))
+            (named_type_identifier name:  (identifier))
+            (named_type_identifier name:  (identifier))))
     (variable_declaration
         name: (identifier)
-        type: (builtin_type_identifier))
+        type: (builtin_type_identifier
+            (builtin_type_identifier_name)))
     (variable_declaration
         name: (identifier)
         type: (fn_type_identifier
@@ -107,24 +109,24 @@ var x: unboxed Fn();
         name: (identifier)
         type: (fn_type_identifier
             (fn_type_parameter_list
-                (fn_type_parameter (named_type_identifier (identifier)))
-                (fn_type_parameter (named_type_identifier (identifier))))))
+                (fn_type_parameter (named_type_identifier name:  (identifier)))
+                (fn_type_parameter (named_type_identifier name:  (identifier))))))
     (variable_declaration
         name: (identifier)
         type: (fn_type_identifier
             (fn_type_parameter_list
-                (fn_type_parameter (modifier) (named_type_identifier (identifier)))
-                (fn_type_parameter (named_type_identifier (identifier))))))
+                (fn_type_parameter (modifier) (named_type_identifier name:  (identifier)))
+                (fn_type_parameter (named_type_identifier name:  (identifier))))))
     (variable_declaration
         name: (identifier)
         type: (fn_type_identifier
             (fn_type_parameter_list)
-            (return_type (named_type_identifier (identifier)))))
+            (return_type (named_type_identifier name:  (identifier)))))
     (variable_declaration
         name: (identifier)
         type: (fn_type_identifier
             (fn_type_parameter_list)
-            (return_type (modifier) (named_type_identifier (identifier)))))
+            (return_type (modifier) (named_type_identifier name:  (identifier)))))
     (variable_declaration
         name: (identifier)
         type: (fn_type_identifier

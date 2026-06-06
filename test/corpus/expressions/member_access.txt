@@ -22,5 +22,5 @@ a.b::<SomeType>();
         method: (member_access
             owner: (variable_access name: (identifier))
             member_name: (identifier)
-            type_arguments: (named_type_identifier (identifier))))
+            type_arguments: (named_type_identifier name: (identifier))))
 )

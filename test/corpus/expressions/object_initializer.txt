@@ -10,9 +10,9 @@ new x::v {};
 
 (source_file
     (object_initializer
-        type: (named_type_identifier (identifier)))
+        type: (named_type_identifier name: (identifier)))
     (object_initializer
-        type: (named_type_identifier (identifier))
+        type: (named_type_identifier name: (identifier))
         field_initializers: (field_initializer
             field_name: (identifier)
             value: (int))
@@ -21,6 +21,6 @@ new x::v {};
             value: (int))
     )
     (object_initializer
-        type: (named_type_identifier (identifier))
+        type: (named_type_identifier name: (identifier))
         variant: (identifier))
 )

@@ -12,15 +12,15 @@ a::b::<SomeType>();
 
 (source_file
     (static_member_access
-        owner_type: (named_type_identifier (identifier))
+        owner_type: (named_type_identifier name: (identifier))
         member_name: (identifier))
     (method_call
         method: (static_member_access
-            owner_type: (named_type_identifier (identifier))
+            owner_type: (named_type_identifier name: (identifier))
             member_name: (identifier)))
     (method_call
         method: (static_member_access
-            owner_type: (named_type_identifier (identifier))
+            owner_type: (named_type_identifier name: (identifier))
             member_name: (identifier)
-            type_arguments: (named_type_identifier (identifier))))
+            type_arguments: (named_type_identifier name: (identifier))))
 )

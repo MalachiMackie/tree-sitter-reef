@@ -549,26 +549,29 @@ export default grammar({
         $.fn_type_identifier,
       ),
 
+    builtin_type_identifier_name: ($) =>
+      choice(
+        "u64",
+        "u32",
+        "u16",
+        "u8",
+        "i64",
+        "i32",
+        "i16",
+        "i8",
+        "result",
+        "option",
+        "string",
+        "()",
+      ),
+
     builtin_type_identifier: ($) =>
       prec.right(
         1,
         seq(
           optional($.boxing_specifier),
           choice(
-            choice(
-              "u64",
-              "u32",
-              "u16",
-              "u8",
-              "i64",
-              "i32",
-              "i16",
-              "i8",
-              "result",
-              "option",
-              "string",
-              "()",
-            ),
+            $.builtin_type_identifier_name,
             seq(
               optional(":::"),
               field(
@@ -576,20 +579,7 @@ export default grammar({
                 seq($.identifier, repeat(seq(":::", $.identifier))),
               ),
               ":::",
-              choice(
-                "u64",
-                "u32",
-                "u16",
-                "u8",
-                "i64",
-                "i32",
-                "i16",
-                "i8",
-                "result",
-                "option",
-                "string",
-                "()",
-              ),
+              $.builtin_type_identifier_name,
             ),
           ),
           field("type_arguments", optional($._type_argument_list)),
@@ -645,7 +635,7 @@ export default grammar({
         seq(
           optional($.boxing_specifier),
           choice(
-            $.identifier,
+            field("name", $.identifier),
             seq(
               optional(":::"),
               field(
@@ -653,7 +643,7 @@ export default grammar({
                 seq($.identifier, repeat(seq(":::", $.identifier))),
               ),
               ":::",
-              $.identifier,
+              field("name", $.identifier),
             ),
           ),
           field("type_arguments", optional($._type_argument_list)),

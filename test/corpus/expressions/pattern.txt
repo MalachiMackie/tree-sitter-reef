@@ -39,38 +39,38 @@ match (x) {
             (variable_declaration_pattern (modifier) variable_name: (identifier))
             (block))
         (match_arm
-            (type_pattern type: (named_type_identifier (identifier)))
+            (type_pattern type: (named_type_identifier name: (identifier)))
             (block))
         (match_arm
-            (type_pattern type: (named_type_identifier (identifier)) variable_name: (identifier))
+            (type_pattern type: (named_type_identifier name: (identifier)) variable_name: (identifier))
             (block))
         (match_arm
             (type_pattern
                 type: (named_type_identifier
-                    (identifier)
-                    type_arguments: (named_type_identifier (identifier))))
+                    name: (identifier)
+                    type_arguments: (named_type_identifier name: (identifier))))
             (block))
         (match_arm
             (union_variant_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 variant: (identifier))
             (block))
         (match_arm
             (union_variant_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 variant: (identifier)
                 variable_name: (identifier))
             (block))
         (match_arm
             (union_tuple_variant_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 variant: (identifier)
                 element_patterns: (variable_declaration_pattern variable_name: (identifier))
                 element_patterns: (variable_declaration_pattern variable_name: (identifier)))
             (block))
         (match_arm
             (union_tuple_variant_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 variant: (identifier)
                 element_patterns: (variable_declaration_pattern variable_name: (identifier))
                 element_patterns: (variable_declaration_pattern variable_name: (identifier))
@@ -78,26 +78,26 @@ match (x) {
             (block))
         (match_arm
             (union_class_variant_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 variant: (identifier))
             (block))
         (match_arm
             (union_class_variant_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 variant: (identifier)
                 field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
                 field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier))))
             (block))
         (match_arm
             (union_class_variant_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 variant: (identifier)
                 field_patterns: (field_pattern field_name: (identifier))
                 field_patterns: (field_pattern field_name: (identifier)))
             (block))
         (match_arm
             (union_class_variant_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 variant: (identifier)
                 field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
                 field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
@@ -105,32 +105,32 @@ match (x) {
             (block))
         (match_arm
             (class_pattern
-                type: (named_type_identifier (identifier)))
+                type: (named_type_identifier name: (identifier)))
             (block))
         (match_arm
             (class_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
                 field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier))))
             (block))
         (match_arm
             (class_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 field_patterns: (field_pattern field_name: (identifier))
                 field_patterns: (field_pattern field_name: (identifier)))
             (block))
         (match_arm
             (class_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
                 field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier)))
                 variable_name: (identifier))
             (block))
         (match_arm
             (class_pattern
-                type: (named_type_identifier (identifier))
+                type: (named_type_identifier name: (identifier))
                 field_patterns: (field_pattern field_name: (identifier) pattern: (class_pattern
-                    type: (named_type_identifier (identifier))
+                    type: (named_type_identifier name: (identifier))
                     field_patterns: (field_pattern field_name: (identifier) pattern: (variable_declaration_pattern variable_name: (identifier))))))
             (block)))
 )

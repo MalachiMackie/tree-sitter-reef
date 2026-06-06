@@ -14,7 +14,7 @@ a matches MyUnion::A(var b);
     (matches
         check: (variable_access name: (identifier))
         pattern: (union_tuple_variant_pattern
-            type: (named_type_identifier (identifier))
+            type: (named_type_identifier name: (identifier))
             variant: (identifier)
             element_patterns: (variable_declaration_pattern variable_name: (identifier))))
 )

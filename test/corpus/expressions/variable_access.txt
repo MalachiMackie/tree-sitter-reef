@@ -16,7 +16,8 @@ some:::path:::value;
         name: (identifier))
     (variable_access
         name: (identifier)
-        type_arguments: (builtin_type_identifier))
+        type_arguments: (builtin_type_identifier
+            (builtin_type_identifier_name)))
     (variable_access
         module_path: (identifier)
         module_path: (identifier)

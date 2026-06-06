@@ -420,15 +420,24 @@
       }
     },
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
         {
           "type": "boxing_specifier",
           "named": true
+        },
+        {
+          "type": "builtin_type_identifier_name",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "builtin_type_identifier_name",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "class_definition",
@@ -3336,6 +3345,16 @@
           }
         ]
       },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
       "type_arguments": {
         "multiple": true,
         "required": false,
@@ -3376,15 +3395,11 @@
       }
     },
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
         {
           "type": "boxing_specifier",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         }
       ]
