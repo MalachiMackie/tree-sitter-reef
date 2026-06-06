@@ -543,12 +543,59 @@ export default grammar({
 
     _type_identifier: ($) =>
       choice(
+        $.builtin_type_identifier,
         $.named_type_identifier,
         $.array_type_identifier,
         $.tuple_type_identifier,
         $.fn_type_identifier,
       ),
 
+    builtin_type_identifier: ($) =>
+      prec.right(
+        1,
+        seq(
+          optional($.boxing_specifier),
+          choice(
+            choice(
+              "u64",
+              "u32",
+              "u16",
+              "u8",
+              "i64",
+              "i32",
+              "i16",
+              "i8",
+              "result",
+              "option",
+              "string",
+              "()",
+            ),
+            seq(
+              optional(":::"),
+              field(
+                "module_path",
+                seq($.identifier, repeat(seq(":::", $.identifier))),
+              ),
+              ":::",
+              choice(
+                "u64",
+                "u32",
+                "u16",
+                "u8",
+                "i64",
+                "i32",
+                "i16",
+                "i8",
+                "result",
+                "option",
+                "string",
+                "()",
+              ),
+            ),
+          ),
+          field("type_arguments", optional($._type_argument_list)),
+        ),
+      ),
     array_type_identifier: ($) =>
       prec(
         1,
@@ -561,9 +608,18 @@ export default grammar({
         ),
       ),
 
+    tuple: ($) =>
+      prec.right(
+        5,
+        choice(
+          "()",
+          seq("(", optional(comma_separated_list($._expression)), ")"),
+        ),
+      ),
+
     tuple_type_identifier: ($) =>
       prec(
-        1,
+        3,
         seq(
           optional($.boxing_specifier),
           seq("(", comma_separated_list($._type_identifier), ")"),
@@ -660,8 +716,5 @@ export default grammar({
     bool: ($) => choice("true", "false"),
 
     todo: ($) => "todo!",
-
-    tuple: ($) =>
-      prec(4, seq("(", optional(comma_separated_list($._expression)), ")")),
   },
 });

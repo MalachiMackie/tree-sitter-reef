@@ -6,7 +6,7 @@ a.b;
 
 a.b();
 
-a.b::<string>();
+a.b::<SomeType>();
 
 ---
 

@@ -23,12 +23,12 @@ union MyUnion
 
 union MyUnion
 {
-    B(string,int,),
+    B(SomeType,SomeType,),
 }
 
 union MyUnion
 {
-    B{field MyField: string, field otherField: int},
+    B{field MyField: SomeType, field otherField: SomeType},
 }
 
 union MyUnion

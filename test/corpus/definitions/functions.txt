@@ -14,11 +14,11 @@ extern fn fn_3() {}
 
 pub static extern fn fn_3() {}
 
-fn fn_4(a: string, mut b: int,) {}
+fn fn_4(a: SomeType, mut b: SomeType,) {}
 
-fn fn_5(): string {}
+fn fn_5(): SomeType {}
 
-fn fn_5(): mut string {}
+fn fn_5(): mut SomeType {}
 
 #[my_attribute]
 #[:::some:::path:::my_attribute_2]

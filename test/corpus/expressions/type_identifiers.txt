@@ -3,36 +3,36 @@ Type Identifiers
 =========================
 
 var x: string;
-var x: string::<A, B,>;
-var x: string::<A::<B>, C>;
+var x: SomeType::<A, B,>;
+var x: SomeType::<A::<B>, C>;
 
-var x: A:::B:::string;
-var x: :::A:::B:::string;
+var x: A:::B:::SomeType;
+var x: :::A:::B:::SomeType;
 
-var x: unboxed string;
-var x: boxed string;
+var x: unboxed SomeType;
+var x: boxed SomeType;
 
-var x: [string];
-var x: [string; 10];
-var x: unboxed [string; 10];
+var x: [SomeType];
+var x: [SomeType; 10];
+var x: unboxed [SomeType; 10];
 
-var x: (string, string,);
-var x: unboxed (string, string,);
+var x: (SomeType, SomeType,);
+var x: unboxed (SomeType, SomeType,);
 
 var x: ();
 
 var x: Fn();
-var x: Fn(string, int);
-var x: Fn(mut string, int);
-var x: Fn(): string;
-var x: Fn(): mut string;
+var x: Fn(SomeType, int);
+var x: Fn(mut SomeType, int);
+var x: Fn(): SomeType;
+var x: Fn(): mut SomeType;
 var x: unboxed Fn();
 
 ---
 (source_file
     (variable_declaration
         name: (identifier)
-        type: (named_type_identifier (identifier)))
+        type: (builtin_type_identifier))
     (variable_declaration
         name: (identifier)
         type: (named_type_identifier
@@ -98,7 +98,7 @@ var x: unboxed Fn();
             (named_type_identifier (identifier))))
     (variable_declaration
         name: (identifier)
-        type: (tuple_type_identifier))
+        type: (builtin_type_identifier))
     (variable_declaration
         name: (identifier)
         type: (fn_type_identifier

@@ -16,15 +16,15 @@ class MyClass<T> where T : boxed something
 {}
 
 class MyClass {
-    field MyField: string,
+    field MyField: SomeType,
 }
 
 class MyClass {
-    pub mut field MyField: string,
+    pub mut field MyField: SomeType,
 }
 
 class MyClass {
-    pub mut static field MyField: string = "",
+    pub mut static field MyField: SomeType = "",
 }
 
 class MyClass {
