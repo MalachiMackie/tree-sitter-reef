@@ -4060,6 +4060,11 @@
     }
   },
   {
+    "type": "star",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "static_member_access",
     "named": true,
     "fields": {
@@ -4852,6 +4857,10 @@
       "types": [
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "star",
           "named": true
         },
         {

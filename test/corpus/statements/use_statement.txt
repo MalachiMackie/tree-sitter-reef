@@ -16,7 +16,7 @@ use x:::{a:::{b, c}, d};
 (source_file
     (use_statement (use_segment (identifier)))
     (use_statement (use_segment (identifier)))
-    (use_statement (use_segment (identifier)))
+    (use_statement (use_segment (identifier) (star)))
     (use_statement
         (use_segment
             (identifier)

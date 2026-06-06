@@ -325,6 +325,8 @@ export default grammar({
 
     use_statement: ($) => seq("use", optional(":::"), $.use_segment),
 
+    star: ($) => "*",
+
     use_segment: ($) =>
       seq(
         $.identifier,
@@ -334,7 +336,7 @@ export default grammar({
             choice(
               $.use_segment,
               seq("{", comma_separated_list($.use_segment), "}"),
-              "*",
+              $.star,
             ),
           ),
         ),

@@ -1677,6 +1677,10 @@
         }
       ]
     },
+    "star": {
+      "type": "STRING",
+      "value": "*"
+    },
     "use_segment": {
       "type": "SEQ",
       "members": [
@@ -1760,8 +1764,8 @@
                       ]
                     },
                     {
-                      "type": "STRING",
-                      "value": "*"
+                      "type": "SYMBOL",
+                      "name": "star"
                     }
                   ]
                 }
