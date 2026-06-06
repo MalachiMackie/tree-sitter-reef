@@ -53,12 +53,12 @@ export default grammar({
 
   word: ($) => $.identifier,
 
-  extras: ($) => [/\s/, $._comment],
+  extras: ($) => [/\s/, $.comment],
 
   rules: {
     source_file: ($) => repeat(choice($._definition, $._statement)),
 
-    _comment: ($) =>
+    comment: ($) =>
       token(
         choice(seq("//", /.*/), seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
       ),

@@ -19,6 +19,8 @@ var a = "";
 (source_file
     (variable_declaration
         name: (identifier)
+        (comment)
+        (comment)
         value: (string))
     (variable_declaration
         name: (identifier)

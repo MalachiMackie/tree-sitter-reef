@@ -19,7 +19,7 @@
         ]
       }
     },
-    "_comment": {
+    "comment": {
       "type": "TOKEN",
       "content": {
         "type": "CHOICE",
@@ -3630,7 +3630,7 @@
     },
     {
       "type": "SYMBOL",
-      "name": "_comment"
+      "name": "comment"
     }
   ],
   "conflicts": [],
