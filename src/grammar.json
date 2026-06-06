@@ -3483,8 +3483,41 @@
       "value": "[a-zA-Z_][a-zA-Z_0-9]*"
     },
     "string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "string_fragment"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "escape_sequence"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "\""
+        }
+      ]
+    },
+    "string_fragment": {
       "type": "PATTERN",
-      "value": "\"[^\"]*\""
+      "value": "[^\"\\\\]+"
+    },
+    "escape_sequence": {
+      "type": "PATTERN",
+      "value": "\\\\."
     },
     "int": {
       "type": "PATTERN",

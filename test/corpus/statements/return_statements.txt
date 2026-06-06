@@ -3,11 +3,11 @@ Return
 =================
 
 return;
-return "a";
+return true;
 
 ---
 
 (source_file
     (return)
-    (return value: (string))
+    (return value: (bool))
 )

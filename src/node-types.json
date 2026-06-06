@@ -4006,6 +4006,25 @@
     }
   },
   {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        },
+        {
+          "type": "string_fragment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "tuple",
     "named": true,
     "fields": {},
@@ -5090,6 +5109,10 @@
     "named": false
   },
   {
+    "type": "\"",
+    "named": false
+  },
+  {
     "type": "#",
     "named": false
   },
@@ -5222,6 +5245,10 @@
     "named": false
   },
   {
+    "type": "escape_sequence",
+    "named": true
+  },
+  {
     "type": "extern",
     "named": false
   },
@@ -5282,7 +5309,7 @@
     "named": false
   },
   {
-    "type": "string",
+    "type": "string_fragment",
     "named": true
   },
   {

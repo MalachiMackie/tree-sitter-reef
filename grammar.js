@@ -641,11 +641,16 @@ export default grammar({
         field("body", $.block),
       ),
 
-    identifier: ($) => new RustRegex("[a-zA-Z_][a-zA-Z_0-9]*"),
+    identifier: ($) => /[a-zA-Z_][a-zA-Z_0-9]*/,
 
-    string: ($) => new RustRegex('"[^"]*"'),
+    string: ($) =>
+      seq('"', repeat(choice($.string_fragment, $.escape_sequence)), '"'),
 
-    int: ($) => new RustRegex("[0-9]+"),
+    string_fragment: ($) => /[^"\\]+/,
+
+    escape_sequence: ($) => /\\./,
+
+    int: ($) => /[0-9]+/,
 
     bool: ($) => choice("true", "false"),
 

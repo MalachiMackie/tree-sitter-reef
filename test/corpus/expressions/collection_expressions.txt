@@ -3,17 +3,17 @@ Collection Expressions
 =========================
 
 [];
-["hi"];
-[unboxed; "hi"];
-["hi"; 2];
-[unboxed; "hi"; 2];
+[true];
+[unboxed; true];
+[true; 2];
+[unboxed; true; 2];
 
 ---
 
 (source_file
     (collection)
-    (collection (string))
-    (collection (boxing_specifier) (string))
-    (collection_fill value: (string) length: (int))
-    (collection_fill (boxing_specifier) value: (string) length: (int))
+    (collection (bool))
+    (collection (boxing_specifier) (bool))
+    (collection_fill value: (bool) length: (int))
+    (collection_fill (boxing_specifier) value: (bool) length: (int))
 )
