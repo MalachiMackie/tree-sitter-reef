@@ -1543,7 +1543,7 @@
     },
     "binary_operator": {
       "type": "PREC_LEFT",
-      "value": 1,
+      "value": 0,
       "content": {
         "type": "SEQ",
         "members": [
@@ -2046,7 +2046,7 @@
     },
     "method_call": {
       "type": "PREC",
-      "value": 1,
+      "value": 4,
       "content": {
         "type": "SEQ",
         "members": [

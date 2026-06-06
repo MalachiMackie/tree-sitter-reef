@@ -8,6 +8,8 @@ x(a, b,);
 
 x()();
 
+true && some_string_check();
+
 ---
 
 (source_file
@@ -19,5 +21,9 @@ x()();
         arguments: (variable_access name: (identifier)))
     (method_call
         method: (method_call
+            method: (variable_access name: (identifier))))
+    (binary_operator
+        (bool)
+        (method_call
             method: (variable_access name: (identifier))))
 )

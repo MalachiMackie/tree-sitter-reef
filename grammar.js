@@ -299,7 +299,6 @@ export default grammar({
 
     binary_operator: ($) =>
       prec.left(
-        1,
         seq(
           $._expression,
           choice(
@@ -392,7 +391,7 @@ export default grammar({
 
     method_call: ($) =>
       prec(
-        1,
+        4,
         seq(
           field("method", $._expression),
           "(",
