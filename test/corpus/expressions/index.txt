@@ -9,9 +9,9 @@ x[a];
 
 (source_file
     (index
-        owner: (variable_access (identifier))
+        owner: (variable_access name: (identifier))
         index: (int))
     (index
-        owner: (variable_access (identifier))
-        index: (variable_access (identifier)))
+        owner: (variable_access name: (identifier))
+        index: (variable_access name: (identifier)))
 )

@@ -9,10 +9,10 @@ a matches MyUnion::A(var b);
 
 (source_file
     (matches
-        check: (variable_access (identifier))
+        check: (variable_access name: (identifier))
         pattern: (discard_pattern))
     (matches
-        check: (variable_access (identifier))
+        check: (variable_access name: (identifier))
         pattern: (union_tuple_variant_pattern
             type: (named_type_identifier (identifier))
             variant: (identifier)

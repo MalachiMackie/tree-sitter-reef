@@ -7,7 +7,7 @@ Prefix Unary Operators
 ---
 
 (source_file
-    (prefix_unary_operator (variable_access (identifier)))
+    (prefix_unary_operator (variable_access name: (identifier)))
 )
 
 =========================
@@ -19,5 +19,5 @@ a?;
 ---
 
 (source_file
-    (postfix_unary_operator (variable_access (identifier)))
+    (postfix_unary_operator (variable_access name: (identifier)))
 )

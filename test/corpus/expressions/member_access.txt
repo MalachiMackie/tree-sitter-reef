@@ -12,15 +12,15 @@ a.b::<string>();
 
 (source_file
     (member_access
-        owner: (variable_access (identifier))
+        owner: (variable_access name: (identifier))
         member_name: (identifier))
     (method_call
         method: (member_access
-            owner: (variable_access (identifier))
+            owner: (variable_access name: (identifier))
             member_name: (identifier)))
     (method_call
         method: (member_access
-            owner: (variable_access (identifier))
+            owner: (variable_access name: (identifier))
             member_name: (identifier)
             type_arguments: (named_type_identifier (identifier))))
 )

@@ -13,16 +13,16 @@ some:::path:::value;
 ---
 (source_file
     (variable_access
-        (identifier))
+        name: (identifier))
     (variable_access
-        (identifier)
+        name: (identifier)
         type_arguments: (named_type_identifier (identifier)))
     (variable_access
         module_path: (identifier)
         module_path: (identifier)
-        (identifier))
+        name: (identifier))
     (variable_access
         module_path: (identifier)
         module_path: (identifier)
-        (identifier))
+        name: (identifier))
 )

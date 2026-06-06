@@ -28,7 +28,7 @@ match (x) {
 
 (source_file
     (match
-        check: (variable_access (identifier))
+        check: (variable_access name: (identifier))
         (match_arm
             (discard_pattern)
             (block))

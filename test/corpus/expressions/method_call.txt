@@ -12,12 +12,12 @@ x()();
 
 (source_file
     (method_call
-        method: (variable_access (identifier)))
+        method: (variable_access name: (identifier)))
     (method_call
-        method: (variable_access (identifier))
-        arguments: (variable_access (identifier))
-        arguments: (variable_access (identifier)))
+        method: (variable_access name: (identifier))
+        arguments: (variable_access name: (identifier))
+        arguments: (variable_access name: (identifier)))
     (method_call
         method: (method_call
-            method: (variable_access (identifier))))
+            method: (variable_access name: (identifier))))
 )

@@ -196,7 +196,12 @@ export default grammar({
     parameter_list: ($) => seq("(", comma_separated_list($.parameter), ")"),
 
     parameter: ($) =>
-      seq(optional($.modifier), $.identifier, ":", $._type_identifier),
+      seq(
+        optional($.modifier),
+        field("name", $.identifier),
+        ":",
+        $._type_identifier,
+      ),
 
     _statement: ($) =>
       prec(
@@ -351,7 +356,7 @@ export default grammar({
         2,
         seq(
           choice(
-            $.identifier,
+            field("name", $.identifier),
             seq(
               optional(":::"),
               field(
@@ -359,7 +364,7 @@ export default grammar({
                 seq($.identifier, repeat(seq(":::", $.identifier))),
               ),
               ":::",
-              $.identifier,
+              field("name", $.identifier),
             ),
           ),
           field("type_arguments", optional($._type_argument_list)),
