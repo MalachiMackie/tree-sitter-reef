@@ -15,9 +15,13 @@ Postfix Unary Operators
 =========================
 
 a?;
+a++;
+a--;
 
 ---
 
 (source_file
+    (postfix_unary_operator (variable_access name: (identifier)))
+    (postfix_unary_operator (variable_access name: (identifier)))
     (postfix_unary_operator (variable_access name: (identifier)))
 )

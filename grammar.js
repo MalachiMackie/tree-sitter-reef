@@ -32,6 +32,7 @@ export default grammar({
       "grab",
       "mut",
       "while",
+      "for",
       "break",
       "continue",
       "match",
@@ -215,7 +216,7 @@ export default grammar({
       ),
 
     // expressions that don't need a semicolon to be a statement
-    _block_expression: ($) => choice($.block, $.match, $.if, $.while),
+    _block_expression: ($) => choice($.block, $.match, $.if, $.while, $.for),
 
     // expressions that need a semicolon to be a statement
     _non_block_expression: ($) =>
@@ -250,7 +251,8 @@ export default grammar({
     prefix_unary_operator: ($) =>
       prec(-1, seq(choice("-", "!"), $._expression)),
 
-    postfix_unary_operator: ($) => prec(-2, seq($._expression, "?")),
+    postfix_unary_operator: ($) =>
+      prec(-2, seq($._expression, choice("?", "++", "--"))),
 
     collection: ($) =>
       seq(
@@ -691,6 +693,21 @@ export default grammar({
         field("check", $._expression),
         ")",
         field("body", $.block),
+      ),
+
+    for: ($) =>
+      prec.left(
+        seq(
+          "for",
+          "(",
+          optional(field("initializer", $._expression)),
+          ";",
+          optional(field("check", $._expression)),
+          ";",
+          optional(field("increment", $._expression)),
+          ")",
+          field("body", $._expression),
+        ),
       ),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z_0-9]*/,

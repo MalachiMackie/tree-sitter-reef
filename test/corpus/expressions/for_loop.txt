@@ -1,0 +1,23 @@
+==========
+For
+==========
+
+for (var a = 0; true; a++) {
+}
+
+for (;;) {
+}
+
+---
+
+(source_file
+    (for
+        initializer: (variable_declaration
+            name: (identifier)
+            value: (int))
+        check: (bool)
+        increment: (postfix_unary_operator (variable_access name: (identifier)))
+        body: (block))
+    (for
+        body: (block))
+)

@@ -37,14 +37,14 @@
   },
   "devDependencies": {
     "prebuildify": "^6.0.1",
-    "tree-sitter": "^0.25.0",
+    "@keqingmoe/tree-sitter": "^0.26.2",
     "tree-sitter-cli": "^0.26.9"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.25.0"
+    "@keqingmoe/tree-sitter": "^0.26.2"
   },
   "peerDependenciesMeta": {
-    "tree-sitter": {
+    "@keqingmoe/tree-sitter": {
       "optional": true
     }
   },

@@ -131,6 +131,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "grab",
           "named": true
         },
@@ -255,6 +259,10 @@
         },
         {
           "type": "continue",
+          "named": true
+        },
+        {
+          "type": "for",
           "named": true
         },
         {
@@ -654,6 +662,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "grab",
           "named": true
         },
@@ -773,6 +785,10 @@
             "named": true
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "grab",
             "named": true
           },
@@ -884,6 +900,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -1022,6 +1042,10 @@
             "named": true
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "grab",
             "named": true
           },
@@ -1133,6 +1157,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -1306,6 +1334,10 @@
             "named": true
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "grab",
             "named": true
           },
@@ -1433,6 +1465,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -1643,6 +1679,484 @@
     }
   },
   {
+    "type": "for",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "grab",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "matches",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "todo",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "type_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "check": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "grab",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "matches",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "todo",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "type_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "increment": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "grab",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "matches",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "todo",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "type_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "initializer": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "collection",
+            "named": true
+          },
+          {
+            "type": "collection_fill",
+            "named": true
+          },
+          {
+            "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
+            "named": true
+          },
+          {
+            "type": "grab",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "index",
+            "named": true
+          },
+          {
+            "type": "int",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "matches",
+            "named": true
+          },
+          {
+            "type": "member_access",
+            "named": true
+          },
+          {
+            "type": "method_call",
+            "named": true
+          },
+          {
+            "type": "object_initializer",
+            "named": true
+          },
+          {
+            "type": "postfix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "prefix_unary_operator",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "static_member_access",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "todo",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "type_identifier_expression",
+            "named": true
+          },
+          {
+            "type": "variable_access",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "function_definition",
     "named": true,
     "fields": {
@@ -1765,6 +2279,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "grab",
           "named": true
         },
@@ -1884,6 +2402,10 @@
             "named": true
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "grab",
             "named": true
           },
@@ -1998,6 +2520,10 @@
             "named": true
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "grab",
             "named": true
           },
@@ -2109,6 +2635,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -2242,6 +2772,10 @@
             "named": true
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "grab",
             "named": true
           },
@@ -2353,6 +2887,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -2473,6 +3011,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -2614,6 +3156,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "grab",
           "named": true
         },
@@ -2750,6 +3296,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -2914,6 +3464,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -3110,6 +3664,10 @@
             "named": true
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "grab",
             "named": true
           },
@@ -3221,6 +3779,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -3563,6 +4125,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "grab",
           "named": true
         },
@@ -3682,6 +4248,10 @@
           "named": true
         },
         {
+          "type": "for",
+          "named": true
+        },
+        {
           "type": "grab",
           "named": true
         },
@@ -3798,6 +4368,10 @@
           },
           {
             "type": "continue",
+            "named": true
+          },
+          {
+            "type": "for",
             "named": true
           },
           {
@@ -3962,6 +4536,10 @@
         },
         {
           "type": "continue",
+          "named": true
+        },
+        {
+          "type": "for",
           "named": true
         },
         {
@@ -4197,6 +4775,10 @@
         },
         {
           "type": "continue",
+          "named": true
+        },
+        {
+          "type": "for",
           "named": true
         },
         {
@@ -5034,6 +5616,10 @@
             "named": true
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "grab",
             "named": true
           },
@@ -5200,6 +5786,10 @@
             "named": true
           },
           {
+            "type": "for",
+            "named": true
+          },
+          {
             "type": "grab",
             "named": true
           },
@@ -5324,11 +5914,19 @@
     "named": false
   },
   {
+    "type": "++",
+    "named": false
+  },
+  {
     "type": ",",
     "named": false
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "--",
     "named": false
   },
   {
@@ -5454,6 +6052,10 @@
   },
   {
     "type": "fn",
+    "named": false
+  },
+  {
+    "type": "for",
     "named": false
   },
   {
