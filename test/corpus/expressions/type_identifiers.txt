@@ -28,6 +28,10 @@ var x: Fn(): SomeType;
 var x: Fn(): mut SomeType;
 var x: unboxed Fn();
 
+var x: [SomeType::<string>];
+
+var x: variantOf SomeType;
+
 ---
 (source_file
     (variable_declaration
@@ -132,4 +136,15 @@ var x: unboxed Fn();
         type: (fn_type_identifier
             (boxing_specifier)
             (fn_type_parameter_list)))
+    (variable_declaration
+        name: (identifier)
+        type: (array_type_identifier
+            (named_type_identifier
+                name: (identifier)
+                type_arguments: (builtin_type_identifier (builtin_type_identifier_name)))))
+    (variable_declaration
+        name: (identifier)
+        type: (variant_of_type_identifier
+            type: (named_type_identifier name: (identifier))))
+
 )

@@ -22,6 +22,7 @@ export default grammar({
   reserved: {
     global: ($) => [
       "attribute",
+      "variantOf",
       "todo!",
       "use",
       "extern",
@@ -551,7 +552,11 @@ export default grammar({
         $.array_type_identifier,
         $.tuple_type_identifier,
         $.fn_type_identifier,
+        $.variant_of_type_identifier,
       ),
+
+    variant_of_type_identifier: ($) =>
+      seq("variantOf", field("type", $._type_identifier)),
 
     builtin_type_identifier_name: ($) =>
       choice(

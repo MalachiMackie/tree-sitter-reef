@@ -2914,6 +2914,27 @@
         {
           "type": "SYMBOL",
           "name": "fn_type_identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "variant_of_type_identifier"
+        }
+      ]
+    },
+    "variant_of_type_identifier": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "variantOf"
+        },
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_type_identifier"
+          }
         }
       ]
     },
@@ -3931,6 +3952,10 @@
       {
         "type": "STRING",
         "value": "attribute"
+      },
+      {
+        "type": "STRING",
+        "value": "variantOf"
       },
       {
         "type": "STRING",

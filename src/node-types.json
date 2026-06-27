@@ -34,6 +34,10 @@
         {
           "type": "tuple_type_identifier",
           "named": true
+        },
+        {
+          "type": "variant_of_type_identifier",
+          "named": true
         }
       ]
     }
@@ -423,6 +427,10 @@
           {
             "type": "tuple_type_identifier",
             "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
+            "named": true
           }
         ]
       }
@@ -557,6 +565,10 @@
           },
           {
             "type": "tuple_type_identifier",
+            "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
             "named": true
           }
         ]
@@ -1294,6 +1306,10 @@
           {
             "type": "tuple_type_identifier",
             "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
+            "named": true
           }
         ]
       },
@@ -1658,6 +1674,10 @@
         },
         {
           "type": "tuple_type_identifier",
+          "named": true
+        },
+        {
+          "type": "variant_of_type_identifier",
           "named": true
         }
       ]
@@ -3587,6 +3607,10 @@
           {
             "type": "tuple_type_identifier",
             "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
+            "named": true
           }
         ]
       }
@@ -3952,6 +3976,10 @@
           {
             "type": "tuple_type_identifier",
             "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
+            "named": true
           }
         ]
       }
@@ -4007,6 +4035,10 @@
           },
           {
             "type": "tuple_type_identifier",
+            "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
             "named": true
           }
         ]
@@ -4068,6 +4100,10 @@
         },
         {
           "type": "tuple_type_identifier",
+          "named": true
+        },
+        {
+          "type": "variant_of_type_identifier",
           "named": true
         }
       ]
@@ -4489,6 +4525,10 @@
         {
           "type": "tuple_type_identifier",
           "named": true
+        },
+        {
+          "type": "variant_of_type_identifier",
+          "named": true
         }
       ]
     }
@@ -4679,6 +4719,10 @@
           {
             "type": "tuple_type_identifier",
             "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
+            "named": true
           }
         ]
       },
@@ -4716,6 +4760,10 @@
           },
           {
             "type": "tuple_type_identifier",
+            "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
             "named": true
           }
         ]
@@ -4895,6 +4943,10 @@
         {
           "type": "tuple_type_identifier",
           "named": true
+        },
+        {
+          "type": "variant_of_type_identifier",
+          "named": true
         }
       ]
     }
@@ -4948,6 +5000,10 @@
           {
             "type": "tuple_type_identifier",
             "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
+            "named": true
           }
         ]
       }
@@ -4987,6 +5043,10 @@
         },
         {
           "type": "tuple_type_identifier",
+          "named": true
+        },
+        {
+          "type": "variant_of_type_identifier",
           "named": true
         }
       ]
@@ -5034,6 +5094,10 @@
         {
           "type": "tuple_type_identifier",
           "named": true
+        },
+        {
+          "type": "variant_of_type_identifier",
+          "named": true
         }
       ]
     }
@@ -5079,6 +5143,10 @@
           },
           {
             "type": "tuple_type_identifier",
+            "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
             "named": true
           }
         ]
@@ -5149,6 +5217,10 @@
           },
           {
             "type": "tuple_type_identifier",
+            "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
             "named": true
           }
         ]
@@ -5316,6 +5388,10 @@
           {
             "type": "tuple_type_identifier",
             "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
+            "named": true
           }
         ]
       },
@@ -5377,6 +5453,10 @@
           },
           {
             "type": "tuple_type_identifier",
+            "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
             "named": true
           }
         ]
@@ -5530,6 +5610,10 @@
           {
             "type": "tuple_type_identifier",
             "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
+            "named": true
           }
         ]
       }
@@ -5575,6 +5659,10 @@
           },
           {
             "type": "tuple_type_identifier",
+            "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
             "named": true
           }
         ]
@@ -5737,6 +5825,42 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "variant_of_type_identifier",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_type_identifier",
+            "named": true
+          },
+          {
+            "type": "builtin_type_identifier",
+            "named": true
+          },
+          {
+            "type": "fn_type_identifier",
+            "named": true
+          },
+          {
+            "type": "named_type_identifier",
+            "named": true
+          },
+          {
+            "type": "tuple_type_identifier",
+            "named": true
+          },
+          {
+            "type": "variant_of_type_identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -6172,6 +6296,10 @@
   },
   {
     "type": "var",
+    "named": false
+  },
+  {
+    "type": "variantOf",
     "named": false
   },
   {
